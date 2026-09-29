@@ -1,0 +1,248 @@
+# Design
+
+## Tokens
+
+  bg-page: #EEF1F5
+  surface: #FFFFFF
+  surface-sunken: #F7F9FB
+  text-primary: #10203A
+  text-secondary: #5A6B80
+  text-muted: #6D7C8D
+  accent: #1F58D6
+  accent-strong: #123E9E
+  accent-soft: #E7EEFC
+  border: #D7DFE8
+  border-strong: #B6C2D0
+  danger: #BE2A1E
+  danger-soft: #FCEAE8
+  danger-border: #E09A92
+  on-accent: #FFFFFF
+  font-sans: Inter
+  radius-sm: 8
+  radius-md: 12
+  radius-lg: 20
+  space-1: 4
+  space-2: 8
+  space-3: 12
+  space-4: 16
+  space-5: 24
+  space-6: 32
+  space-7: 40
+  text-xs: 12
+  text-sm: 14
+  text-base: 16
+  text-lg: 20
+  text-xl: 26
+  text-2xl: 32
+  input-height: 54
+
+## Board - Valid
+
+  frame [Board - Valid] layout=vertical gap=16
+    text [Board Title] content=1 · Хэвийн төлөв — бүх утга зөв, үр дүн харагдана fill=#5A6B80 fontFamily=Inter fontSize=16 fontWeight=700
+    frame [Desktop / Valid] fill=#EEF1F5 width=1120 height=700 layout=vertical padding=40 cornerRadius=20
+      frame [Calculator Card] fill=#FFFFFF stroke=#D7DFE8 width=fill_container height=fill_container layout=vertical gap=32 padding=40 cornerRadius=20
+        frame [Header] width=fill_container layout=vertical gap=8
+          text [Title] content=Зээлийн хүү тооцоолуур fill=#10203A fontFamily=Inter fontSize=32 fontWeight=700
+          text [Subtitle] content=Утгаа оруулахад сарын төлбөр, нийт хүү шууд тооцоологдоно. fill=#5A6B80 width=fill_container fontFamily=Inter fontSize=16 fontWeight=normal
+        frame [Body] width=fill_container height=fill_container gap=40
+          frame [Form] width=fill_container layout=vertical gap=24
+            frame [Amount Field] ←Field width=fill_container layout=vertical gap=8
+              frame [Field Header] width=fill_container gap=12 justifyContent=space_between alignItems=center
+                text [Label] content=Зээлийн хэмжээ fill=#10203A fontFamily=Inter fontSize=14 fontWeight=600
+                text [Hint] content=100,000 – 500,000,000₮ fill=#6D7C8D fontFamily=Inter fontSize=12 fontWeight=normal
+              frame [Input] fill=#FFFFFF stroke=#B6C2D0 width=fill_container height=54 gap=12 padding=[0,"$space-4"] cornerRadius=12 justifyContent=space_between alignItems=center
+                text [Value] content=10,000,000 fill=#10203A fontFamily=Inter fontSize=20 fontWeight=600
+                text [Unit] content=₮ fill=#6D7C8D fontFamily=Inter fontSize=16 fontWeight=normal
+              frame [Error] width=fill_container gap=8
+                icon [Error Icon] icon=circle-alert fill=#BE2A1E width=16 height=16
+                text [Error Text] content=Зээлийн хэмжээ 100,000 – 500,000,000₮ хооронд байх ёстой. fill=#BE2A1E width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+            frame [Rate Field] ←Field width=fill_container layout=vertical gap=8
+              frame [Field Header] width=fill_container gap=12 justifyContent=space_between alignItems=center
+                text [Label] content=Зээлийн хэмжээ fill=#10203A fontFamily=Inter fontSize=14 fontWeight=600
+                text [Hint] content=100,000 – 500,000,000₮ fill=#6D7C8D fontFamily=Inter fontSize=12 fontWeight=normal
+              frame [Input] fill=#FFFFFF stroke=#B6C2D0 width=fill_container height=54 gap=12 padding=[0,"$space-4"] cornerRadius=12 justifyContent=space_between alignItems=center
+                text [Value] content=10,000,000 fill=#10203A fontFamily=Inter fontSize=20 fontWeight=600
+                text [Unit] content=₮ fill=#6D7C8D fontFamily=Inter fontSize=16 fontWeight=normal
+              frame [Error] width=fill_container gap=8
+                icon [Error Icon] icon=circle-alert fill=#BE2A1E width=16 height=16
+                text [Error Text] content=Зээлийн хэмжээ 100,000 – 500,000,000₮ хооронд байх ёстой. fill=#BE2A1E width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+            frame [Term Field] ←Field width=fill_container layout=vertical gap=8
+              frame [Field Header] width=fill_container gap=12 justifyContent=space_between alignItems=center
+                text [Label] content=Зээлийн хэмжээ fill=#10203A fontFamily=Inter fontSize=14 fontWeight=600
+                text [Hint] content=100,000 – 500,000,000₮ fill=#6D7C8D fontFamily=Inter fontSize=12 fontWeight=normal
+              frame [Input] fill=#FFFFFF stroke=#B6C2D0 width=fill_container height=54 gap=12 padding=[0,"$space-4"] cornerRadius=12 justifyContent=space_between alignItems=center
+                text [Value] content=10,000,000 fill=#10203A fontFamily=Inter fontSize=20 fontWeight=600
+                text [Unit] content=₮ fill=#6D7C8D fontFamily=Inter fontSize=16 fontWeight=normal
+              frame [Error] width=fill_container gap=8
+                icon [Error Icon] icon=circle-alert fill=#BE2A1E width=16 height=16
+                text [Error Text] content=Зээлийн хэмжээ 100,000 – 500,000,000₮ хооронд байх ёстой. fill=#BE2A1E width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+          frame [Results] fill=#E7EEFC width=420 layout=vertical gap=16 padding=24 cornerRadius=20
+            text [Results Title] content=Тооцооллын үр дүн fill=#123E9E fontFamily=Inter fontSize=14 fontWeight=700
+            frame [Сарын төлбөр] ←Stat fill=#FFFFFF stroke=#D7DFE8 width=fill_container layout=vertical gap=8 padding=16 cornerRadius=12
+              text [Stat Label] content=Сарын төлбөр fill=#5A6B80 fontFamily=Inter fontSize=12 fontWeight=600
+              text [Stat Value] content=945,596₮ fill=#123E9E fontFamily=Inter fontSize=32 fontWeight=700
+            frame [Нийт хүү] ←Stat fill=#FFFFFF stroke=#D7DFE8 width=fill_container layout=vertical gap=8 padding=16 cornerRadius=12
+              text [Stat Label] content=Нийт хүү fill=#5A6B80 fontFamily=Inter fontSize=12 fontWeight=600
+              text [Stat Value] content=1,347,150₮ fill=#10203A fontFamily=Inter fontSize=26 fontWeight=700
+            frame [Нийт төлөх дүн] ←Stat fill=#FFFFFF stroke=#D7DFE8 width=fill_container layout=vertical gap=8 padding=16 cornerRadius=12
+              text [Stat Label] content=Нийт төлөх дүн fill=#5A6B80 fontFamily=Inter fontSize=12 fontWeight=600
+              text [Stat Value] content=11,347,150₮ fill=#10203A fontFamily=Inter fontSize=26 fontWeight=700
+            text [Results Note] content=Тооцоолол нь ойролцоо утга бөгөөд шимтгэл, даатгал ороогүй. fill=#5A6B80 width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+
+## Board - Invalid
+
+  frame [Board - Invalid] layout=vertical gap=16
+    text [Board Title] content=2 · Алдаатай төлөв — хоёр талбар зэрэг алдаатай, үр дүн нуугдана fill=#5A6B80 fontFamily=Inter fontSize=16 fontWeight=700
+    frame [Desktop / Invalid] fill=#EEF1F5 width=1120 height=700 layout=vertical padding=40 cornerRadius=20
+      frame [Calculator Card] fill=#FFFFFF stroke=#D7DFE8 width=fill_container height=fill_container layout=vertical gap=32 padding=40 cornerRadius=20
+        frame [Header] width=fill_container layout=vertical gap=8
+          text [Title] content=Зээлийн хүү тооцоолуур fill=#10203A fontFamily=Inter fontSize=32 fontWeight=700
+          text [Subtitle] content=Утгаа оруулахад сарын төлбөр, нийт хүү шууд тооцоологдоно. fill=#5A6B80 width=fill_container fontFamily=Inter fontSize=16 fontWeight=normal
+        frame [Body] width=fill_container height=fill_container gap=40
+          frame [Form] width=fill_container layout=vertical gap=24
+            frame [Amount Field] ←Field width=fill_container layout=vertical gap=8
+              frame [Field Header] width=fill_container gap=12 justifyContent=space_between alignItems=center
+                text [Label] content=Зээлийн хэмжээ fill=#10203A fontFamily=Inter fontSize=14 fontWeight=600
+                text [Hint] content=100,000 – 500,000,000₮ fill=#6D7C8D fontFamily=Inter fontSize=12 fontWeight=normal
+              frame [Input] fill=#FCEAE8 stroke=#BE2A1E width=fill_container height=54 gap=12 padding=[0,"$space-4"] cornerRadius=12 justifyContent=space_between alignItems=center
+                text [Value] content=10,000,000 fill=#10203A fontFamily=Inter fontSize=20 fontWeight=600
+                text [Unit] content=₮ fill=#6D7C8D fontFamily=Inter fontSize=16 fontWeight=normal
+              frame [Error] width=fill_container gap=8
+                icon [Error Icon] icon=circle-alert fill=#BE2A1E width=16 height=16
+                text [Error Text] content=Зээлийн хэмжээ 100,000 – 500,000,000₮ хооронд байх ёстой. fill=#BE2A1E width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+            frame [Rate Field] ←Field width=fill_container layout=vertical gap=8
+              frame [Field Header] width=fill_container gap=12 justifyContent=space_between alignItems=center
+                text [Label] content=Зээлийн хэмжээ fill=#10203A fontFamily=Inter fontSize=14 fontWeight=600
+                text [Hint] content=100,000 – 500,000,000₮ fill=#6D7C8D fontFamily=Inter fontSize=12 fontWeight=normal
+              frame [Input] fill=#FCEAE8 stroke=#BE2A1E width=fill_container height=54 gap=12 padding=[0,"$space-4"] cornerRadius=12 justifyContent=space_between alignItems=center
+                text [Value] content=10,000,000 fill=#10203A fontFamily=Inter fontSize=20 fontWeight=600
+                text [Unit] content=₮ fill=#6D7C8D fontFamily=Inter fontSize=16 fontWeight=normal
+              frame [Error] width=fill_container gap=8
+                icon [Error Icon] icon=circle-alert fill=#BE2A1E width=16 height=16
+                text [Error Text] content=Зээлийн хэмжээ 100,000 – 500,000,000₮ хооронд байх ёстой. fill=#BE2A1E width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+            frame [Term Field] ←Field width=fill_container layout=vertical gap=8
+              frame [Field Header] width=fill_container gap=12 justifyContent=space_between alignItems=center
+                text [Label] content=Зээлийн хэмжээ fill=#10203A fontFamily=Inter fontSize=14 fontWeight=600
+                text [Hint] content=100,000 – 500,000,000₮ fill=#6D7C8D fontFamily=Inter fontSize=12 fontWeight=normal
+              frame [Input] fill=#FFFFFF stroke=#B6C2D0 width=fill_container height=54 gap=12 padding=[0,"$space-4"] cornerRadius=12 justifyContent=space_between alignItems=center
+                text [Value] content=10,000,000 fill=#10203A fontFamily=Inter fontSize=20 fontWeight=600
+                text [Unit] content=₮ fill=#6D7C8D fontFamily=Inter fontSize=16 fontWeight=normal
+              frame [Error] width=fill_container gap=8
+                icon [Error Icon] icon=circle-alert fill=#BE2A1E width=16 height=16
+                text [Error Text] content=Зээлийн хэмжээ 100,000 – 500,000,000₮ хооронд байх ёстой. fill=#BE2A1E width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+          frame [Results Empty] fill=#F7F9FB stroke=#B6C2D0 width=420 layout=vertical gap=12 padding=24 cornerRadius=20
+            text [Results Title] content=Тооцооллын үр дүн fill=#5A6B80 fontFamily=Inter fontSize=14 fontWeight=700
+            frame [Empty State] width=fill_container layout=vertical gap=12 padding=["$space-6","$space-5"] alignItems=center
+              icon [Empty Icon] icon=calculator fill=#6D7C8D width=34 height=34
+              text [Empty Text] content=Талбаруудын утгыг зөв оруулсны дараа тооцоолол энд харагдана. fill=#5A6B80 width=fill_container fontFamily=Inter fontSize=14 fontWeight=normal lineHeight=1.5 textAlign=center
+
+## Board - Mobile
+
+  frame [Board - Mobile] layout=vertical gap=16
+    text [Board Title] content=3 · Гар утас — хоосон талбар fill=#5A6B80 fontFamily=Inter fontSize=16 fontWeight=700
+    frame [Mobile / Empty field] fill=#EEF1F5 width=390 height=700 layout=vertical gap=16 padding=16 cornerRadius=20
+      frame [Calculator Card] fill=#FFFFFF stroke=#D7DFE8 width=fill_container layout=vertical gap=24 padding=24 cornerRadius=20
+        frame [Header] width=fill_container layout=vertical gap=4
+          text [Title] content=Зээлийн хүү тооцоолуур fill=#10203A width=fill_container fontFamily=Inter fontSize=26 fontWeight=700
+          text [Subtitle] content=Утгаа оруулахад тооцоолол шууд шинэчлэгдэнэ. fill=#5A6B80 width=fill_container fontFamily=Inter fontSize=14 fontWeight=normal lineHeight=1.45
+        frame [Form] width=fill_container layout=vertical gap=24
+          frame [Amount Field] ←Field width=fill_container layout=vertical gap=8
+            frame [Field Header] width=fill_container gap=12 justifyContent=space_between alignItems=center
+              text [Label] content=Зээлийн хэмжээ fill=#10203A fontFamily=Inter fontSize=14 fontWeight=600
+              text [Hint] content=100,000 – 500,000,000₮ fill=#6D7C8D fontFamily=Inter fontSize=12 fontWeight=normal
+            frame [Input] fill=#FCEAE8 stroke=#BE2A1E width=fill_container height=54 gap=12 padding=[0,"$space-4"] cornerRadius=12 justifyContent=space_between alignItems=center
+              text [Value] content=10,000,000 fill=#10203A fontFamily=Inter fontSize=20 fontWeight=600
+              text [Unit] content=₮ fill=#6D7C8D fontFamily=Inter fontSize=16 fontWeight=normal
+            frame [Error] width=fill_container gap=8
+              icon [Error Icon] icon=circle-alert fill=#BE2A1E width=16 height=16
+              text [Error Text] content=Зээлийн хэмжээ 100,000 – 500,000,000₮ хооронд байх ёстой. fill=#BE2A1E width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+          frame [Rate Field] ←Field width=fill_container layout=vertical gap=8
+            frame [Field Header] width=fill_container gap=12 justifyContent=space_between alignItems=center
+              text [Label] content=Зээлийн хэмжээ fill=#10203A fontFamily=Inter fontSize=14 fontWeight=600
+              text [Hint] content=100,000 – 500,000,000₮ fill=#6D7C8D fontFamily=Inter fontSize=12 fontWeight=normal
+            frame [Input] fill=#FFFFFF stroke=#B6C2D0 width=fill_container height=54 gap=12 padding=[0,"$space-4"] cornerRadius=12 justifyContent=space_between alignItems=center
+              text [Value] content=10,000,000 fill=#10203A fontFamily=Inter fontSize=20 fontWeight=600
+              text [Unit] content=₮ fill=#6D7C8D fontFamily=Inter fontSize=16 fontWeight=normal
+            frame [Error] width=fill_container gap=8
+              icon [Error Icon] icon=circle-alert fill=#BE2A1E width=16 height=16
+              text [Error Text] content=Зээлийн хэмжээ 100,000 – 500,000,000₮ хооронд байх ёстой. fill=#BE2A1E width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+          frame [Term Field] ←Field width=fill_container layout=vertical gap=8
+            frame [Field Header] width=fill_container gap=12 justifyContent=space_between alignItems=center
+              text [Label] content=Зээлийн хэмжээ fill=#10203A fontFamily=Inter fontSize=14 fontWeight=600
+              text [Hint] content=100,000 – 500,000,000₮ fill=#6D7C8D fontFamily=Inter fontSize=12 fontWeight=normal
+            frame [Input] fill=#FFFFFF stroke=#B6C2D0 width=fill_container height=54 gap=12 padding=[0,"$space-4"] cornerRadius=12 justifyContent=space_between alignItems=center
+              text [Value] content=10,000,000 fill=#10203A fontFamily=Inter fontSize=20 fontWeight=600
+              text [Unit] content=₮ fill=#6D7C8D fontFamily=Inter fontSize=16 fontWeight=normal
+            frame [Error] width=fill_container gap=8
+              icon [Error Icon] icon=circle-alert fill=#BE2A1E width=16 height=16
+              text [Error Text] content=Зээлийн хэмжээ 100,000 – 500,000,000₮ хооронд байх ёстой. fill=#BE2A1E width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+      frame [Results Empty] fill=#F7F9FB stroke=#B6C2D0 width=fill_container layout=vertical gap=12 padding=24 cornerRadius=20 alignItems=center
+        icon [Empty Icon] icon=calculator fill=#6D7C8D width=30 height=30
+        text [Empty Text] content=Талбаруудын утгыг зөв оруулсны дараа тооцоолол энд харагдана. fill=#5A6B80 width=fill_container fontFamily=Inter fontSize=14 fontWeight=normal lineHeight=1.5 textAlign=center
+
+## Board - Field States
+
+  frame [Board - Field States] layout=vertical gap=16
+    text [Board Title] content=4 · Талбарын төлөв fill=#5A6B80 fontFamily=Inter fontSize=16 fontWeight=700
+    frame [Field States] fill=#FFFFFF stroke=#D7DFE8 width=460 layout=vertical gap=32 padding=32 cornerRadius=20
+      frame [State - Хэвийн — алдаа байхгүй, үр дүн тооцоологдоно] width=fill_container layout=vertical gap=12
+        text [Caption] content=Хэвийн — алдаа байхгүй, үр дүн тооцоологдоно fill=#6D7C8D width=fill_container fontFamily=Inter fontSize=12 fontWeight=600
+        frame [Field] width=fill_container layout=vertical gap=8
+          frame [Field Header] width=fill_container gap=12 justifyContent=space_between alignItems=center
+            text [Label] content=Зээлийн хэмжээ fill=#10203A fontFamily=Inter fontSize=14 fontWeight=600
+            text [Hint] content=100,000 – 500,000,000₮ fill=#6D7C8D fontFamily=Inter fontSize=12 fontWeight=normal
+          frame [Input] fill=#FFFFFF stroke=#B6C2D0 width=fill_container height=54 gap=12 padding=[0,"$space-4"] cornerRadius=12 justifyContent=space_between alignItems=center
+            text [Value] content=10,000,000 fill=#10203A fontFamily=Inter fontSize=20 fontWeight=600
+            text [Unit] content=₮ fill=#6D7C8D fontFamily=Inter fontSize=16 fontWeight=normal
+          frame [Error] width=fill_container gap=8
+            icon [Error Icon] icon=circle-alert fill=#BE2A1E width=16 height=16
+            text [Error Text] content=Зээлийн хэмжээ 100,000 – 500,000,000₮ хооронд байх ёстой. fill=#BE2A1E width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+      frame [State - Фокустай — хэрэглэгч бичиж байна] width=fill_container layout=vertical gap=12
+        text [Caption] content=Фокустай — хэрэглэгч бичиж байна fill=#6D7C8D width=fill_container fontFamily=Inter fontSize=12 fontWeight=600
+        frame [Field] width=fill_container layout=vertical gap=8
+          frame [Field Header] width=fill_container gap=12 justifyContent=space_between alignItems=center
+            text [Label] content=Зээлийн хэмжээ fill=#10203A fontFamily=Inter fontSize=14 fontWeight=600
+            text [Hint] content=100,000 – 500,000,000₮ fill=#6D7C8D fontFamily=Inter fontSize=12 fontWeight=normal
+          frame [Input] fill=#FFFFFF stroke=#1F58D6 width=fill_container height=54 gap=12 padding=[0,"$space-4"] cornerRadius=12 justifyContent=space_between alignItems=center
+            text [Value] content=10,000,000 fill=#10203A fontFamily=Inter fontSize=20 fontWeight=600
+            text [Unit] content=₮ fill=#6D7C8D fontFamily=Inter fontSize=16 fontWeight=normal
+          frame [Error] width=fill_container gap=8
+            icon [Error Icon] icon=circle-alert fill=#BE2A1E width=16 height=16
+            text [Error Text] content=Зээлийн хэмжээ 100,000 – 500,000,000₮ хооронд байх ёстой. fill=#BE2A1E width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+      frame [State - Хязгаараас хэтэрсэн] width=fill_container layout=vertical gap=12
+        text [Caption] content=Хязгаараас хэтэрсэн fill=#6D7C8D width=fill_container fontFamily=Inter fontSize=12 fontWeight=600
+        frame [Field] width=fill_container layout=vertical gap=8
+          frame [Field Header] width=fill_container gap=12 justifyContent=space_between alignItems=center
+            text [Label] content=Зээлийн хэмжээ fill=#10203A fontFamily=Inter fontSize=14 fontWeight=600
+            text [Hint] content=100,000 – 500,000,000₮ fill=#6D7C8D fontFamily=Inter fontSize=12 fontWeight=normal
+          frame [Input] fill=#FCEAE8 stroke=#BE2A1E width=fill_container height=54 gap=12 padding=[0,"$space-4"] cornerRadius=12 justifyContent=space_between alignItems=center
+            text [Value] content=10,000,000 fill=#10203A fontFamily=Inter fontSize=20 fontWeight=600
+            text [Unit] content=₮ fill=#6D7C8D fontFamily=Inter fontSize=16 fontWeight=normal
+          frame [Error] width=fill_container gap=8
+            icon [Error Icon] icon=circle-alert fill=#BE2A1E width=16 height=16
+            text [Error Text] content=Зээлийн хэмжээ 100,000 – 500,000,000₮ хооронд байх ёстой. fill=#BE2A1E width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+      frame [State - Хоосон / тоо биш утга] width=fill_container layout=vertical gap=12
+        text [Caption] content=Тоо биш утга fill=#6D7C8D width=fill_container fontFamily=Inter fontSize=12 fontWeight=600
+        frame [Field] width=fill_container layout=vertical gap=8
+          frame [Field Header] width=fill_container gap=12 justifyContent=space_between alignItems=center
+            text [Label] content=Зээлийн хэмжээ fill=#10203A fontFamily=Inter fontSize=14 fontWeight=600
+            text [Hint] content=100,000 – 500,000,000₮ fill=#6D7C8D fontFamily=Inter fontSize=12 fontWeight=normal
+          frame [Input] fill=#FCEAE8 stroke=#BE2A1E width=fill_container height=54 gap=12 padding=[0,"$space-4"] cornerRadius=12 justifyContent=space_between alignItems=center
+            text [Value] content=10,000,000 fill=#10203A fontFamily=Inter fontSize=20 fontWeight=600
+            text [Unit] content=₮ fill=#6D7C8D fontFamily=Inter fontSize=16 fontWeight=normal
+          frame [Error] width=fill_container gap=8
+            icon [Error Icon] icon=circle-alert fill=#BE2A1E width=16 height=16
+            text [Error Text] content=Зээлийн хэмжээ 100,000 – 500,000,000₮ хооронд байх ёстой. fill=#BE2A1E width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+      frame [State - Хоосон] width=fill_container layout=vertical gap=12
+        text [Caption] content=Хоосон — хоосон талбар 0 биш, алдаатай гэж тооцогдоно fill=#6D7C8D width=fill_container fontFamily=Inter fontSize=12 fontWeight=600
+        frame [Field] width=fill_container layout=vertical gap=8
+          frame [Field Header] width=fill_container gap=12 justifyContent=space_between alignItems=center
+            text [Label] content=Зээлийн хэмжээ fill=#10203A fontFamily=Inter fontSize=14 fontWeight=600
+            text [Hint] content=100,000 – 500,000,000₮ fill=#6D7C8D fontFamily=Inter fontSize=12 fontWeight=normal
+          frame [Input] fill=#FCEAE8 stroke=#BE2A1E width=fill_container height=54 gap=12 padding=[0,"$space-4"] cornerRadius=12 justifyContent=space_between alignItems=center
+            text [Value] content=10,000,000 fill=#10203A fontFamily=Inter fontSize=20 fontWeight=600
+            text [Unit] content=₮ fill=#6D7C8D fontFamily=Inter fontSize=16 fontWeight=normal
+          frame [Error] width=fill_container gap=8
+            icon [Error Icon] icon=circle-alert fill=#BE2A1E width=16 height=16
+            text [Error Text] content=Зээлийн хэмжээ 100,000 – 500,000,000₮ хооронд байх ёстой. fill=#BE2A1E width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45

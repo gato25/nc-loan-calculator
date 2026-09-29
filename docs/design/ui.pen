@@ -1,0 +1,1382 @@
+{
+  "version": "2.17",
+  "children": [
+    {
+      "type": "frame",
+      "id": "KOkgj",
+      "x": 0,
+      "y": 0,
+      "name": "Components",
+      "width": 720,
+      "fill": "$surface-sunken",
+      "cornerRadius": "$radius-lg",
+      "stroke": "$border",
+      "strokeWidth": 1,
+      "gap": "$space-7",
+      "padding": "$space-6",
+      "children": [
+        {
+          "type": "frame",
+          "id": "PUo9S",
+          "name": "Field",
+          "reusable": true,
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": "$space-2",
+          "children": [
+            {
+              "type": "frame",
+              "id": "a7PFfI",
+              "name": "Field Header",
+              "width": "fill_container",
+              "gap": "$space-3",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "CFD9h",
+                  "name": "Label",
+                  "fill": "$text-primary",
+                  "content": "Зээлийн хэмжээ",
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-sm",
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "Y08Q9",
+                  "name": "Hint",
+                  "fill": "$text-muted",
+                  "content": "100,000 – 500,000,000₮",
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-xs",
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "m1plj",
+              "name": "Input",
+              "width": "fill_container",
+              "height": 54,
+              "fill": "$surface",
+              "cornerRadius": "$radius-md",
+              "stroke": "$border-strong",
+              "strokeWidth": 1,
+              "gap": "$space-3",
+              "padding": [
+                0,
+                "$space-4"
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "uSWnQ",
+                  "name": "Value",
+                  "fill": "$text-primary",
+                  "content": "10,000,000",
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-lg",
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "V7Klo2",
+                  "name": "Unit",
+                  "fill": "$text-muted",
+                  "content": "₮",
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-base",
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "RxMwk",
+              "name": "Error",
+              "width": "fill_container",
+              "gap": "$space-2",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "A0Pa9z",
+                  "name": "Error Icon",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "circle-alert",
+                  "library": "lucide",
+                  "fill": "$danger"
+                },
+                {
+                  "type": "text",
+                  "id": "gmCBC",
+                  "name": "Error Text",
+                  "fill": "$danger",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Зээлийн хэмжээ 100,000 – 500,000,000₮ хооронд байх ёстой.",
+                  "lineHeight": 1.45,
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-xs",
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "jQ61w",
+          "name": "Stat",
+          "reusable": true,
+          "width": "fill_container",
+          "fill": "$surface",
+          "cornerRadius": "$radius-md",
+          "stroke": "$border",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": "$space-2",
+          "padding": "$space-4",
+          "children": [
+            {
+              "type": "text",
+              "id": "qHegf",
+              "name": "Stat Label",
+              "fill": "$text-secondary",
+              "content": "Сарын төлбөр",
+              "fontFamily": "$font-sans",
+              "fontSize": "$text-xs",
+              "fontWeight": "600",
+              "letterSpacing": 0.4
+            },
+            {
+              "type": "text",
+              "id": "du94s",
+              "name": "Stat Value",
+              "fill": "$text-primary",
+              "content": "945,596₮",
+              "fontFamily": "$font-sans",
+              "fontSize": "$text-xl",
+              "fontWeight": "700"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "vEqh5",
+      "x": 0,
+      "y": 280,
+      "name": "Board - Valid",
+      "layout": "vertical",
+      "gap": "$space-4",
+      "children": [
+        {
+          "type": "text",
+          "id": "PHPeg",
+          "name": "Board Title",
+          "fill": "$text-secondary",
+          "content": "1 · Хэвийн төлөв — бүх утга зөв, үр дүн харагдана",
+          "fontFamily": "$font-sans",
+          "fontSize": "$text-base",
+          "fontWeight": "700"
+        },
+        {
+          "type": "frame",
+          "id": "dW17R",
+          "name": "Desktop / Valid",
+          "clip": true,
+          "width": 1120,
+          "height": 700,
+          "fill": "$bg-page",
+          "cornerRadius": "$radius-lg",
+          "layout": "vertical",
+          "padding": "$space-7",
+          "children": [
+            {
+              "type": "frame",
+              "id": "HVrms",
+              "name": "Calculator Card",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "$surface",
+              "cornerRadius": "$radius-lg",
+              "stroke": "$border",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": "$space-6",
+              "padding": "$space-7",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "HisrE",
+                  "name": "Header",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": "$space-2",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Y1QRgb",
+                      "name": "Title",
+                      "fill": "$text-primary",
+                      "content": "Зээлийн хүү тооцоолуур",
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-2xl",
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "OmjCN",
+                      "name": "Subtitle",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Утгаа оруулахад сарын төлбөр, нийт хүү шууд тооцоологдоно.",
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "aFirO",
+                  "name": "Body",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "gap": "$space-7",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "X7Ird1",
+                      "name": "Form",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$space-5",
+                      "children": [
+                        {
+                          "id": "i5LI9c",
+                          "type": "ref",
+                          "ref": "PUo9S",
+                          "name": "Amount Field",
+                          "width": "fill_container",
+                          "descendants": {
+                            "CFD9h": {
+                              "content": "Зээлийн хэмжээ"
+                            },
+                            "Y08Q9": {
+                              "content": "100,000 – 500,000,000₮"
+                            },
+                            "uSWnQ": {
+                              "content": "10,000,000",
+                              "fill": "$text-primary"
+                            },
+                            "V7Klo2": {
+                              "content": "₮"
+                            },
+                            "RxMwk": {
+                              "enabled": false
+                            },
+                            "gmCBC": {
+                              "content": ""
+                            }
+                          }
+                        },
+                        {
+                          "id": "hhhWh",
+                          "type": "ref",
+                          "ref": "PUo9S",
+                          "name": "Rate Field",
+                          "width": "fill_container",
+                          "descendants": {
+                            "CFD9h": {
+                              "content": "Сарын хүү"
+                            },
+                            "Y08Q9": {
+                              "content": "0.1 – 10.0%"
+                            },
+                            "uSWnQ": {
+                              "content": "2.0",
+                              "fill": "$text-primary"
+                            },
+                            "V7Klo2": {
+                              "content": "%"
+                            },
+                            "RxMwk": {
+                              "enabled": false
+                            },
+                            "gmCBC": {
+                              "content": ""
+                            }
+                          }
+                        },
+                        {
+                          "id": "xMU9T",
+                          "type": "ref",
+                          "ref": "PUo9S",
+                          "name": "Term Field",
+                          "width": "fill_container",
+                          "descendants": {
+                            "CFD9h": {
+                              "content": "Хугацаа"
+                            },
+                            "Y08Q9": {
+                              "content": "1 – 120 сар"
+                            },
+                            "uSWnQ": {
+                              "content": "12",
+                              "fill": "$text-primary"
+                            },
+                            "V7Klo2": {
+                              "content": "сар"
+                            },
+                            "RxMwk": {
+                              "enabled": false
+                            },
+                            "gmCBC": {
+                              "content": ""
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Emt85",
+                      "name": "Results",
+                      "width": 420,
+                      "fill": "$accent-soft",
+                      "cornerRadius": "$radius-lg",
+                      "layout": "vertical",
+                      "gap": "$space-4",
+                      "padding": "$space-5",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ojxw2",
+                          "name": "Results Title",
+                          "fill": "$accent-strong",
+                          "content": "Тооцооллын үр дүн",
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-sm",
+                          "fontWeight": "700",
+                          "letterSpacing": 0.6
+                        },
+                        {
+                          "id": "IVzv4",
+                          "type": "ref",
+                          "ref": "jQ61w",
+                          "name": "Сарын төлбөр",
+                          "width": "fill_container",
+                          "descendants": {
+                            "qHegf": {
+                              "content": "Сарын төлбөр"
+                            },
+                            "du94s": {
+                              "content": "945,596₮",
+                              "fontSize": "$text-2xl",
+                              "fill": "$accent-strong"
+                            }
+                          }
+                        },
+                        {
+                          "id": "RC60S",
+                          "type": "ref",
+                          "ref": "jQ61w",
+                          "name": "Нийт хүү",
+                          "width": "fill_container",
+                          "descendants": {
+                            "qHegf": {
+                              "content": "Нийт хүү"
+                            },
+                            "du94s": {
+                              "content": "1,347,150₮",
+                              "fontSize": "$text-xl",
+                              "fill": "$text-primary"
+                            }
+                          }
+                        },
+                        {
+                          "id": "h0R6dn",
+                          "type": "ref",
+                          "ref": "jQ61w",
+                          "name": "Нийт төлөх дүн",
+                          "width": "fill_container",
+                          "descendants": {
+                            "qHegf": {
+                              "content": "Нийт төлөх дүн"
+                            },
+                            "du94s": {
+                              "content": "11,347,150₮",
+                              "fontSize": "$text-xl",
+                              "fill": "$text-primary"
+                            }
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "id": "v5G37",
+                          "name": "Results Note",
+                          "fill": "$text-secondary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Тооцоолол нь ойролцоо утга бөгөөд шимтгэл, даатгал ороогүй.",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-xs",
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "qguwH",
+      "x": 1220,
+      "y": 280,
+      "name": "Board - Invalid",
+      "layout": "vertical",
+      "gap": "$space-4",
+      "children": [
+        {
+          "type": "text",
+          "id": "i06Wg",
+          "name": "Board Title",
+          "fill": "$text-secondary",
+          "content": "2 · Алдаатай төлөв — хоёр талбар зэрэг алдаатай, үр дүн нуугдана",
+          "fontFamily": "$font-sans",
+          "fontSize": "$text-base",
+          "fontWeight": "700"
+        },
+        {
+          "type": "frame",
+          "id": "Vt6D4",
+          "name": "Desktop / Invalid",
+          "clip": true,
+          "width": 1120,
+          "height": 700,
+          "fill": "$bg-page",
+          "cornerRadius": "$radius-lg",
+          "layout": "vertical",
+          "padding": "$space-7",
+          "children": [
+            {
+              "type": "frame",
+              "id": "BzGjU",
+              "name": "Calculator Card",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "$surface",
+              "cornerRadius": "$radius-lg",
+              "stroke": "$border",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": "$space-6",
+              "padding": "$space-7",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "YAcwV",
+                  "name": "Header",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": "$space-2",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "z2sllt",
+                      "name": "Title",
+                      "fill": "$text-primary",
+                      "content": "Зээлийн хүү тооцоолуур",
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-2xl",
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "UFBsv",
+                      "name": "Subtitle",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Утгаа оруулахад сарын төлбөр, нийт хүү шууд тооцоологдоно.",
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-base",
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "w6hNHJ",
+                  "name": "Body",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "gap": "$space-7",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "OlagG",
+                      "name": "Form",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$space-5",
+                      "children": [
+                        {
+                          "id": "g3DDz",
+                          "type": "ref",
+                          "ref": "PUo9S",
+                          "name": "Amount Field",
+                          "width": "fill_container",
+                          "descendants": {
+                            "CFD9h": {
+                              "content": "Зээлийн хэмжээ"
+                            },
+                            "Y08Q9": {
+                              "content": "100,000 – 500,000,000₮"
+                            },
+                            "m1plj": {
+                              "stroke": "$danger",
+                              "fill": "$danger-soft",
+                              "strokeWidth": 1.5
+                            },
+                            "uSWnQ": {
+                              "content": "50,000",
+                              "fill": "$text-primary"
+                            },
+                            "V7Klo2": {
+                              "content": "₮"
+                            },
+                            "RxMwk": {
+                              "enabled": true
+                            },
+                            "gmCBC": {
+                              "content": "Зээлийн хэмжээ 100,000 – 500,000,000₮ хооронд байх ёстой."
+                            }
+                          }
+                        },
+                        {
+                          "id": "aoBxg",
+                          "type": "ref",
+                          "ref": "PUo9S",
+                          "name": "Rate Field",
+                          "width": "fill_container",
+                          "descendants": {
+                            "CFD9h": {
+                              "content": "Сарын хүү"
+                            },
+                            "Y08Q9": {
+                              "content": "0.1 – 10.0%"
+                            },
+                            "m1plj": {
+                              "stroke": "$danger",
+                              "fill": "$danger-soft",
+                              "strokeWidth": 1.5
+                            },
+                            "uSWnQ": {
+                              "content": "12.5",
+                              "fill": "$text-primary"
+                            },
+                            "V7Klo2": {
+                              "content": "%"
+                            },
+                            "RxMwk": {
+                              "enabled": true
+                            },
+                            "gmCBC": {
+                              "content": "Сарын хүү 0.1 – 10.0% хооронд байх ёстой."
+                            }
+                          }
+                        },
+                        {
+                          "id": "TO8K9",
+                          "type": "ref",
+                          "ref": "PUo9S",
+                          "name": "Term Field",
+                          "width": "fill_container",
+                          "descendants": {
+                            "CFD9h": {
+                              "content": "Хугацаа"
+                            },
+                            "Y08Q9": {
+                              "content": "1 – 120 сар"
+                            },
+                            "uSWnQ": {
+                              "content": "12",
+                              "fill": "$text-primary"
+                            },
+                            "V7Klo2": {
+                              "content": "сар"
+                            },
+                            "RxMwk": {
+                              "enabled": false
+                            },
+                            "gmCBC": {
+                              "content": ""
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "jZEC3",
+                      "name": "Results Empty",
+                      "width": 420,
+                      "fill": "$surface-sunken",
+                      "cornerRadius": "$radius-lg",
+                      "stroke": "$border-strong",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "gap": "$space-3",
+                      "padding": "$space-5",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "mcJHi",
+                          "name": "Results Title",
+                          "fill": "$text-secondary",
+                          "content": "Тооцооллын үр дүн",
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-sm",
+                          "fontWeight": "700",
+                          "letterSpacing": 0.6
+                        },
+                        {
+                          "type": "frame",
+                          "id": "iBh0J",
+                          "name": "Empty State",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": "$space-3",
+                          "padding": [
+                            "$space-6",
+                            "$space-5"
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "yXFV2",
+                              "name": "Empty Icon",
+                              "width": 34,
+                              "height": 34,
+                              "icon": "calculator",
+                              "library": "lucide",
+                              "fill": "$text-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "tKi8e",
+                              "name": "Empty Text",
+                              "fill": "$text-secondary",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Талбаруудын утгыг зөв оруулсны дараа тооцоолол энд харагдана.",
+                              "lineHeight": 1.5,
+                              "textAlign": "center",
+                              "fontFamily": "$font-sans",
+                              "fontSize": "$text-sm",
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "kJ4qj",
+      "x": 2440,
+      "y": 280,
+      "name": "Board - Mobile",
+      "layout": "vertical",
+      "gap": "$space-4",
+      "children": [
+        {
+          "type": "text",
+          "id": "Rgj6B",
+          "name": "Board Title",
+          "fill": "$text-secondary",
+          "content": "3 · Гар утас — хоосон талбар",
+          "fontFamily": "$font-sans",
+          "fontSize": "$text-base",
+          "fontWeight": "700"
+        },
+        {
+          "type": "frame",
+          "id": "F5QV8",
+          "name": "Mobile / Empty field",
+          "clip": true,
+          "width": 390,
+          "height": 700,
+          "fill": "$bg-page",
+          "cornerRadius": "$radius-lg",
+          "layout": "vertical",
+          "gap": "$space-4",
+          "padding": "$space-4",
+          "children": [
+            {
+              "type": "frame",
+              "id": "j96Sl",
+              "name": "Calculator Card",
+              "width": "fill_container",
+              "fill": "$surface",
+              "cornerRadius": "$radius-lg",
+              "stroke": "$border",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": "$space-5",
+              "padding": "$space-5",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "NnpbC",
+                  "name": "Header",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": "$space-1",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Vlxor",
+                      "name": "Title",
+                      "fill": "$text-primary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Зээлийн хүү тооцоолуур",
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-xl",
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "DBXme",
+                      "name": "Subtitle",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Утгаа оруулахад тооцоолол шууд шинэчлэгдэнэ.",
+                      "lineHeight": 1.45,
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-sm",
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "opwQ8",
+                  "name": "Form",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": "$space-5",
+                  "children": [
+                    {
+                      "id": "T4KsS",
+                      "type": "ref",
+                      "ref": "PUo9S",
+                      "name": "Amount Field",
+                      "width": "fill_container",
+                      "descendants": {
+                        "CFD9h": {
+                          "content": "Зээлийн хэмжээ"
+                        },
+                        "Y08Q9": {
+                          "content": "100,000 – 500,000,000₮",
+                          "enabled": true
+                        },
+                        "m1plj": {
+                          "stroke": "$danger",
+                          "fill": "$danger-soft",
+                          "strokeWidth": 1.5
+                        },
+                        "uSWnQ": {
+                          "content": "Дүн оруулна уу",
+                          "fill": "$text-muted"
+                        },
+                        "V7Klo2": {
+                          "content": "₮"
+                        },
+                        "RxMwk": {
+                          "enabled": true
+                        },
+                        "gmCBC": {
+                          "content": "Зээлийн хэмжээг оруулна уу. 100,000 – 500,000,000₮ хооронд байна."
+                        }
+                      }
+                    },
+                    {
+                      "id": "GfBG2",
+                      "type": "ref",
+                      "ref": "PUo9S",
+                      "name": "Rate Field",
+                      "width": "fill_container",
+                      "descendants": {
+                        "CFD9h": {
+                          "content": "Сарын хүү"
+                        },
+                        "Y08Q9": {
+                          "content": "0.1 – 10.0%",
+                          "enabled": true
+                        },
+                        "uSWnQ": {
+                          "content": "2.0",
+                          "fill": "$text-primary"
+                        },
+                        "V7Klo2": {
+                          "content": "%"
+                        },
+                        "RxMwk": {
+                          "enabled": false
+                        },
+                        "gmCBC": {
+                          "content": ""
+                        }
+                      }
+                    },
+                    {
+                      "id": "tH5Ao",
+                      "type": "ref",
+                      "ref": "PUo9S",
+                      "name": "Term Field",
+                      "width": "fill_container",
+                      "descendants": {
+                        "CFD9h": {
+                          "content": "Хугацаа"
+                        },
+                        "Y08Q9": {
+                          "content": "1 – 120 сар",
+                          "enabled": true
+                        },
+                        "uSWnQ": {
+                          "content": "12",
+                          "fill": "$text-primary"
+                        },
+                        "V7Klo2": {
+                          "content": "сар"
+                        },
+                        "RxMwk": {
+                          "enabled": false
+                        },
+                        "gmCBC": {
+                          "content": ""
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "B7SdyT",
+              "name": "Results Empty",
+              "width": "fill_container",
+              "fill": "$surface-sunken",
+              "cornerRadius": "$radius-lg",
+              "stroke": "$border-strong",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": "$space-3",
+              "padding": "$space-5",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "C1UFRr",
+                  "name": "Empty Icon",
+                  "width": 30,
+                  "height": 30,
+                  "icon": "calculator",
+                  "library": "lucide",
+                  "fill": "$text-muted"
+                },
+                {
+                  "type": "text",
+                  "id": "Z1EsB",
+                  "name": "Empty Text",
+                  "fill": "$text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Талбаруудын утгыг зөв оруулсны дараа тооцоолол энд харагдана.",
+                  "lineHeight": 1.5,
+                  "textAlign": "center",
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-sm",
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "WO6c2",
+      "x": 2900,
+      "y": 280,
+      "name": "Board - Field States",
+      "layout": "vertical",
+      "gap": "$space-4",
+      "children": [
+        {
+          "type": "text",
+          "id": "Tbnzf",
+          "name": "Board Title",
+          "fill": "$text-secondary",
+          "content": "4 · Талбарын төлөв",
+          "fontFamily": "$font-sans",
+          "fontSize": "$text-base",
+          "fontWeight": "700"
+        },
+        {
+          "type": "frame",
+          "id": "w4A9B",
+          "name": "Field States",
+          "width": 460,
+          "fill": "$surface",
+          "cornerRadius": "$radius-lg",
+          "stroke": "$border",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": "$space-6",
+          "padding": "$space-6",
+          "children": [
+            {
+              "type": "frame",
+              "id": "JZnJR",
+              "name": "State - Хэвийн — алдаа байхгүй, үр дүн тооцоологдоно",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": "$space-3",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "gOBah",
+                  "name": "Caption",
+                  "fill": "$text-muted",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Хэвийн — алдаа байхгүй, үр дүн тооцоологдоно",
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-xs",
+                  "fontWeight": "600",
+                  "letterSpacing": 0.4
+                },
+                {
+                  "id": "lb4Sa",
+                  "type": "ref",
+                  "ref": "PUo9S",
+                  "name": "Field",
+                  "width": "fill_container",
+                  "descendants": {
+                    "CFD9h": {
+                      "content": "Зээлийн хэмжээ"
+                    },
+                    "Y08Q9": {
+                      "content": "100,000 – 500,000,000₮"
+                    },
+                    "uSWnQ": {
+                      "content": "10,000,000",
+                      "fill": "$text-primary"
+                    },
+                    "V7Klo2": {
+                      "content": "₮"
+                    },
+                    "RxMwk": {
+                      "enabled": false
+                    },
+                    "gmCBC": {
+                      "content": ""
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "AJN0h",
+              "name": "State - Фокустай — хэрэглэгч бичиж байна",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": "$space-3",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "cuv4d",
+                  "name": "Caption",
+                  "fill": "$text-muted",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Фокустай — хэрэглэгч бичиж байна",
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-xs",
+                  "fontWeight": "600",
+                  "letterSpacing": 0.4
+                },
+                {
+                  "id": "XXSCX",
+                  "type": "ref",
+                  "ref": "PUo9S",
+                  "name": "Field",
+                  "width": "fill_container",
+                  "descendants": {
+                    "CFD9h": {
+                      "content": "Сарын хүү"
+                    },
+                    "Y08Q9": {
+                      "content": "0.1 – 10.0%"
+                    },
+                    "m1plj": {
+                      "stroke": "$accent",
+                      "strokeWidth": 2
+                    },
+                    "uSWnQ": {
+                      "content": "2.5",
+                      "fill": "$text-primary"
+                    },
+                    "V7Klo2": {
+                      "content": "%"
+                    },
+                    "RxMwk": {
+                      "enabled": false
+                    },
+                    "gmCBC": {
+                      "content": ""
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "vPlV7",
+              "name": "State - Хязгаараас хэтэрсэн",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": "$space-3",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "q0f48t",
+                  "name": "Caption",
+                  "fill": "$text-muted",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Хязгаараас хэтэрсэн",
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-xs",
+                  "fontWeight": "600",
+                  "letterSpacing": 0.4
+                },
+                {
+                  "id": "Q4ZQcE",
+                  "type": "ref",
+                  "ref": "PUo9S",
+                  "name": "Field",
+                  "width": "fill_container",
+                  "descendants": {
+                    "CFD9h": {
+                      "content": "Хугацаа"
+                    },
+                    "Y08Q9": {
+                      "content": "1 – 120 сар"
+                    },
+                    "m1plj": {
+                      "stroke": "$danger",
+                      "fill": "$danger-soft",
+                      "strokeWidth": 1.5
+                    },
+                    "uSWnQ": {
+                      "content": "150",
+                      "fill": "$text-primary"
+                    },
+                    "V7Klo2": {
+                      "content": "сар"
+                    },
+                    "RxMwk": {
+                      "enabled": true
+                    },
+                    "gmCBC": {
+                      "content": "Хугацаа 1 – 120 сарын хооронд бүхэл тоо байх ёстой."
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "t6Tfa",
+              "name": "State - Хоосон / тоо биш утга",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": "$space-3",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "lZTnP",
+                  "name": "Caption",
+                  "fill": "$text-muted",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Тоо биш утга",
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-xs",
+                  "fontWeight": "600",
+                  "letterSpacing": 0.4
+                },
+                {
+                  "id": "qtPnk",
+                  "type": "ref",
+                  "ref": "PUo9S",
+                  "name": "Field",
+                  "width": "fill_container",
+                  "descendants": {
+                    "CFD9h": {
+                      "content": "Зээлийн хэмжээ"
+                    },
+                    "Y08Q9": {
+                      "content": "100,000 – 500,000,000₮"
+                    },
+                    "m1plj": {
+                      "stroke": "$danger",
+                      "fill": "$danger-soft",
+                      "strokeWidth": 1.5
+                    },
+                    "uSWnQ": {
+                      "content": "10сая",
+                      "fill": "$text-primary"
+                    },
+                    "V7Klo2": {
+                      "content": "₮"
+                    },
+                    "RxMwk": {
+                      "enabled": true
+                    },
+                    "gmCBC": {
+                      "content": "Зөвхөн тоо оруулна уу. Жишээ: 10,000,000"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "QsLSE",
+              "name": "State - Хоосон",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": "$space-3",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "fymW6",
+                  "name": "Caption",
+                  "fill": "$text-muted",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Хоосон — хоосон талбар 0 биш, алдаатай гэж тооцогдоно",
+                  "fontFamily": "$font-sans",
+                  "fontSize": "$text-xs",
+                  "fontWeight": "600",
+                  "letterSpacing": 0.4
+                },
+                {
+                  "id": "Z7SQOa",
+                  "type": "ref",
+                  "ref": "PUo9S",
+                  "name": "Field",
+                  "width": "fill_container",
+                  "descendants": {
+                    "CFD9h": {
+                      "content": "Хугацаа"
+                    },
+                    "Y08Q9": {
+                      "content": "1 – 120 сар"
+                    },
+                    "m1plj": {
+                      "stroke": "$danger",
+                      "fill": "$danger-soft",
+                      "strokeWidth": 1.5
+                    },
+                    "uSWnQ": {
+                      "content": "Хугацаа оруулна уу",
+                      "fill": "$text-muted"
+                    },
+                    "V7Klo2": {
+                      "content": "сар"
+                    },
+                    "RxMwk": {
+                      "enabled": true
+                    },
+                    "gmCBC": {
+                      "content": "Хугацааг оруулна уу. 1 – 120 сарын хооронд байна."
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "bg-page": {
+      "type": "color",
+      "value": "#EEF1F5"
+    },
+    "surface": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "surface-sunken": {
+      "type": "color",
+      "value": "#F7F9FB"
+    },
+    "text-primary": {
+      "type": "color",
+      "value": "#10203A"
+    },
+    "text-secondary": {
+      "type": "color",
+      "value": "#5A6B80"
+    },
+    "text-muted": {
+      "type": "color",
+      "value": "#6D7C8D"
+    },
+    "accent": {
+      "type": "color",
+      "value": "#1F58D6"
+    },
+    "accent-strong": {
+      "type": "color",
+      "value": "#123E9E"
+    },
+    "accent-soft": {
+      "type": "color",
+      "value": "#E7EEFC"
+    },
+    "border": {
+      "type": "color",
+      "value": "#D7DFE8"
+    },
+    "border-strong": {
+      "type": "color",
+      "value": "#B6C2D0"
+    },
+    "danger": {
+      "type": "color",
+      "value": "#BE2A1E"
+    },
+    "danger-soft": {
+      "type": "color",
+      "value": "#FCEAE8"
+    },
+    "danger-border": {
+      "type": "color",
+      "value": "#E09A92"
+    },
+    "on-accent": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "font-sans": {
+      "type": "string",
+      "value": "Inter"
+    },
+    "radius-sm": {
+      "type": "number",
+      "value": 8
+    },
+    "radius-md": {
+      "type": "number",
+      "value": 12
+    },
+    "radius-lg": {
+      "type": "number",
+      "value": 20
+    },
+    "space-1": {
+      "type": "number",
+      "value": 4
+    },
+    "space-2": {
+      "type": "number",
+      "value": 8
+    },
+    "space-3": {
+      "type": "number",
+      "value": 12
+    },
+    "space-4": {
+      "type": "number",
+      "value": 16
+    },
+    "space-5": {
+      "type": "number",
+      "value": 24
+    },
+    "space-6": {
+      "type": "number",
+      "value": 32
+    },
+    "space-7": {
+      "type": "number",
+      "value": 40
+    },
+    "text-xs": {
+      "type": "number",
+      "value": 12
+    },
+    "text-sm": {
+      "type": "number",
+      "value": 14
+    },
+    "text-base": {
+      "type": "number",
+      "value": 16
+    },
+    "text-lg": {
+      "type": "number",
+      "value": 20
+    },
+    "text-xl": {
+      "type": "number",
+      "value": 26
+    },
+    "text-2xl": {
+      "type": "number",
+      "value": 32
+    },
+    "input-height": {
+      "type": "number",
+      "value": 54
+    }
+  },
+  "fileToken": "9ad208af-a43b-41f7-98bf-cc0ae2a2a36a"
+}
