@@ -25,7 +25,7 @@
 		oninput
 	}: Props = $props();
 
-	const hintId = `${id}-hint`;
+	let hintId = $derived(`${id}-hint`);
 </script>
 
 <div class="field">
