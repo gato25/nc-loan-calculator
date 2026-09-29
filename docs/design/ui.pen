@@ -4,11 +4,11 @@
     {
       "type": "frame",
       "id": "xUUGw",
-      "x": -120,
-      "y": -120,
+      "x": 0,
+      "y": 0,
       "name": "Canvas",
       "width": 2740,
-      "height": 1270,
+      "height": 2024,
       "fill": "#E3E2DB",
       "layout": "none",
       "children": [
@@ -36,7 +36,7 @@
               "type": "frame",
               "id": "EQyOk",
               "name": "Components — Field, Result Row",
-              "width": 1252,
+              "width": 1980,
               "fill": "$bg-page",
               "cornerRadius": "$radius-lg",
               "stroke": "$border",
@@ -203,6 +203,209 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "frame",
+                  "id": "d0rWPJ",
+                  "name": "Schedule Row Context",
+                  "layout": "vertical",
+                  "gap": "$space-3",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "HQHLn",
+                      "name": "Context Caption",
+                      "fill": "$ink-muted",
+                      "content": "Schedule Row",
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-hint",
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "l30D8",
+                      "name": "Card",
+                      "fill": "$surface",
+                      "cornerRadius": "$radius-md",
+                      "stroke": "$border",
+                      "strokeWidth": 1,
+                      "layout": "vertical",
+                      "padding": [
+                        8,
+                        0
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "wpmhG",
+                          "name": "Schedule Row",
+                          "reusable": true,
+                          "gap": "$space-3",
+                          "padding": [
+                            "$table-row-y",
+                            12
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "qJv8r",
+                              "name": "Cell Month",
+                              "fill": "$ink-muted",
+                              "textGrowth": "fixed-width",
+                              "width": 44,
+                              "content": "Month",
+                              "fontFamily": "$font-sans",
+                              "fontSize": "$text-table",
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "zhxqZ",
+                              "name": "Cell Payment",
+                              "fill": "$ink",
+                              "textGrowth": "fixed-width",
+                              "width": 120,
+                              "content": "Payment",
+                              "textAlign": "right",
+                              "fontFamily": "$font-sans",
+                              "fontSize": "$text-table",
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "remex",
+                              "name": "Cell Principal",
+                              "fill": "$ink",
+                              "textGrowth": "fixed-width",
+                              "width": 128,
+                              "content": "Principal",
+                              "textAlign": "right",
+                              "fontFamily": "$font-sans",
+                              "fontSize": "$text-table",
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "QoXjL",
+                              "name": "Cell Interest",
+                              "fill": "$ink",
+                              "textGrowth": "fixed-width",
+                              "width": 110,
+                              "content": "Interest",
+                              "textAlign": "right",
+                              "fontFamily": "$font-sans",
+                              "fontSize": "$text-table",
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "nDWpe",
+                              "name": "Cell Balance",
+                              "fill": "$ink",
+                              "textGrowth": "fixed-width",
+                              "width": 128,
+                              "content": "Balance",
+                              "textAlign": "right",
+                              "fontFamily": "$font-sans",
+                              "fontSize": "$text-table",
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "WDBki",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Header Row",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "САР",
+                              "fontSize": "$text-table-head",
+                              "fontWeight": "600",
+                              "letterSpacing": 0.6,
+                              "fill": "$ink-muted"
+                            },
+                            "zhxqZ": {
+                              "content": "ТӨЛБӨР",
+                              "fontSize": "$text-table-head",
+                              "fontWeight": "600",
+                              "letterSpacing": 0.6,
+                              "fill": "$ink-muted"
+                            },
+                            "remex": {
+                              "content": "ҮНДСЭН ТӨЛБӨР",
+                              "fontSize": "$text-table-head",
+                              "fontWeight": "600",
+                              "letterSpacing": 0.6,
+                              "fill": "$ink-muted"
+                            },
+                            "QoXjL": {
+                              "content": "ХҮҮ",
+                              "fontSize": "$text-table-head",
+                              "fontWeight": "600",
+                              "letterSpacing": 0.6,
+                              "fill": "$ink-muted"
+                            },
+                            "nDWpe": {
+                              "content": "ҮЛДЭГДЭЛ",
+                              "fontSize": "$text-table-head",
+                              "fontWeight": "600",
+                              "letterSpacing": 0.6,
+                              "fill": "$ink-muted"
+                            }
+                          }
+                        },
+                        {
+                          "id": "N8yMo",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Row 1",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "1"
+                            },
+                            "zhxqZ": {
+                              "content": "945,596₮"
+                            },
+                            "remex": {
+                              "content": "745,596₮"
+                            },
+                            "QoXjL": {
+                              "content": "200,000₮"
+                            },
+                            "nDWpe": {
+                              "content": "9,254,404₮"
+                            }
+                          }
+                        },
+                        {
+                          "id": "k9T0s",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Row 2",
+                          "fill": "$surface-stripe",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "2"
+                            },
+                            "zhxqZ": {
+                              "content": "945,596₮"
+                            },
+                            "remex": {
+                              "content": "760,508₮"
+                            },
+                            "QoXjL": {
+                              "content": "185,088₮"
+                            },
+                            "nDWpe": {
+                              "content": "8,493,896₮"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }
@@ -212,7 +415,7 @@
           "type": "frame",
           "id": "LT7TC",
           "x": 60,
-          "y": 336,
+          "y": 440,
           "name": "Artboard — Desktop",
           "layout": "vertical",
           "gap": "$space-3",
@@ -485,7 +688,7 @@
                               "content": "Нийт хүү"
                             },
                             "JCqd8": {
-                              "content": "1,347,151₮",
+                              "content": "1,347,153₮",
                               "fill": "$ink-inverse"
                             }
                           }
@@ -509,7 +712,7 @@
                               "content": "Нийт төлөх дүн"
                             },
                             "JCqd8": {
-                              "content": "11,347,151₮",
+                              "content": "11,347,153₮",
                               "fill": "$accent-bright"
                             }
                           }
@@ -563,6 +766,467 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "frame",
+                  "id": "T7DkNZ",
+                  "name": "Schedule Section",
+                  "width": "fill_container",
+                  "fill": "$surface",
+                  "cornerRadius": "$radius-lg",
+                  "stroke": "$border",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": "$space-5",
+                  "padding": "$space-6",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "B0KZd",
+                      "name": "Section Head",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$space-1",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "fjztA",
+                          "name": "Section Title",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Эргэн төлөлтийн хуваарь",
+                          "fontFamily": "$font-sans",
+                          "fontSize": 20,
+                          "fontWeight": "600",
+                          "letterSpacing": -0.3
+                        },
+                        {
+                          "type": "text",
+                          "id": "b2ME9T",
+                          "name": "Section Subtitle",
+                          "fill": "$ink-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Сар бүрийн төлбөр үндсэн зээл болон хүү хэрхэн хуваагдаж, үлдэгдэл хэрхэн буурахыг харуулна.",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-hint",
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Pv0c5",
+                      "name": "Schedule Table",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "children": [
+                        {
+                          "id": "oM6SW",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Header Row",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "САР",
+                              "fontSize": "$text-table-head",
+                              "fontWeight": "600",
+                              "letterSpacing": 0.6,
+                              "fill": "$ink-muted",
+                              "width": 90
+                            },
+                            "zhxqZ": {
+                              "content": "ТӨЛБӨР",
+                              "fontSize": "$text-table-head",
+                              "fontWeight": "600",
+                              "letterSpacing": 0.6,
+                              "fill": "$ink-muted",
+                              "width": 230
+                            },
+                            "remex": {
+                              "content": "ҮНДСЭН ТӨЛБӨР",
+                              "fontSize": "$text-table-head",
+                              "fontWeight": "600",
+                              "letterSpacing": 0.6,
+                              "fill": "$ink-muted",
+                              "width": 250
+                            },
+                            "QoXjL": {
+                              "content": "ХҮҮ",
+                              "fontSize": "$text-table-head",
+                              "fontWeight": "600",
+                              "letterSpacing": 0.6,
+                              "fill": "$ink-muted",
+                              "width": 200
+                            },
+                            "nDWpe": {
+                              "content": "ҮЛДЭГДЭЛ",
+                              "fontSize": "$text-table-head",
+                              "fontWeight": "600",
+                              "letterSpacing": 0.6,
+                              "fill": "$ink-muted",
+                              "width": 246
+                            }
+                          }
+                        },
+                        {
+                          "type": "rectangle",
+                          "id": "cDUgK",
+                          "name": "Header Divider",
+                          "fill": "$border",
+                          "width": "fill_container",
+                          "height": 1
+                        },
+                        {
+                          "id": "Ugm7N",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Row 1",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "1",
+                              "width": 90
+                            },
+                            "zhxqZ": {
+                              "content": "945,596₮",
+                              "width": 230
+                            },
+                            "remex": {
+                              "content": "745,596₮",
+                              "width": 250
+                            },
+                            "QoXjL": {
+                              "content": "200,000₮",
+                              "width": 200
+                            },
+                            "nDWpe": {
+                              "content": "9,254,404₮",
+                              "width": 246
+                            }
+                          }
+                        },
+                        {
+                          "id": "PcQLu",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Row 2",
+                          "fill": "$surface-stripe",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "2",
+                              "width": 90
+                            },
+                            "zhxqZ": {
+                              "content": "945,596₮",
+                              "width": 230
+                            },
+                            "remex": {
+                              "content": "760,508₮",
+                              "width": 250
+                            },
+                            "QoXjL": {
+                              "content": "185,088₮",
+                              "width": 200
+                            },
+                            "nDWpe": {
+                              "content": "8,493,896₮",
+                              "width": 246
+                            }
+                          }
+                        },
+                        {
+                          "id": "b9K9Ju",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Row 3",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "3",
+                              "width": 90
+                            },
+                            "zhxqZ": {
+                              "content": "945,596₮",
+                              "width": 230
+                            },
+                            "remex": {
+                              "content": "775,718₮",
+                              "width": 250
+                            },
+                            "QoXjL": {
+                              "content": "169,878₮",
+                              "width": 200
+                            },
+                            "nDWpe": {
+                              "content": "7,718,178₮",
+                              "width": 246
+                            }
+                          }
+                        },
+                        {
+                          "id": "JiPCh",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Row 4",
+                          "fill": "$surface-stripe",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "4",
+                              "width": 90
+                            },
+                            "zhxqZ": {
+                              "content": "945,596₮",
+                              "width": 230
+                            },
+                            "remex": {
+                              "content": "791,232₮",
+                              "width": 250
+                            },
+                            "QoXjL": {
+                              "content": "154,364₮",
+                              "width": 200
+                            },
+                            "nDWpe": {
+                              "content": "6,926,946₮",
+                              "width": 246
+                            }
+                          }
+                        },
+                        {
+                          "id": "sJvst",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Row 5",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "5",
+                              "width": 90
+                            },
+                            "zhxqZ": {
+                              "content": "945,596₮",
+                              "width": 230
+                            },
+                            "remex": {
+                              "content": "807,057₮",
+                              "width": 250
+                            },
+                            "QoXjL": {
+                              "content": "138,539₮",
+                              "width": 200
+                            },
+                            "nDWpe": {
+                              "content": "6,119,889₮",
+                              "width": 246
+                            }
+                          }
+                        },
+                        {
+                          "id": "NIXKZ",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Row 6",
+                          "fill": "$surface-stripe",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "6",
+                              "width": 90
+                            },
+                            "zhxqZ": {
+                              "content": "945,596₮",
+                              "width": 230
+                            },
+                            "remex": {
+                              "content": "823,198₮",
+                              "width": 250
+                            },
+                            "QoXjL": {
+                              "content": "122,398₮",
+                              "width": 200
+                            },
+                            "nDWpe": {
+                              "content": "5,296,691₮",
+                              "width": 246
+                            }
+                          }
+                        },
+                        {
+                          "id": "gJZ43",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Row 7",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "7",
+                              "width": 90
+                            },
+                            "zhxqZ": {
+                              "content": "945,596₮",
+                              "width": 230
+                            },
+                            "remex": {
+                              "content": "839,662₮",
+                              "width": 250
+                            },
+                            "QoXjL": {
+                              "content": "105,934₮",
+                              "width": 200
+                            },
+                            "nDWpe": {
+                              "content": "4,457,029₮",
+                              "width": 246
+                            }
+                          }
+                        },
+                        {
+                          "id": "VmGLE",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Row 8",
+                          "fill": "$surface-stripe",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "8",
+                              "width": 90
+                            },
+                            "zhxqZ": {
+                              "content": "945,596₮",
+                              "width": 230
+                            },
+                            "remex": {
+                              "content": "856,455₮",
+                              "width": 250
+                            },
+                            "QoXjL": {
+                              "content": "89,141₮",
+                              "width": 200
+                            },
+                            "nDWpe": {
+                              "content": "3,600,574₮",
+                              "width": 246
+                            }
+                          }
+                        },
+                        {
+                          "id": "PJDxB",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Row 9",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "9",
+                              "width": 90
+                            },
+                            "zhxqZ": {
+                              "content": "945,596₮",
+                              "width": 230
+                            },
+                            "remex": {
+                              "content": "873,585₮",
+                              "width": 250
+                            },
+                            "QoXjL": {
+                              "content": "72,011₮",
+                              "width": 200
+                            },
+                            "nDWpe": {
+                              "content": "2,726,989₮",
+                              "width": 246
+                            }
+                          }
+                        },
+                        {
+                          "id": "y5wZBE",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Row 10",
+                          "fill": "$surface-stripe",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "10",
+                              "width": 90
+                            },
+                            "zhxqZ": {
+                              "content": "945,596₮",
+                              "width": 230
+                            },
+                            "remex": {
+                              "content": "891,056₮",
+                              "width": 250
+                            },
+                            "QoXjL": {
+                              "content": "54,540₮",
+                              "width": 200
+                            },
+                            "nDWpe": {
+                              "content": "1,835,933₮",
+                              "width": 246
+                            }
+                          }
+                        },
+                        {
+                          "id": "oI5Bq",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Row 11",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "11",
+                              "width": 90
+                            },
+                            "zhxqZ": {
+                              "content": "945,596₮",
+                              "width": 230
+                            },
+                            "remex": {
+                              "content": "908,877₮",
+                              "width": 250
+                            },
+                            "QoXjL": {
+                              "content": "36,719₮",
+                              "width": 200
+                            },
+                            "nDWpe": {
+                              "content": "927,056₮",
+                              "width": 246
+                            }
+                          }
+                        },
+                        {
+                          "id": "UeFsl",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Row 12",
+                          "fill": "$surface-stripe",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "12",
+                              "width": 90,
+                              "fill": "$ink"
+                            },
+                            "zhxqZ": {
+                              "content": "945,597₮",
+                              "width": 230
+                            },
+                            "remex": {
+                              "content": "927,056₮",
+                              "width": 250
+                            },
+                            "QoXjL": {
+                              "content": "18,541₮",
+                              "width": 200
+                            },
+                            "nDWpe": {
+                              "content": "0₮",
+                              "width": 246,
+                              "fontWeight": "600",
+                              "fill": "$accent"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }
@@ -572,7 +1236,7 @@
           "type": "frame",
           "id": "Bfa0K",
           "x": 1460,
-          "y": 336,
+          "y": 440,
           "name": "Artboard — Mobile 390",
           "layout": "vertical",
           "gap": "$space-3",
@@ -814,7 +1478,7 @@
                           "fontSize": 14
                         },
                         "JCqd8": {
-                          "content": "1,347,151₮",
+                          "content": "1,347,153₮",
                           "fill": "$ink-inverse",
                           "fontSize": 18
                         }
@@ -844,7 +1508,7 @@
                           "fontSize": 14
                         },
                         "JCqd8": {
-                          "content": "11,347,151₮",
+                          "content": "11,347,153₮",
                           "fill": "$accent-bright",
                           "fontSize": 18
                         }
@@ -897,6 +1561,505 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ucG4i",
+                  "name": "Schedule Card",
+                  "width": "fill_container",
+                  "fill": "$surface",
+                  "cornerRadius": "$radius-lg",
+                  "stroke": "$border",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": "$space-4",
+                  "padding": [
+                    20,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "soekE",
+                      "name": "Section Head",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$space-1",
+                      "padding": [
+                        0,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "HzjJV",
+                          "name": "Section Title",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Эргэн төлөлтийн хуваарь",
+                          "fontFamily": "$font-sans",
+                          "fontSize": 17,
+                          "fontWeight": "600",
+                          "letterSpacing": -0.2
+                        },
+                        {
+                          "type": "text",
+                          "id": "U073zm",
+                          "name": "Section Subtitle",
+                          "fill": "$ink-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Сар бүрийн төлбөрийн задаргаа, үлдэгдэл.",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$font-sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Qmumo",
+                      "name": "Scroll Area",
+                      "clip": true,
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "wv6d2",
+                          "name": "Schedule Table",
+                          "width": 610,
+                          "layout": "vertical",
+                          "children": [
+                            {
+                              "id": "y4ioLZ",
+                              "type": "ref",
+                              "ref": "wpmhG",
+                              "name": "Header Row",
+                              "padding": [
+                                "$table-row-y",
+                                16
+                              ],
+                              "descendants": {
+                                "qJv8r": {
+                                  "content": "САР",
+                                  "fontSize": "$text-table-head",
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.6,
+                                  "fill": "$ink-muted"
+                                },
+                                "zhxqZ": {
+                                  "content": "ТӨЛБӨР",
+                                  "fontSize": "$text-table-head",
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.6,
+                                  "fill": "$ink-muted"
+                                },
+                                "remex": {
+                                  "content": "ҮНДСЭН ТӨЛБӨР",
+                                  "fontSize": "$text-table-head",
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.6,
+                                  "fill": "$ink-muted"
+                                },
+                                "QoXjL": {
+                                  "content": "ХҮҮ",
+                                  "fontSize": "$text-table-head",
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.6,
+                                  "fill": "$ink-muted"
+                                },
+                                "nDWpe": {
+                                  "content": "ҮЛДЭГДЭЛ",
+                                  "fontSize": "$text-table-head",
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.6,
+                                  "fill": "$ink-muted"
+                                }
+                              }
+                            },
+                            {
+                              "type": "rectangle",
+                              "id": "NsOx5",
+                              "name": "Header Divider",
+                              "fill": "$border",
+                              "width": "fill_container",
+                              "height": 1
+                            },
+                            {
+                              "id": "J3GI3P",
+                              "type": "ref",
+                              "ref": "wpmhG",
+                              "name": "Row 1",
+                              "padding": [
+                                "$table-row-y",
+                                16
+                              ],
+                              "descendants": {
+                                "qJv8r": {
+                                  "content": "1"
+                                },
+                                "zhxqZ": {
+                                  "content": "945,596₮"
+                                },
+                                "remex": {
+                                  "content": "745,596₮"
+                                },
+                                "QoXjL": {
+                                  "content": "200,000₮"
+                                },
+                                "nDWpe": {
+                                  "content": "9,254,404₮"
+                                }
+                              }
+                            },
+                            {
+                              "id": "NZVzO",
+                              "type": "ref",
+                              "ref": "wpmhG",
+                              "name": "Row 2",
+                              "padding": [
+                                "$table-row-y",
+                                16
+                              ],
+                              "fill": "$surface-stripe",
+                              "descendants": {
+                                "qJv8r": {
+                                  "content": "2"
+                                },
+                                "zhxqZ": {
+                                  "content": "945,596₮"
+                                },
+                                "remex": {
+                                  "content": "760,508₮"
+                                },
+                                "QoXjL": {
+                                  "content": "185,088₮"
+                                },
+                                "nDWpe": {
+                                  "content": "8,493,896₮"
+                                }
+                              }
+                            },
+                            {
+                              "id": "oabuc",
+                              "type": "ref",
+                              "ref": "wpmhG",
+                              "name": "Row 3",
+                              "padding": [
+                                "$table-row-y",
+                                16
+                              ],
+                              "descendants": {
+                                "qJv8r": {
+                                  "content": "3"
+                                },
+                                "zhxqZ": {
+                                  "content": "945,596₮"
+                                },
+                                "remex": {
+                                  "content": "775,718₮"
+                                },
+                                "QoXjL": {
+                                  "content": "169,878₮"
+                                },
+                                "nDWpe": {
+                                  "content": "7,718,178₮"
+                                }
+                              }
+                            },
+                            {
+                              "id": "qLXNc",
+                              "type": "ref",
+                              "ref": "wpmhG",
+                              "name": "Row 4",
+                              "padding": [
+                                "$table-row-y",
+                                16
+                              ],
+                              "fill": "$surface-stripe",
+                              "descendants": {
+                                "qJv8r": {
+                                  "content": "4"
+                                },
+                                "zhxqZ": {
+                                  "content": "945,596₮"
+                                },
+                                "remex": {
+                                  "content": "791,232₮"
+                                },
+                                "QoXjL": {
+                                  "content": "154,364₮"
+                                },
+                                "nDWpe": {
+                                  "content": "6,926,946₮"
+                                }
+                              }
+                            },
+                            {
+                              "id": "YYCbV",
+                              "type": "ref",
+                              "ref": "wpmhG",
+                              "name": "Row 5",
+                              "padding": [
+                                "$table-row-y",
+                                16
+                              ],
+                              "descendants": {
+                                "qJv8r": {
+                                  "content": "5"
+                                },
+                                "zhxqZ": {
+                                  "content": "945,596₮"
+                                },
+                                "remex": {
+                                  "content": "807,057₮"
+                                },
+                                "QoXjL": {
+                                  "content": "138,539₮"
+                                },
+                                "nDWpe": {
+                                  "content": "6,119,889₮"
+                                }
+                              }
+                            },
+                            {
+                              "id": "aFBGx",
+                              "type": "ref",
+                              "ref": "wpmhG",
+                              "name": "Row 6",
+                              "padding": [
+                                "$table-row-y",
+                                16
+                              ],
+                              "fill": "$surface-stripe",
+                              "descendants": {
+                                "qJv8r": {
+                                  "content": "6"
+                                },
+                                "zhxqZ": {
+                                  "content": "945,596₮"
+                                },
+                                "remex": {
+                                  "content": "823,198₮"
+                                },
+                                "QoXjL": {
+                                  "content": "122,398₮"
+                                },
+                                "nDWpe": {
+                                  "content": "5,296,691₮"
+                                }
+                              }
+                            },
+                            {
+                              "id": "g2QY5z",
+                              "type": "ref",
+                              "ref": "wpmhG",
+                              "name": "Row 7",
+                              "padding": [
+                                "$table-row-y",
+                                16
+                              ],
+                              "descendants": {
+                                "qJv8r": {
+                                  "content": "7"
+                                },
+                                "zhxqZ": {
+                                  "content": "945,596₮"
+                                },
+                                "remex": {
+                                  "content": "839,662₮"
+                                },
+                                "QoXjL": {
+                                  "content": "105,934₮"
+                                },
+                                "nDWpe": {
+                                  "content": "4,457,029₮"
+                                }
+                              }
+                            },
+                            {
+                              "id": "aSxMI",
+                              "type": "ref",
+                              "ref": "wpmhG",
+                              "name": "Row 8",
+                              "padding": [
+                                "$table-row-y",
+                                16
+                              ],
+                              "fill": "$surface-stripe",
+                              "descendants": {
+                                "qJv8r": {
+                                  "content": "8"
+                                },
+                                "zhxqZ": {
+                                  "content": "945,596₮"
+                                },
+                                "remex": {
+                                  "content": "856,455₮"
+                                },
+                                "QoXjL": {
+                                  "content": "89,141₮"
+                                },
+                                "nDWpe": {
+                                  "content": "3,600,574₮"
+                                }
+                              }
+                            },
+                            {
+                              "id": "Fr1qj",
+                              "type": "ref",
+                              "ref": "wpmhG",
+                              "name": "Row 9",
+                              "padding": [
+                                "$table-row-y",
+                                16
+                              ],
+                              "descendants": {
+                                "qJv8r": {
+                                  "content": "9"
+                                },
+                                "zhxqZ": {
+                                  "content": "945,596₮"
+                                },
+                                "remex": {
+                                  "content": "873,585₮"
+                                },
+                                "QoXjL": {
+                                  "content": "72,011₮"
+                                },
+                                "nDWpe": {
+                                  "content": "2,726,989₮"
+                                }
+                              }
+                            },
+                            {
+                              "id": "bQ3yt",
+                              "type": "ref",
+                              "ref": "wpmhG",
+                              "name": "Row 10",
+                              "padding": [
+                                "$table-row-y",
+                                16
+                              ],
+                              "fill": "$surface-stripe",
+                              "descendants": {
+                                "qJv8r": {
+                                  "content": "10"
+                                },
+                                "zhxqZ": {
+                                  "content": "945,596₮"
+                                },
+                                "remex": {
+                                  "content": "891,056₮"
+                                },
+                                "QoXjL": {
+                                  "content": "54,540₮"
+                                },
+                                "nDWpe": {
+                                  "content": "1,835,933₮"
+                                }
+                              }
+                            },
+                            {
+                              "id": "N2mheK",
+                              "type": "ref",
+                              "ref": "wpmhG",
+                              "name": "Row 11",
+                              "padding": [
+                                "$table-row-y",
+                                16
+                              ],
+                              "descendants": {
+                                "qJv8r": {
+                                  "content": "11"
+                                },
+                                "zhxqZ": {
+                                  "content": "945,596₮"
+                                },
+                                "remex": {
+                                  "content": "908,877₮"
+                                },
+                                "QoXjL": {
+                                  "content": "36,719₮"
+                                },
+                                "nDWpe": {
+                                  "content": "927,056₮"
+                                }
+                              }
+                            },
+                            {
+                              "id": "NHzsi",
+                              "type": "ref",
+                              "ref": "wpmhG",
+                              "name": "Row 12",
+                              "padding": [
+                                "$table-row-y",
+                                16
+                              ],
+                              "fill": "$surface-stripe",
+                              "descendants": {
+                                "qJv8r": {
+                                  "content": "12",
+                                  "fill": "$ink"
+                                },
+                                "zhxqZ": {
+                                  "content": "945,597₮"
+                                },
+                                "remex": {
+                                  "content": "927,056₮"
+                                },
+                                "QoXjL": {
+                                  "content": "18,541₮"
+                                },
+                                "nDWpe": {
+                                  "content": "0₮",
+                                  "fontWeight": "600",
+                                  "fill": "$accent"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "muGrD",
+                      "name": "Scroll Hint",
+                      "width": "fill_container",
+                      "gap": 6,
+                      "padding": [
+                        0,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "yYs5F",
+                          "name": "Hint Icon",
+                          "width": 14,
+                          "height": 14,
+                          "icon": "move-horizontal",
+                          "library": "lucide",
+                          "fill": "$ink-muted"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Ub9K8",
+                          "name": "Hint Text",
+                          "fill": "$ink-muted",
+                          "content": "Хүснэгтийг хэвтээ чиглэлд гүйлгэнэ",
+                          "fontFamily": "$font-sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }
@@ -906,7 +2069,7 @@
           "type": "frame",
           "id": "qf21s",
           "x": 1910,
-          "y": 336,
+          "y": 440,
           "name": "Artboard — Mobile 320",
           "layout": "vertical",
           "gap": "$space-3",
@@ -1148,7 +2311,7 @@
                           "fontSize": 14
                         },
                         "JCqd8": {
-                          "content": "1,347,151₮",
+                          "content": "1,347,153₮",
                           "fill": "$ink-inverse",
                           "fontSize": 18
                         }
@@ -1178,7 +2341,7 @@
                           "fontSize": 14
                         },
                         "JCqd8": {
-                          "content": "11,347,151₮",
+                          "content": "11,347,153₮",
                           "fill": "$accent-bright",
                           "fontSize": 18
                         }
@@ -1231,6 +2394,505 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ExdbY",
+                  "name": "Schedule Card",
+                  "width": "fill_container",
+                  "fill": "$surface",
+                  "cornerRadius": "$radius-lg",
+                  "stroke": "$border",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": "$space-4",
+                  "padding": [
+                    20,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "GyMsc",
+                      "name": "Section Head",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$space-1",
+                      "padding": [
+                        0,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ZQ5Z1",
+                          "name": "Section Title",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Эргэн төлөлтийн хуваарь",
+                          "fontFamily": "$font-sans",
+                          "fontSize": 17,
+                          "fontWeight": "600",
+                          "letterSpacing": -0.2
+                        },
+                        {
+                          "type": "text",
+                          "id": "se270",
+                          "name": "Section Subtitle",
+                          "fill": "$ink-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Сар бүрийн төлбөрийн задаргаа, үлдэгдэл.",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$font-sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "sup7U",
+                      "name": "Scroll Area",
+                      "clip": true,
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "r5Xw43",
+                          "name": "Schedule Table",
+                          "width": 610,
+                          "layout": "vertical",
+                          "children": [
+                            {
+                              "id": "T43U8",
+                              "type": "ref",
+                              "ref": "wpmhG",
+                              "name": "Header Row",
+                              "padding": [
+                                "$table-row-y",
+                                16
+                              ],
+                              "descendants": {
+                                "qJv8r": {
+                                  "content": "САР",
+                                  "fontSize": "$text-table-head",
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.6,
+                                  "fill": "$ink-muted"
+                                },
+                                "zhxqZ": {
+                                  "content": "ТӨЛБӨР",
+                                  "fontSize": "$text-table-head",
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.6,
+                                  "fill": "$ink-muted"
+                                },
+                                "remex": {
+                                  "content": "ҮНДСЭН ТӨЛБӨР",
+                                  "fontSize": "$text-table-head",
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.6,
+                                  "fill": "$ink-muted"
+                                },
+                                "QoXjL": {
+                                  "content": "ХҮҮ",
+                                  "fontSize": "$text-table-head",
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.6,
+                                  "fill": "$ink-muted"
+                                },
+                                "nDWpe": {
+                                  "content": "ҮЛДЭГДЭЛ",
+                                  "fontSize": "$text-table-head",
+                                  "fontWeight": "600",
+                                  "letterSpacing": 0.6,
+                                  "fill": "$ink-muted"
+                                }
+                              }
+                            },
+                            {
+                              "type": "rectangle",
+                              "id": "yPM5y",
+                              "name": "Header Divider",
+                              "fill": "$border",
+                              "width": "fill_container",
+                              "height": 1
+                            },
+                            {
+                              "id": "d37ua",
+                              "type": "ref",
+                              "ref": "wpmhG",
+                              "name": "Row 1",
+                              "padding": [
+                                "$table-row-y",
+                                16
+                              ],
+                              "descendants": {
+                                "qJv8r": {
+                                  "content": "1"
+                                },
+                                "zhxqZ": {
+                                  "content": "945,596₮"
+                                },
+                                "remex": {
+                                  "content": "745,596₮"
+                                },
+                                "QoXjL": {
+                                  "content": "200,000₮"
+                                },
+                                "nDWpe": {
+                                  "content": "9,254,404₮"
+                                }
+                              }
+                            },
+                            {
+                              "id": "TLA3p",
+                              "type": "ref",
+                              "ref": "wpmhG",
+                              "name": "Row 2",
+                              "padding": [
+                                "$table-row-y",
+                                16
+                              ],
+                              "fill": "$surface-stripe",
+                              "descendants": {
+                                "qJv8r": {
+                                  "content": "2"
+                                },
+                                "zhxqZ": {
+                                  "content": "945,596₮"
+                                },
+                                "remex": {
+                                  "content": "760,508₮"
+                                },
+                                "QoXjL": {
+                                  "content": "185,088₮"
+                                },
+                                "nDWpe": {
+                                  "content": "8,493,896₮"
+                                }
+                              }
+                            },
+                            {
+                              "id": "V9Kovh",
+                              "type": "ref",
+                              "ref": "wpmhG",
+                              "name": "Row 3",
+                              "padding": [
+                                "$table-row-y",
+                                16
+                              ],
+                              "descendants": {
+                                "qJv8r": {
+                                  "content": "3"
+                                },
+                                "zhxqZ": {
+                                  "content": "945,596₮"
+                                },
+                                "remex": {
+                                  "content": "775,718₮"
+                                },
+                                "QoXjL": {
+                                  "content": "169,878₮"
+                                },
+                                "nDWpe": {
+                                  "content": "7,718,178₮"
+                                }
+                              }
+                            },
+                            {
+                              "id": "AAQsH",
+                              "type": "ref",
+                              "ref": "wpmhG",
+                              "name": "Row 4",
+                              "padding": [
+                                "$table-row-y",
+                                16
+                              ],
+                              "fill": "$surface-stripe",
+                              "descendants": {
+                                "qJv8r": {
+                                  "content": "4"
+                                },
+                                "zhxqZ": {
+                                  "content": "945,596₮"
+                                },
+                                "remex": {
+                                  "content": "791,232₮"
+                                },
+                                "QoXjL": {
+                                  "content": "154,364₮"
+                                },
+                                "nDWpe": {
+                                  "content": "6,926,946₮"
+                                }
+                              }
+                            },
+                            {
+                              "id": "D1Kygk",
+                              "type": "ref",
+                              "ref": "wpmhG",
+                              "name": "Row 5",
+                              "padding": [
+                                "$table-row-y",
+                                16
+                              ],
+                              "descendants": {
+                                "qJv8r": {
+                                  "content": "5"
+                                },
+                                "zhxqZ": {
+                                  "content": "945,596₮"
+                                },
+                                "remex": {
+                                  "content": "807,057₮"
+                                },
+                                "QoXjL": {
+                                  "content": "138,539₮"
+                                },
+                                "nDWpe": {
+                                  "content": "6,119,889₮"
+                                }
+                              }
+                            },
+                            {
+                              "id": "AG8DW",
+                              "type": "ref",
+                              "ref": "wpmhG",
+                              "name": "Row 6",
+                              "padding": [
+                                "$table-row-y",
+                                16
+                              ],
+                              "fill": "$surface-stripe",
+                              "descendants": {
+                                "qJv8r": {
+                                  "content": "6"
+                                },
+                                "zhxqZ": {
+                                  "content": "945,596₮"
+                                },
+                                "remex": {
+                                  "content": "823,198₮"
+                                },
+                                "QoXjL": {
+                                  "content": "122,398₮"
+                                },
+                                "nDWpe": {
+                                  "content": "5,296,691₮"
+                                }
+                              }
+                            },
+                            {
+                              "id": "CgGf6",
+                              "type": "ref",
+                              "ref": "wpmhG",
+                              "name": "Row 7",
+                              "padding": [
+                                "$table-row-y",
+                                16
+                              ],
+                              "descendants": {
+                                "qJv8r": {
+                                  "content": "7"
+                                },
+                                "zhxqZ": {
+                                  "content": "945,596₮"
+                                },
+                                "remex": {
+                                  "content": "839,662₮"
+                                },
+                                "QoXjL": {
+                                  "content": "105,934₮"
+                                },
+                                "nDWpe": {
+                                  "content": "4,457,029₮"
+                                }
+                              }
+                            },
+                            {
+                              "id": "m8dGGr",
+                              "type": "ref",
+                              "ref": "wpmhG",
+                              "name": "Row 8",
+                              "padding": [
+                                "$table-row-y",
+                                16
+                              ],
+                              "fill": "$surface-stripe",
+                              "descendants": {
+                                "qJv8r": {
+                                  "content": "8"
+                                },
+                                "zhxqZ": {
+                                  "content": "945,596₮"
+                                },
+                                "remex": {
+                                  "content": "856,455₮"
+                                },
+                                "QoXjL": {
+                                  "content": "89,141₮"
+                                },
+                                "nDWpe": {
+                                  "content": "3,600,574₮"
+                                }
+                              }
+                            },
+                            {
+                              "id": "yjhr1",
+                              "type": "ref",
+                              "ref": "wpmhG",
+                              "name": "Row 9",
+                              "padding": [
+                                "$table-row-y",
+                                16
+                              ],
+                              "descendants": {
+                                "qJv8r": {
+                                  "content": "9"
+                                },
+                                "zhxqZ": {
+                                  "content": "945,596₮"
+                                },
+                                "remex": {
+                                  "content": "873,585₮"
+                                },
+                                "QoXjL": {
+                                  "content": "72,011₮"
+                                },
+                                "nDWpe": {
+                                  "content": "2,726,989₮"
+                                }
+                              }
+                            },
+                            {
+                              "id": "A64WFC",
+                              "type": "ref",
+                              "ref": "wpmhG",
+                              "name": "Row 10",
+                              "padding": [
+                                "$table-row-y",
+                                16
+                              ],
+                              "fill": "$surface-stripe",
+                              "descendants": {
+                                "qJv8r": {
+                                  "content": "10"
+                                },
+                                "zhxqZ": {
+                                  "content": "945,596₮"
+                                },
+                                "remex": {
+                                  "content": "891,056₮"
+                                },
+                                "QoXjL": {
+                                  "content": "54,540₮"
+                                },
+                                "nDWpe": {
+                                  "content": "1,835,933₮"
+                                }
+                              }
+                            },
+                            {
+                              "id": "gdEe6",
+                              "type": "ref",
+                              "ref": "wpmhG",
+                              "name": "Row 11",
+                              "padding": [
+                                "$table-row-y",
+                                16
+                              ],
+                              "descendants": {
+                                "qJv8r": {
+                                  "content": "11"
+                                },
+                                "zhxqZ": {
+                                  "content": "945,596₮"
+                                },
+                                "remex": {
+                                  "content": "908,877₮"
+                                },
+                                "QoXjL": {
+                                  "content": "36,719₮"
+                                },
+                                "nDWpe": {
+                                  "content": "927,056₮"
+                                }
+                              }
+                            },
+                            {
+                              "id": "ph6hQ",
+                              "type": "ref",
+                              "ref": "wpmhG",
+                              "name": "Row 12",
+                              "padding": [
+                                "$table-row-y",
+                                16
+                              ],
+                              "fill": "$surface-stripe",
+                              "descendants": {
+                                "qJv8r": {
+                                  "content": "12",
+                                  "fill": "$ink"
+                                },
+                                "zhxqZ": {
+                                  "content": "945,597₮"
+                                },
+                                "remex": {
+                                  "content": "927,056₮"
+                                },
+                                "QoXjL": {
+                                  "content": "18,541₮"
+                                },
+                                "nDWpe": {
+                                  "content": "0₮",
+                                  "fontWeight": "600",
+                                  "fill": "$accent"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "YyGii",
+                      "name": "Scroll Hint",
+                      "width": "fill_container",
+                      "gap": 6,
+                      "padding": [
+                        0,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "a4XGr",
+                          "name": "Hint Icon",
+                          "width": 14,
+                          "height": 14,
+                          "icon": "move-horizontal",
+                          "library": "lucide",
+                          "fill": "$ink-muted"
+                        },
+                        {
+                          "type": "text",
+                          "id": "JZcTd",
+                          "name": "Hint Text",
+                          "fill": "$ink-muted",
+                          "content": "Хүснэгтийг хэвтээ чиглэлд гүйлгэнэ",
+                          "fontFamily": "$font-sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }
@@ -1240,7 +2902,7 @@
           "type": "frame",
           "id": "m54Cl9",
           "x": 2290,
-          "y": 336,
+          "y": 440,
           "name": "Artboard — Mobile Invalid",
           "layout": "vertical",
           "gap": "$space-3",
@@ -1714,6 +3376,26 @@
     "accent-bright": {
       "type": "color",
       "value": "#62D39B"
+    },
+    "text-table": {
+      "type": "number",
+      "value": 14
+    },
+    "text-table-head": {
+      "type": "number",
+      "value": 12
+    },
+    "table-row-y": {
+      "type": "number",
+      "value": 11
+    },
+    "table-min-width": {
+      "type": "number",
+      "value": 610
+    },
+    "surface-stripe": {
+      "type": "color",
+      "value": "#FAF9F6"
     }
   },
   "fileToken": "78ae1295-9b66-46ce-b965-d008a61a00a7"
