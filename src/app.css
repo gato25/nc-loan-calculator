@@ -1,0 +1,78 @@
+/* index.css нь бүх subset-ийг агуулна — кирилл (U+0400-045F) болон ₮ (U+20AE) багтсан. */
+@import '@fontsource-variable/inter/index.css';
+
+/* Дизайны токенууд — docs/design/ui.txt-ийн Tokens блокоос яг тэр утгаараа. */
+:root {
+	--bg-page: #f1f0eb;
+	--surface: #ffffff;
+	--surface-inset: #f7f6f2;
+	--brand-deep: #0f3d2e;
+	--brand-deep-soft: #1b5943;
+	--accent: #248059;
+	--accent-soft: #e3f1ea;
+	--ink: #141a17;
+	--ink-muted: #5c6560;
+	--ink-inverse: #ffffff;
+	--ink-inverse-muted: #a9c6b9;
+	--border: #dedcd4;
+	--border-strong: #8e8b80;
+	--danger: #b4442f;
+	--accent-bright: #62d39b;
+
+	/* Токен жагсаалтад ороогүй боловч дизайнд байгаа алдаатай талбарын дэвсгэр. */
+	--surface-danger-soft: #fff7f5;
+
+	--font-sans: 'Inter Variable', Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+	--radius-sm: 8px;
+	--radius-md: 12px;
+	--radius-lg: 20px;
+
+	--space-1: 4px;
+	--space-2: 8px;
+	--space-3: 12px;
+	--space-4: 16px;
+	--space-5: 24px;
+	--space-6: 32px;
+	--space-7: 48px;
+
+	--text-label: 14px;
+	--text-body: 15px;
+	--text-hint: 13px;
+	--text-input: 22px;
+	--text-result: 20px;
+	--text-hero: 44px;
+	--text-title: 34px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	background: var(--bg-page);
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	min-width: 0;
+	background: var(--bg-page);
+	color: var(--ink);
+	font-family: var(--font-sans);
+	font-size: var(--text-body);
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* 320px дээр хэвтээ гүйлгэлт үүсэхгүй байх. */
+html,
+body {
+	overflow-x: hidden;
+}
+
+input {
+	font-family: inherit;
+}
