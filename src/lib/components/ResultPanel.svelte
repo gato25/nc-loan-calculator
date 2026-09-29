@@ -107,6 +107,7 @@
 		font-size: var(--text-label);
 		font-weight: normal;
 		line-height: 1.3;
+		overflow-wrap: anywhere;
 	}
 
 	.row-value {

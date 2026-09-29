@@ -216,10 +216,12 @@
 
 	.subtitle {
 		margin: 0;
+		min-width: 0;
 		color: var(--ink-muted);
 		font-size: var(--text-label);
 		font-weight: normal;
 		line-height: 1.45;
+		overflow-wrap: anywhere;
 	}
 
 	.desktop-only {
