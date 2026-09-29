@@ -37,6 +37,61 @@ export function calculateLoan(
 	return { monthlyPayment, totalInterest, totalPayment };
 }
 
+/** Эргэн төлөлтийн хуваарийн нэг мөр — бүх дүн бүхэл төгрөгөөр дугуйлагдсан. */
+export type ScheduleRow = {
+	/** Сарын дугаар, 1-ээс `termMonths` хүртэл. */
+	month: number;
+	/** Тухайн сард төлөх нийт дүн. */
+	payment: number;
+	/** Төлбөрөөс үндсэн зээлийг бууруулах хэсэг. */
+	principal: number;
+	/** Төлбөрөөс хүүнд ногдох хэсэг. */
+	interest: number;
+	/** Төлбөрийн дараах үлдэгдэл зээл. */
+	balance: number;
+};
+
+/**
+ * Сар бүрийн задаргааг байгуулна. `calculateLoan`-оос ялгаатай нь дугуйлалт энд
+ * хийгдэнэ — харагдаж буй тоонууд дээр үлдэгдэл яг тэглэж, үндсэн төлбөрийн
+ * нийлбэр зээлийн хэмжээтэй яг тэнцэх ёстой.
+ *
+ * Сүүлийн мөр үлдсэн үндсэн зээлийг бүрэн хааж, түүнд тохируулан төлбөрөө засна.
+ * Тиймээс сүүлийн төлбөр бусад мөрөөс хэдэн төгрөгөөр зөрж болно.
+ *
+ * @param amount Зээлийн хэмжээ (₮)
+ * @param monthlyRatePercent Сарын хүү (%)
+ * @param termMonths Хугацаа (сар)
+ */
+export function buildSchedule(
+	amount: number,
+	monthlyRatePercent: number,
+	termMonths: number
+): ScheduleRow[] {
+	const r = monthlyRatePercent / 100;
+	const payment = Math.round(calculateLoan(amount, monthlyRatePercent, termMonths).monthlyPayment);
+
+	const rows: ScheduleRow[] = [];
+	let balance = amount;
+
+	for (let month = 1; month <= termMonths; month++) {
+		const interest = Math.round(balance * r);
+
+		if (month === termMonths) {
+			// Сүүлийн мөр: үлдсэн үндсэн зээлийг бүрэн хааж, үлдэгдлийг тэглэнэ.
+			const principal = balance;
+			rows.push({ month, payment: principal + interest, principal, interest, balance: 0 });
+			break;
+		}
+
+		const principal = payment - interest;
+		balance -= principal;
+		rows.push({ month, payment, principal, interest, balance });
+	}
+
+	return rows;
+}
+
 /** Зээлийн хэмжээ 0-оос их бодит тоо байх ёстой. */
 export function isValidAmount(value: number | null): value is number {
 	return value !== null && Number.isFinite(value) && value > 0;

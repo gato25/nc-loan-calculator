@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { formatGroupedInput, parseNumberInput } from '$lib/format';
-	import { calculateLoan, isValidAmount, isValidRate, isValidTerm } from '$lib/loan';
+	import { buildSchedule, calculateLoan, isValidAmount, isValidRate, isValidTerm } from '$lib/loan';
 	import BrandMark from './BrandMark.svelte';
 	import Field from './Field.svelte';
 	import ResultPanel from './ResultPanel.svelte';
+	import ScheduleTable from './ScheduleTable.svelte';
 
 	// Анхны утга — хуудас нээгдмэгц үр дүн харагдана.
 	let amountRaw = $state('10,000,000');
@@ -22,6 +23,13 @@
 	let result = $derived(
 		isValidAmount(amount) && isValidRate(rate) && isValidTerm(term)
 			? calculateLoan(amount, rate, term)
+			: null
+	);
+
+	// Оролт зөв үед л хуваарь байгуулна — үр дүн байхгүй бол хүснэгт ч харагдахгүй.
+	let schedule = $derived(
+		result && isValidAmount(amount) && isValidRate(rate) && isValidTerm(term)
+			? buildSchedule(amount, rate, term)
 			: null
 	);
 
@@ -134,6 +142,21 @@
 
 		<ResultPanel {result} />
 	</main>
+
+	{#if schedule}
+		<section class="schedule-card">
+			<div class="schedule-head">
+				<h2 class="schedule-title">Эргэн төлөлтийн хуваарь</h2>
+				<p class="schedule-subtitle desktop-only">
+					Сар бүрийн төлбөр үндсэн зээл болон хүү хэрхэн хуваагдаж, үлдэгдэл хэрхэн буурахыг
+					харуулна.
+				</p>
+				<p class="schedule-subtitle mobile-only">Сар бүрийн төлбөрийн задаргаа, үлдэгдэл.</p>
+			</div>
+
+			<ScheduleTable rows={schedule} />
+		</section>
+	{/if}
 </div>
 
 <style>
@@ -239,6 +262,48 @@
 		border-radius: var(--radius-lg);
 	}
 
+	/*
+	 * Хуваарийн карт нь main-ий доор бүтэн өргөнөөр. Хэвтээ padding-ыг картад бус
+	 * дотоод блокуудад өгнө — хүснэгт өөрөө картын ирмэг хүртэл дүүрч гүйлгэгдэнэ.
+	 */
+	.schedule-card {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-4);
+		min-width: 0;
+		padding: 20px 0;
+		background: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-lg);
+	}
+
+	.schedule-head {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-1);
+		min-width: 0;
+		padding: 0 var(--space-4);
+	}
+
+	.schedule-title {
+		margin: 0;
+		color: var(--ink);
+		font-size: 17px;
+		font-weight: 600;
+		line-height: 1.2;
+		overflow-wrap: anywhere;
+	}
+
+	.schedule-subtitle {
+		margin: 0;
+		min-width: 0;
+		color: var(--ink-muted);
+		font-size: 12px;
+		font-weight: normal;
+		line-height: 1.45;
+		overflow-wrap: anywhere;
+	}
+
 	/* Хамгийн нарийн дэлгэц (320px) — хэвтээ гүйлгэлт үүсгэхгүй. */
 	@media (max-width: 359px) {
 		.page {
@@ -297,6 +362,23 @@
 		.form-card {
 			gap: var(--space-5);
 			padding: var(--space-6);
+		}
+
+		.schedule-card {
+			gap: var(--space-5);
+			padding: var(--space-6);
+		}
+
+		.schedule-head {
+			padding: 0;
+		}
+
+		.schedule-title {
+			font-size: var(--text-result);
+		}
+
+		.schedule-subtitle {
+			font-size: var(--text-hint);
 		}
 	}
 </style>

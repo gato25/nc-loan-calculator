@@ -35,13 +35,18 @@
   text-hero: 44
   text-title: 34
   accent-bright: #62D39B
+  text-table: 14
+  text-table-head: 12
+  table-row-y: 11
+  table-min-width: 610
+  surface-stripe: #FAF9F6
 
 ## Canvas
 
-  frame [Canvas] fill=#E3E2DB width=2740 height=1270 layout=none
+  frame [Canvas] fill=#E3E2DB width=2740 height=2024 layout=none
     frame [Artboard — Components] layout=vertical gap=12
       text [Caption] content=КОМПОНЕНТ — FIELD, RESULT ROW fill=#5C6560 fontFamily=Inter fontSize=14 fontWeight=600
-      frame [Components — Field, Result Row] fill=#F1F0EB stroke=#DEDCD4 width=1252 gap=48 padding=48 cornerRadius=20
+      frame [Components — Field, Result Row] fill=#F1F0EB stroke=#DEDCD4 width=1980 gap=48 padding=48 cornerRadius=20
         frame [Field] width=fill_container layout=vertical gap=8
           text [Field Label] content=Зээлийн хэмжээ fill=#5C6560 width=fill_container fontFamily=Inter fontSize=14 fontWeight=500
           frame [Field Box] fill=#FFFFFF stroke=#8E8B80 width=fill_container gap=12 padding=[14,16] cornerRadius=12 justifyContent=space_between alignItems=center
@@ -59,6 +64,33 @@
           frame [Result Row] width=fill_container gap=16 padding=[16,0] justifyContent=space_between alignItems=center
             text [Result Label] content=Нийт хүү fill=#A9C6B9 fontFamily=Inter fontSize=15 fontWeight=normal
             text [Result Value] content=1,347,151₮ fill=#FFFFFF fontFamily=Inter fontSize=20 fontWeight=600
+        frame [Schedule Row Context] layout=vertical gap=12
+          text [Context Caption] content=Schedule Row fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=600
+          frame [Card] fill=#FFFFFF stroke=#DEDCD4 layout=vertical padding=[8,0] cornerRadius=12
+            frame [Schedule Row] gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=Month fill=#5C6560 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=Payment fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=Principal fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=Interest fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=Balance fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+            frame [Header Row] ←Schedule Row gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=САР fill=#5C6560 width=44 fontFamily=Inter fontSize=12 fontWeight=600
+              text [Cell Payment] content=ТӨЛБӨР fill=#5C6560 width=120 fontFamily=Inter fontSize=12 fontWeight=600 textAlign=right
+              text [Cell Principal] content=ҮНДСЭН ТӨЛБӨР fill=#5C6560 width=128 fontFamily=Inter fontSize=12 fontWeight=600 textAlign=right
+              text [Cell Interest] content=ХҮҮ fill=#5C6560 width=110 fontFamily=Inter fontSize=12 fontWeight=600 textAlign=right
+              text [Cell Balance] content=ҮЛДЭГДЭЛ fill=#5C6560 width=128 fontFamily=Inter fontSize=12 fontWeight=600 textAlign=right
+            frame [Row 1] ←Schedule Row gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=1 fill=#5C6560 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=945,596₮ fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=745,596₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=200,000₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=9,254,404₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+            frame [Row 2] ←Schedule Row fill=#FAF9F6 gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=2 fill=#5C6560 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=945,596₮ fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=760,508₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=185,088₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=8,493,896₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
     frame [Artboard — Desktop] layout=vertical gap=12
       text [Caption] content=DESKTOP 1280 — ЗЭЭЛИЙН ХҮҮ ТООЦООЛУУР fill=#5C6560 fontFamily=Inter fontSize=14 fontWeight=600
       frame [Desktop Calculator] fill=#F1F0EB width=1280 layout=vertical gap=48 padding=[40,64,56,64]
@@ -99,15 +131,99 @@
             rectangle [Divider] fill=#1B5943 width=fill_container height=1
             frame [Result — Нийт хүү] ←Result Row width=fill_container gap=16 padding=[16,0] justifyContent=space_between alignItems=center
               text [Result Label] content=Нийт хүү fill=#A9C6B9 fontFamily=Inter fontSize=15 fontWeight=normal
-              text [Result Value] content=1,347,151₮ fill=#FFFFFF fontFamily=Inter fontSize=20 fontWeight=600
+              text [Result Value] content=1,347,153₮ fill=#FFFFFF fontFamily=Inter fontSize=20 fontWeight=600
             rectangle [Divider] fill=#1B5943 width=fill_container height=1
             frame [Result — Нийт төлөх дүн] ←Result Row width=fill_container gap=16 padding=[16,0] justifyContent=space_between alignItems=center
               text [Result Label] content=Нийт төлөх дүн fill=#A9C6B9 fontFamily=Inter fontSize=15 fontWeight=normal
-              text [Result Value] content=11,347,151₮ fill=#62D39B fontFamily=Inter fontSize=20 fontWeight=600
+              text [Result Value] content=11,347,153₮ fill=#62D39B fontFamily=Inter fontSize=20 fontWeight=600
             rectangle [Divider] fill=#1B5943 width=fill_container height=1
             frame [Panel Note] width=fill_container gap=8 padding=[20,0,0,0]
               icon [Note Icon] icon=info fill=#A9C6B9 width=16 height=16
               text [Note Text] content=Тэнцүү төлбөрт (аннуитет) аргаар тооцов. Дүн нь урьдчилсан тооцоо бөгөөд бүхэл төгрөгөөр дугуйлагдсан. fill=#A9C6B9 width=fill_container fontFamily=Inter fontSize=13 fontWeight=normal lineHeight=1.45
+        frame [Schedule Section] fill=#FFFFFF stroke=#DEDCD4 width=fill_container layout=vertical gap=24 padding=32 cornerRadius=20
+          frame [Section Head] width=fill_container layout=vertical gap=4
+            text [Section Title] content=Эргэн төлөлтийн хуваарь fill=#141A17 width=fill_container fontFamily=Inter fontSize=20 fontWeight=600
+            text [Section Subtitle] content=Сар бүрийн төлбөр үндсэн зээл болон хүү хэрхэн хуваагдаж, үлдэгдэл хэрхэн буурахыг харуулна. fill=#5C6560 width=fill_container fontFamily=Inter fontSize=13 fontWeight=normal lineHeight=1.45
+          frame [Schedule Table] width=fill_container layout=vertical
+            frame [Header Row] ←Schedule Row gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=САР fill=#5C6560 width=90 fontFamily=Inter fontSize=12 fontWeight=600
+              text [Cell Payment] content=ТӨЛБӨР fill=#5C6560 width=230 fontFamily=Inter fontSize=12 fontWeight=600 textAlign=right
+              text [Cell Principal] content=ҮНДСЭН ТӨЛБӨР fill=#5C6560 width=250 fontFamily=Inter fontSize=12 fontWeight=600 textAlign=right
+              text [Cell Interest] content=ХҮҮ fill=#5C6560 width=200 fontFamily=Inter fontSize=12 fontWeight=600 textAlign=right
+              text [Cell Balance] content=ҮЛДЭГДЭЛ fill=#5C6560 width=246 fontFamily=Inter fontSize=12 fontWeight=600 textAlign=right
+            rectangle [Header Divider] fill=#DEDCD4 width=fill_container height=1
+            frame [Row 1] ←Schedule Row gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=1 fill=#5C6560 width=90 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=945,596₮ fill=#141A17 width=230 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=745,596₮ fill=#141A17 width=250 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=200,000₮ fill=#141A17 width=200 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=9,254,404₮ fill=#141A17 width=246 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+            frame [Row 2] ←Schedule Row fill=#FAF9F6 gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=2 fill=#5C6560 width=90 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=945,596₮ fill=#141A17 width=230 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=760,508₮ fill=#141A17 width=250 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=185,088₮ fill=#141A17 width=200 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=8,493,896₮ fill=#141A17 width=246 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+            frame [Row 3] ←Schedule Row gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=3 fill=#5C6560 width=90 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=945,596₮ fill=#141A17 width=230 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=775,718₮ fill=#141A17 width=250 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=169,878₮ fill=#141A17 width=200 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=7,718,178₮ fill=#141A17 width=246 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+            frame [Row 4] ←Schedule Row fill=#FAF9F6 gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=4 fill=#5C6560 width=90 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=945,596₮ fill=#141A17 width=230 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=791,232₮ fill=#141A17 width=250 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=154,364₮ fill=#141A17 width=200 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=6,926,946₮ fill=#141A17 width=246 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+            frame [Row 5] ←Schedule Row gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=5 fill=#5C6560 width=90 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=945,596₮ fill=#141A17 width=230 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=807,057₮ fill=#141A17 width=250 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=138,539₮ fill=#141A17 width=200 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=6,119,889₮ fill=#141A17 width=246 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+            frame [Row 6] ←Schedule Row fill=#FAF9F6 gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=6 fill=#5C6560 width=90 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=945,596₮ fill=#141A17 width=230 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=823,198₮ fill=#141A17 width=250 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=122,398₮ fill=#141A17 width=200 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=5,296,691₮ fill=#141A17 width=246 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+            frame [Row 7] ←Schedule Row gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=7 fill=#5C6560 width=90 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=945,596₮ fill=#141A17 width=230 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=839,662₮ fill=#141A17 width=250 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=105,934₮ fill=#141A17 width=200 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=4,457,029₮ fill=#141A17 width=246 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+            frame [Row 8] ←Schedule Row fill=#FAF9F6 gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=8 fill=#5C6560 width=90 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=945,596₮ fill=#141A17 width=230 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=856,455₮ fill=#141A17 width=250 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=89,141₮ fill=#141A17 width=200 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=3,600,574₮ fill=#141A17 width=246 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+            frame [Row 9] ←Schedule Row gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=9 fill=#5C6560 width=90 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=945,596₮ fill=#141A17 width=230 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=873,585₮ fill=#141A17 width=250 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=72,011₮ fill=#141A17 width=200 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=2,726,989₮ fill=#141A17 width=246 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+            frame [Row 10] ←Schedule Row fill=#FAF9F6 gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=10 fill=#5C6560 width=90 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=945,596₮ fill=#141A17 width=230 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=891,056₮ fill=#141A17 width=250 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=54,540₮ fill=#141A17 width=200 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=1,835,933₮ fill=#141A17 width=246 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+            frame [Row 11] ←Schedule Row gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=11 fill=#5C6560 width=90 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=945,596₮ fill=#141A17 width=230 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=908,877₮ fill=#141A17 width=250 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=36,719₮ fill=#141A17 width=200 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=927,056₮ fill=#141A17 width=246 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+            frame [Row 12] ←Schedule Row fill=#FAF9F6 gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=12 fill=#141A17 width=90 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=945,597₮ fill=#141A17 width=230 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=927,056₮ fill=#141A17 width=250 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=18,541₮ fill=#141A17 width=200 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=0₮ fill=#248059 width=246 fontFamily=Inter fontSize=14 fontWeight=600 textAlign=right
     frame [Artboard — Mobile 390] layout=vertical gap=12
       text [Caption] content=MOBILE 390 — ҮНДСЭН ТӨЛӨВ fill=#5C6560 fontFamily=Inter fontSize=14 fontWeight=600
       frame [Mobile Calculator] fill=#F1F0EB width=390 layout=vertical gap=24 padding=[24,20,32,20]
@@ -144,15 +260,103 @@
           rectangle [Divider] fill=#1B5943 width=fill_container height=1
           frame [Result — Нийт хүү] ←Result Row width=fill_container gap=16 padding=[14,0] justifyContent=space_between alignItems=center
             text [Result Label] content=Нийт хүү fill=#A9C6B9 fontFamily=Inter fontSize=14 fontWeight=normal
-            text [Result Value] content=1,347,151₮ fill=#FFFFFF fontFamily=Inter fontSize=18 fontWeight=600
+            text [Result Value] content=1,347,153₮ fill=#FFFFFF fontFamily=Inter fontSize=18 fontWeight=600
           rectangle [Divider] fill=#1B5943 width=fill_container height=1
           frame [Result — Нийт төлөх дүн] ←Result Row width=fill_container gap=16 padding=[14,0] justifyContent=space_between alignItems=center
             text [Result Label] content=Нийт төлөх дүн fill=#A9C6B9 fontFamily=Inter fontSize=14 fontWeight=normal
-            text [Result Value] content=11,347,151₮ fill=#62D39B fontFamily=Inter fontSize=18 fontWeight=600
+            text [Result Value] content=11,347,153₮ fill=#62D39B fontFamily=Inter fontSize=18 fontWeight=600
           rectangle [Divider] fill=#1B5943 width=fill_container height=1
           frame [Panel Note] width=fill_container gap=8 padding=[16,0,0,0]
             icon [Note Icon] icon=info fill=#A9C6B9 width=15 height=15
             text [Note Text] content=Тэнцүү төлбөрт (аннуитет) аргаар тооцсон урьдчилсан дүн. fill=#A9C6B9 width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+        frame [Schedule Card] fill=#FFFFFF stroke=#DEDCD4 width=fill_container layout=vertical gap=16 padding=[20,0] cornerRadius=20
+          frame [Section Head] width=fill_container layout=vertical gap=4 padding=[0,16]
+            text [Section Title] content=Эргэн төлөлтийн хуваарь fill=#141A17 width=fill_container fontFamily=Inter fontSize=17 fontWeight=600
+            text [Section Subtitle] content=Сар бүрийн төлбөрийн задаргаа, үлдэгдэл. fill=#5C6560 width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+          frame [Scroll Area] width=fill_container layout=vertical
+            frame [Schedule Table] width=610 layout=vertical
+              frame [Header Row] ←Schedule Row gap=12 padding=["$table-row-y",16] alignItems=center
+                text [Cell Month] content=САР fill=#5C6560 width=44 fontFamily=Inter fontSize=12 fontWeight=600
+                text [Cell Payment] content=ТӨЛБӨР fill=#5C6560 width=120 fontFamily=Inter fontSize=12 fontWeight=600 textAlign=right
+                text [Cell Principal] content=ҮНДСЭН ТӨЛБӨР fill=#5C6560 width=128 fontFamily=Inter fontSize=12 fontWeight=600 textAlign=right
+                text [Cell Interest] content=ХҮҮ fill=#5C6560 width=110 fontFamily=Inter fontSize=12 fontWeight=600 textAlign=right
+                text [Cell Balance] content=ҮЛДЭГДЭЛ fill=#5C6560 width=128 fontFamily=Inter fontSize=12 fontWeight=600 textAlign=right
+              rectangle [Header Divider] fill=#DEDCD4 width=fill_container height=1
+              frame [Row 1] ←Schedule Row gap=12 padding=["$table-row-y",16] alignItems=center
+                text [Cell Month] content=1 fill=#5C6560 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+                text [Cell Payment] content=945,596₮ fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Principal] content=745,596₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Interest] content=200,000₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Balance] content=9,254,404₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              frame [Row 2] ←Schedule Row fill=#FAF9F6 gap=12 padding=["$table-row-y",16] alignItems=center
+                text [Cell Month] content=2 fill=#5C6560 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+                text [Cell Payment] content=945,596₮ fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Principal] content=760,508₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Interest] content=185,088₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Balance] content=8,493,896₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              frame [Row 3] ←Schedule Row gap=12 padding=["$table-row-y",16] alignItems=center
+                text [Cell Month] content=3 fill=#5C6560 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+                text [Cell Payment] content=945,596₮ fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Principal] content=775,718₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Interest] content=169,878₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Balance] content=7,718,178₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              frame [Row 4] ←Schedule Row fill=#FAF9F6 gap=12 padding=["$table-row-y",16] alignItems=center
+                text [Cell Month] content=4 fill=#5C6560 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+                text [Cell Payment] content=945,596₮ fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Principal] content=791,232₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Interest] content=154,364₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Balance] content=6,926,946₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              frame [Row 5] ←Schedule Row gap=12 padding=["$table-row-y",16] alignItems=center
+                text [Cell Month] content=5 fill=#5C6560 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+                text [Cell Payment] content=945,596₮ fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Principal] content=807,057₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Interest] content=138,539₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Balance] content=6,119,889₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              frame [Row 6] ←Schedule Row fill=#FAF9F6 gap=12 padding=["$table-row-y",16] alignItems=center
+                text [Cell Month] content=6 fill=#5C6560 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+                text [Cell Payment] content=945,596₮ fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Principal] content=823,198₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Interest] content=122,398₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Balance] content=5,296,691₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              frame [Row 7] ←Schedule Row gap=12 padding=["$table-row-y",16] alignItems=center
+                text [Cell Month] content=7 fill=#5C6560 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+                text [Cell Payment] content=945,596₮ fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Principal] content=839,662₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Interest] content=105,934₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Balance] content=4,457,029₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              frame [Row 8] ←Schedule Row fill=#FAF9F6 gap=12 padding=["$table-row-y",16] alignItems=center
+                text [Cell Month] content=8 fill=#5C6560 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+                text [Cell Payment] content=945,596₮ fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Principal] content=856,455₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Interest] content=89,141₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Balance] content=3,600,574₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              frame [Row 9] ←Schedule Row gap=12 padding=["$table-row-y",16] alignItems=center
+                text [Cell Month] content=9 fill=#5C6560 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+                text [Cell Payment] content=945,596₮ fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Principal] content=873,585₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Interest] content=72,011₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Balance] content=2,726,989₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              frame [Row 10] ←Schedule Row fill=#FAF9F6 gap=12 padding=["$table-row-y",16] alignItems=center
+                text [Cell Month] content=10 fill=#5C6560 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+                text [Cell Payment] content=945,596₮ fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Principal] content=891,056₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Interest] content=54,540₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Balance] content=1,835,933₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              frame [Row 11] ←Schedule Row gap=12 padding=["$table-row-y",16] alignItems=center
+                text [Cell Month] content=11 fill=#5C6560 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+                text [Cell Payment] content=945,596₮ fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Principal] content=908,877₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Interest] content=36,719₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Balance] content=927,056₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              frame [Row 12] ←Schedule Row fill=#FAF9F6 gap=12 padding=["$table-row-y",16] alignItems=center
+                text [Cell Month] content=12 fill=#141A17 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+                text [Cell Payment] content=945,597₮ fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Principal] content=927,056₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Interest] content=18,541₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Balance] content=0₮ fill=#248059 width=128 fontFamily=Inter fontSize=14 fontWeight=600 textAlign=right
+          frame [Scroll Hint] width=fill_container gap=6 padding=[0,16] alignItems=center
+            icon [Hint Icon] icon=move-horizontal fill=#5C6560 width=14 height=14
+            text [Hint Text] content=Хүснэгтийг хэвтээ чиглэлд гүйлгэнэ fill=#5C6560 fontFamily=Inter fontSize=12 fontWeight=normal
     frame [Artboard — Mobile 320] layout=vertical gap=12
       text [Caption] content=MOBILE 320 — ХАМГИЙН НАРИЙН ДЭЛГЭЦ fill=#5C6560 fontFamily=Inter fontSize=14 fontWeight=600
       frame [Mobile Calculator 320] fill=#F1F0EB width=320 layout=vertical gap=24 padding=[20,16,28,16]
@@ -189,15 +393,103 @@
           rectangle [Divider] fill=#1B5943 width=fill_container height=1
           frame [Result — Нийт хүү] ←Result Row width=fill_container gap=16 padding=[14,0] justifyContent=space_between alignItems=center
             text [Result Label] content=Нийт хүү fill=#A9C6B9 fontFamily=Inter fontSize=14 fontWeight=normal
-            text [Result Value] content=1,347,151₮ fill=#FFFFFF fontFamily=Inter fontSize=18 fontWeight=600
+            text [Result Value] content=1,347,153₮ fill=#FFFFFF fontFamily=Inter fontSize=18 fontWeight=600
           rectangle [Divider] fill=#1B5943 width=fill_container height=1
           frame [Result — Нийт төлөх дүн] ←Result Row width=fill_container gap=16 padding=[14,0] justifyContent=space_between alignItems=center
             text [Result Label] content=Нийт төлөх дүн fill=#A9C6B9 fontFamily=Inter fontSize=14 fontWeight=normal
-            text [Result Value] content=11,347,151₮ fill=#62D39B fontFamily=Inter fontSize=18 fontWeight=600
+            text [Result Value] content=11,347,153₮ fill=#62D39B fontFamily=Inter fontSize=18 fontWeight=600
           rectangle [Divider] fill=#1B5943 width=fill_container height=1
           frame [Panel Note] width=fill_container gap=8 padding=[16,0,0,0]
             icon [Note Icon] icon=info fill=#A9C6B9 width=15 height=15
             text [Note Text] content=Тэнцүү төлбөрт (аннуитет) аргаар тооцсон урьдчилсан дүн. fill=#A9C6B9 width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+        frame [Schedule Card] fill=#FFFFFF stroke=#DEDCD4 width=fill_container layout=vertical gap=16 padding=[20,0] cornerRadius=20
+          frame [Section Head] width=fill_container layout=vertical gap=4 padding=[0,16]
+            text [Section Title] content=Эргэн төлөлтийн хуваарь fill=#141A17 width=fill_container fontFamily=Inter fontSize=17 fontWeight=600
+            text [Section Subtitle] content=Сар бүрийн төлбөрийн задаргаа, үлдэгдэл. fill=#5C6560 width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+          frame [Scroll Area] width=fill_container layout=vertical
+            frame [Schedule Table] width=610 layout=vertical
+              frame [Header Row] ←Schedule Row gap=12 padding=["$table-row-y",16] alignItems=center
+                text [Cell Month] content=САР fill=#5C6560 width=44 fontFamily=Inter fontSize=12 fontWeight=600
+                text [Cell Payment] content=ТӨЛБӨР fill=#5C6560 width=120 fontFamily=Inter fontSize=12 fontWeight=600 textAlign=right
+                text [Cell Principal] content=ҮНДСЭН ТӨЛБӨР fill=#5C6560 width=128 fontFamily=Inter fontSize=12 fontWeight=600 textAlign=right
+                text [Cell Interest] content=ХҮҮ fill=#5C6560 width=110 fontFamily=Inter fontSize=12 fontWeight=600 textAlign=right
+                text [Cell Balance] content=ҮЛДЭГДЭЛ fill=#5C6560 width=128 fontFamily=Inter fontSize=12 fontWeight=600 textAlign=right
+              rectangle [Header Divider] fill=#DEDCD4 width=fill_container height=1
+              frame [Row 1] ←Schedule Row gap=12 padding=["$table-row-y",16] alignItems=center
+                text [Cell Month] content=1 fill=#5C6560 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+                text [Cell Payment] content=945,596₮ fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Principal] content=745,596₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Interest] content=200,000₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Balance] content=9,254,404₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              frame [Row 2] ←Schedule Row fill=#FAF9F6 gap=12 padding=["$table-row-y",16] alignItems=center
+                text [Cell Month] content=2 fill=#5C6560 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+                text [Cell Payment] content=945,596₮ fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Principal] content=760,508₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Interest] content=185,088₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Balance] content=8,493,896₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              frame [Row 3] ←Schedule Row gap=12 padding=["$table-row-y",16] alignItems=center
+                text [Cell Month] content=3 fill=#5C6560 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+                text [Cell Payment] content=945,596₮ fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Principal] content=775,718₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Interest] content=169,878₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Balance] content=7,718,178₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              frame [Row 4] ←Schedule Row fill=#FAF9F6 gap=12 padding=["$table-row-y",16] alignItems=center
+                text [Cell Month] content=4 fill=#5C6560 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+                text [Cell Payment] content=945,596₮ fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Principal] content=791,232₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Interest] content=154,364₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Balance] content=6,926,946₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              frame [Row 5] ←Schedule Row gap=12 padding=["$table-row-y",16] alignItems=center
+                text [Cell Month] content=5 fill=#5C6560 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+                text [Cell Payment] content=945,596₮ fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Principal] content=807,057₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Interest] content=138,539₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Balance] content=6,119,889₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              frame [Row 6] ←Schedule Row fill=#FAF9F6 gap=12 padding=["$table-row-y",16] alignItems=center
+                text [Cell Month] content=6 fill=#5C6560 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+                text [Cell Payment] content=945,596₮ fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Principal] content=823,198₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Interest] content=122,398₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Balance] content=5,296,691₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              frame [Row 7] ←Schedule Row gap=12 padding=["$table-row-y",16] alignItems=center
+                text [Cell Month] content=7 fill=#5C6560 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+                text [Cell Payment] content=945,596₮ fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Principal] content=839,662₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Interest] content=105,934₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Balance] content=4,457,029₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              frame [Row 8] ←Schedule Row fill=#FAF9F6 gap=12 padding=["$table-row-y",16] alignItems=center
+                text [Cell Month] content=8 fill=#5C6560 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+                text [Cell Payment] content=945,596₮ fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Principal] content=856,455₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Interest] content=89,141₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Balance] content=3,600,574₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              frame [Row 9] ←Schedule Row gap=12 padding=["$table-row-y",16] alignItems=center
+                text [Cell Month] content=9 fill=#5C6560 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+                text [Cell Payment] content=945,596₮ fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Principal] content=873,585₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Interest] content=72,011₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Balance] content=2,726,989₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              frame [Row 10] ←Schedule Row fill=#FAF9F6 gap=12 padding=["$table-row-y",16] alignItems=center
+                text [Cell Month] content=10 fill=#5C6560 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+                text [Cell Payment] content=945,596₮ fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Principal] content=891,056₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Interest] content=54,540₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Balance] content=1,835,933₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              frame [Row 11] ←Schedule Row gap=12 padding=["$table-row-y",16] alignItems=center
+                text [Cell Month] content=11 fill=#5C6560 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+                text [Cell Payment] content=945,596₮ fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Principal] content=908,877₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Interest] content=36,719₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Balance] content=927,056₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              frame [Row 12] ←Schedule Row fill=#FAF9F6 gap=12 padding=["$table-row-y",16] alignItems=center
+                text [Cell Month] content=12 fill=#141A17 width=44 fontFamily=Inter fontSize=14 fontWeight=600
+                text [Cell Payment] content=945,597₮ fill=#141A17 width=120 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Principal] content=927,056₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Interest] content=18,541₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+                text [Cell Balance] content=0₮ fill=#248059 width=128 fontFamily=Inter fontSize=14 fontWeight=600 textAlign=right
+          frame [Scroll Hint] width=fill_container gap=6 padding=[0,16] alignItems=center
+            icon [Hint Icon] icon=move-horizontal fill=#5C6560 width=14 height=14
+            text [Hint Text] content=Хүснэгтийг хэвтээ чиглэлд гүйлгэнэ fill=#5C6560 fontFamily=Inter fontSize=12 fontWeight=normal
     frame [Artboard — Mobile Invalid] layout=vertical gap=12
       text [Caption] content=MOBILE 390 — БУРУУ ОРОЛТЫН ТӨЛӨВ fill=#5C6560 fontFamily=Inter fontSize=14 fontWeight=600
       frame [Mobile Calculator Invalid] fill=#F1F0EB width=390 layout=vertical gap=24 padding=[24,20,32,20]
