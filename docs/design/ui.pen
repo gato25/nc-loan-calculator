@@ -8,7 +8,7 @@
       "y": 0,
       "name": "Canvas",
       "width": 2740,
-      "height": 2024,
+      "height": 3580,
       "fill": "#E3E2DB",
       "layout": "none",
       "children": [
@@ -36,7 +36,7 @@
               "type": "frame",
               "id": "EQyOk",
               "name": "Components — Field, Result Row",
-              "width": 1980,
+              "width": 2364,
               "fill": "$bg-page",
               "cornerRadius": "$radius-lg",
               "stroke": "$border",
@@ -406,6 +406,87 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "frame",
+                  "id": "UIcZY",
+                  "name": "Segment Control Context",
+                  "width": 336,
+                  "layout": "vertical",
+                  "gap": "$space-3",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "JXJpY",
+                      "name": "Context Caption",
+                      "fill": "$ink-muted",
+                      "content": "Segment Option",
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-hint",
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "C03Ou9",
+                      "name": "Segment Track",
+                      "width": "fill_container",
+                      "fill": "$surface-inset",
+                      "cornerRadius": "$radius-md",
+                      "stroke": "$border",
+                      "strokeWidth": 1,
+                      "gap": "$space-1",
+                      "padding": "$space-1",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "iEl3T",
+                          "name": "Segment Option",
+                          "reusable": true,
+                          "width": "fill_container",
+                          "cornerRadius": "$radius-sm",
+                          "padding": [
+                            "$space-3",
+                            "$space-2"
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "PjIYH",
+                              "name": "Segment Label",
+                              "fill": "$ink-muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Тэнцүү төлбөрт",
+                              "lineHeight": 1.3,
+                              "textAlign": "center",
+                              "fontFamily": "$font-sans",
+                              "fontSize": "$text-label",
+                              "fontWeight": "500"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "fJ08g",
+                          "type": "ref",
+                          "ref": "iEl3T",
+                          "name": "Segment Option — Сонгогдсон",
+                          "width": "fill_container",
+                          "fill": "$surface",
+                          "stroke": "$accent",
+                          "strokeWidth": 1,
+                          "descendants": {
+                            "PjIYH": {
+                              "content": "Үндсэн төлбөр тэнцүү",
+                              "fill": "$brand-deep",
+                              "fontWeight": "600"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }
@@ -615,6 +696,84 @@
                                   "content": "сар"
                                 }
                               }
+                            },
+                            {
+                              "type": "frame",
+                              "id": "aR4qk",
+                              "name": "Field — Эргэн төлөлтийн төрөл",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": "$space-2",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "u7g1mp",
+                                  "name": "Field Label",
+                                  "fill": "$ink-muted",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Эргэн төлөлтийн төрөл",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": "$text-label",
+                                  "fontWeight": "500"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "oSY89",
+                                  "name": "Segment Track",
+                                  "width": "fill_container",
+                                  "fill": "$surface-inset",
+                                  "cornerRadius": "$radius-md",
+                                  "stroke": "$border",
+                                  "strokeWidth": 1,
+                                  "gap": "$space-1",
+                                  "padding": "$space-1",
+                                  "children": [
+                                    {
+                                      "id": "lDBR7",
+                                      "type": "ref",
+                                      "ref": "iEl3T",
+                                      "name": "Option — Тэнцүү төлбөрт",
+                                      "width": "fill_container",
+                                      "fill": "$surface",
+                                      "stroke": "$accent",
+                                      "strokeWidth": 1,
+                                      "descendants": {
+                                        "PjIYH": {
+                                          "content": "Тэнцүү төлбөрт",
+                                          "fill": "$brand-deep",
+                                          "fontWeight": "600"
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "id": "Vn26W",
+                                      "type": "ref",
+                                      "ref": "iEl3T",
+                                      "name": "Option — Үндсэн төлбөр тэнцүү",
+                                      "width": "fill_container",
+                                      "descendants": {
+                                        "PjIYH": {
+                                          "content": "Үндсэн төлбөр тэнцүү"
+                                        }
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "S8wZD",
+                                  "name": "Field Hint",
+                                  "fill": "$ink-muted",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Сар бүр ижил дүн төлнө.",
+                                  "lineHeight": 1.45,
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": "$text-hint",
+                                  "fontWeight": "normal"
+                                }
+                              ]
                             }
                           ]
                         }
@@ -724,6 +883,92 @@
                           "fill": "$brand-deep-soft",
                           "width": "fill_container",
                           "height": 1
+                        },
+                        {
+                          "type": "frame",
+                          "id": "iJf07",
+                          "name": "Savings Block",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": "$space-2",
+                          "padding": [
+                            "$space-5",
+                            0,
+                            0,
+                            0
+                          ],
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "B9cFWX",
+                              "name": "Savings Strip",
+                              "reusable": true,
+                              "width": "fill_container",
+                              "fill": "$brand-deep-soft",
+                              "cornerRadius": "$radius-md",
+                              "gap": "$space-4",
+                              "padding": [
+                                "$space-3",
+                                "$space-4"
+                              ],
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "BzCSl",
+                                  "name": "Savings Left",
+                                  "gap": "$space-2",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "M3B8L",
+                                      "name": "Savings Icon",
+                                      "width": 16,
+                                      "height": 16,
+                                      "icon": "trending-down",
+                                      "library": "lucide",
+                                      "fill": "$accent-bright"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "id": "WMByF",
+                                      "name": "Savings Label",
+                                      "fill": "$accent-bright",
+                                      "content": "Хэмнэлт",
+                                      "fontFamily": "$font-sans",
+                                      "fontSize": "$text-hint",
+                                      "fontWeight": "600"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "v5ERr",
+                                  "name": "Savings Value",
+                                  "fill": "$ink-inverse",
+                                  "content": "47,153₮",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": "$text-result",
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "dMUXd",
+                              "name": "Savings Caption",
+                              "fill": "$ink-inverse-muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Хоёр аргын нийт хүүгийн зөрүү. Үндсэн төлбөр тэнцүү аргаар тооцвол нийт хүү ийм дүнгээр бага гарна.",
+                              "lineHeight": 1.45,
+                              "fontFamily": "$font-sans",
+                              "fontSize": "$text-hint",
+                              "fontWeight": "normal"
+                            }
+                          ]
                         },
                         {
                           "type": "frame",
@@ -1402,6 +1647,86 @@
                           "content": "сар"
                         }
                       }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "VEzrC",
+                      "name": "Field — Эргэн төлөлтийн төрөл",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$space-2",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "WEBCa",
+                          "name": "Field Label",
+                          "fill": "$ink-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Эргэн төлөлтийн төрөл",
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-label",
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "SSJKb",
+                          "name": "Segment Track",
+                          "width": "fill_container",
+                          "fill": "$surface-inset",
+                          "cornerRadius": "$radius-md",
+                          "stroke": "$border",
+                          "strokeWidth": 1,
+                          "gap": "$space-1",
+                          "padding": "$space-1",
+                          "children": [
+                            {
+                              "id": "UGf3H",
+                              "type": "ref",
+                              "ref": "iEl3T",
+                              "name": "Option — Тэнцүү төлбөрт",
+                              "width": "fill_container",
+                              "fill": "$surface",
+                              "stroke": "$accent",
+                              "strokeWidth": 1,
+                              "descendants": {
+                                "PjIYH": {
+                                  "content": "Тэнцүү төлбөрт",
+                                  "fill": "$brand-deep",
+                                  "fontWeight": "600",
+                                  "fontSize": "$text-hint"
+                                }
+                              }
+                            },
+                            {
+                              "id": "BCiCP",
+                              "type": "ref",
+                              "ref": "iEl3T",
+                              "name": "Option — Үндсэн төлбөр тэнцүү",
+                              "width": "fill_container",
+                              "descendants": {
+                                "PjIYH": {
+                                  "content": "Үндсэн төлбөр тэнцүү",
+                                  "fontSize": "$text-hint"
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "l2yWlw",
+                          "name": "Field Hint",
+                          "fill": "$ink-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Сар бүр ижил дүн төлнө.",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-hint",
+                          "fontWeight": "normal"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -1521,6 +1846,48 @@
                       "fill": "$brand-deep-soft",
                       "width": "fill_container",
                       "height": 1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "l39Mz",
+                      "name": "Savings Block",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$space-2",
+                      "padding": [
+                        "$space-4",
+                        0,
+                        0,
+                        0
+                      ],
+                      "children": [
+                        {
+                          "id": "oxCFW",
+                          "type": "ref",
+                          "ref": "B9cFWX",
+                          "name": "Savings Strip",
+                          "width": "fill_container",
+                          "descendants": {
+                            "v5ERr": {
+                              "content": "47,153₮",
+                              "fontSize": 18
+                            }
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "id": "Z7zx7b",
+                          "name": "Savings Caption",
+                          "fill": "$ink-inverse-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Хоёр аргын нийт хүүгийн зөрүү. Үндсэн төлбөр тэнцүү аргаар нийт хүү ийм дүнгээр бага гарна.",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$font-sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
                     },
                     {
                       "type": "frame",
@@ -2235,6 +2602,86 @@
                           "content": "сар"
                         }
                       }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "jcAsy",
+                      "name": "Field — Эргэн төлөлтийн төрөл",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$space-2",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "jYoO2",
+                          "name": "Field Label",
+                          "fill": "$ink-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Эргэн төлөлтийн төрөл",
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-label",
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "oMB8Q",
+                          "name": "Segment Track",
+                          "width": "fill_container",
+                          "fill": "$surface-inset",
+                          "cornerRadius": "$radius-md",
+                          "stroke": "$border",
+                          "strokeWidth": 1,
+                          "gap": "$space-1",
+                          "padding": "$space-1",
+                          "children": [
+                            {
+                              "id": "wLw3E",
+                              "type": "ref",
+                              "ref": "iEl3T",
+                              "name": "Option — Тэнцүү төлбөрт",
+                              "width": "fill_container",
+                              "fill": "$surface",
+                              "stroke": "$accent",
+                              "strokeWidth": 1,
+                              "descendants": {
+                                "PjIYH": {
+                                  "content": "Тэнцүү төлбөрт",
+                                  "fill": "$brand-deep",
+                                  "fontWeight": "600",
+                                  "fontSize": "$text-hint"
+                                }
+                              }
+                            },
+                            {
+                              "id": "BEj19",
+                              "type": "ref",
+                              "ref": "iEl3T",
+                              "name": "Option — Үндсэн төлбөр тэнцүү",
+                              "width": "fill_container",
+                              "descendants": {
+                                "PjIYH": {
+                                  "content": "Үндсэн төлбөр тэнцүү",
+                                  "fontSize": "$text-hint"
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "cxUDy",
+                          "name": "Field Hint",
+                          "fill": "$ink-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Сар бүр ижил дүн төлнө.",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-hint",
+                          "fontWeight": "normal"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -2354,6 +2801,48 @@
                       "fill": "$brand-deep-soft",
                       "width": "fill_container",
                       "height": 1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Kk2Qi",
+                      "name": "Savings Block",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$space-2",
+                      "padding": [
+                        "$space-4",
+                        0,
+                        0,
+                        0
+                      ],
+                      "children": [
+                        {
+                          "id": "fpQnv",
+                          "type": "ref",
+                          "ref": "B9cFWX",
+                          "name": "Savings Strip",
+                          "width": "fill_container",
+                          "descendants": {
+                            "v5ERr": {
+                              "content": "47,153₮",
+                              "fontSize": 18
+                            }
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "id": "Zd2j5",
+                          "name": "Savings Caption",
+                          "fill": "$ink-inverse-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Хоёр аргын нийт хүүгийн зөрүү. Үндсэн төлбөр тэнцүү аргаар нийт хүү ийм дүнгээр бага гарна.",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$font-sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
                     },
                     {
                       "type": "frame",
@@ -3077,6 +3566,86 @@
                           "content": "сар"
                         }
                       }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Rsp7l",
+                      "name": "Field — Эргэн төлөлтийн төрөл",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$space-2",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "MPATn",
+                          "name": "Field Label",
+                          "fill": "$ink-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Эргэн төлөлтийн төрөл",
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-label",
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "hHMuM",
+                          "name": "Segment Track",
+                          "width": "fill_container",
+                          "fill": "$surface-inset",
+                          "cornerRadius": "$radius-md",
+                          "stroke": "$border",
+                          "strokeWidth": 1,
+                          "gap": "$space-1",
+                          "padding": "$space-1",
+                          "children": [
+                            {
+                              "id": "ut4ck",
+                              "type": "ref",
+                              "ref": "iEl3T",
+                              "name": "Option — Тэнцүү төлбөрт",
+                              "width": "fill_container",
+                              "fill": "$surface",
+                              "stroke": "$accent",
+                              "strokeWidth": 1,
+                              "descendants": {
+                                "PjIYH": {
+                                  "content": "Тэнцүү төлбөрт",
+                                  "fill": "$brand-deep",
+                                  "fontWeight": "600",
+                                  "fontSize": "$text-hint"
+                                }
+                              }
+                            },
+                            {
+                              "id": "mX6Rg",
+                              "type": "ref",
+                              "ref": "iEl3T",
+                              "name": "Option — Үндсэн төлбөр тэнцүү",
+                              "width": "fill_container",
+                              "descendants": {
+                                "PjIYH": {
+                                  "content": "Үндсэн төлбөр тэнцүү",
+                                  "fontSize": "$text-hint"
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "grXDd",
+                          "name": "Field Hint",
+                          "fill": "$ink-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Сар бүр ижил дүн төлнө.",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-hint",
+                          "fontWeight": "normal"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -3199,6 +3768,35 @@
                     },
                     {
                       "type": "frame",
+                      "id": "Yxn4A",
+                      "name": "Savings Block",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$space-2",
+                      "padding": [
+                        "$space-4",
+                        0,
+                        0,
+                        0
+                      ],
+                      "children": [
+                        {
+                          "id": "cKtXj",
+                          "type": "ref",
+                          "ref": "B9cFWX",
+                          "name": "Savings Strip",
+                          "width": "fill_container",
+                          "descendants": {
+                            "v5ERr": {
+                              "content": "—",
+                              "fontSize": 18
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
                       "id": "qrRli",
                       "name": "Panel Note",
                       "width": "fill_container",
@@ -3228,6 +3826,1224 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Утга зөв болмогц үр дүн шууд тооцоологдоно.",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$font-sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "IfOf3",
+          "x": 60,
+          "y": 2006,
+          "name": "Artboard — Desktop (Үндсэн төлбөр тэнцүү)",
+          "layout": "vertical",
+          "gap": "$space-3",
+          "children": [
+            {
+              "type": "text",
+              "id": "fY8Pt",
+              "name": "Caption",
+              "fill": "$ink-muted",
+              "content": "DESKTOP 1280 — ҮНДСЭН ТӨЛБӨР ТЭНЦҮҮ",
+              "fontFamily": "$font-sans",
+              "fontSize": 14,
+              "fontWeight": "600",
+              "letterSpacing": 0.6
+            },
+            {
+              "type": "frame",
+              "id": "Ad6xo",
+              "name": "Desktop Calculator",
+              "clip": true,
+              "width": 1280,
+              "fill": "$bg-page",
+              "layout": "vertical",
+              "gap": "$space-7",
+              "padding": [
+                40,
+                64,
+                56,
+                64
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "ckkh2",
+                  "name": "Header",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "GCylF",
+                      "name": "Brand",
+                      "gap": "$space-2",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "Q4QjvL",
+                          "name": "Brand Mark",
+                          "width": 22,
+                          "height": 22,
+                          "icon": "chart-no-axes-combined",
+                          "library": "lucide",
+                          "fill": "$accent"
+                        },
+                        {
+                          "type": "text",
+                          "id": "h7OFn",
+                          "name": "Brand Name",
+                          "fill": "$ink",
+                          "content": "NetCapital",
+                          "fontFamily": "$font-sans",
+                          "fontSize": 19,
+                          "fontWeight": "700",
+                          "letterSpacing": -0.4
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "xAnEj",
+                      "name": "Header Note",
+                      "fill": "$ink-muted",
+                      "content": "Зээлийн урьдчилсан тооцоо",
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-body",
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "y6GYx",
+                  "name": "Main",
+                  "width": "fill_container",
+                  "gap": "$space-6",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "SvMQE",
+                      "name": "Form Column",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$space-5",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "l2k8U",
+                          "name": "Intro",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": "$space-3",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "K8LLvM",
+                              "name": "Page Title",
+                              "fill": "$ink",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Зээлийн хүү тооцоолуур",
+                              "lineHeight": 1.15,
+                              "fontFamily": "$font-sans",
+                              "fontSize": "$text-title",
+                              "fontWeight": "700",
+                              "letterSpacing": -1
+                            },
+                            {
+                              "type": "text",
+                              "id": "N9N42",
+                              "name": "Page Subtitle",
+                              "fill": "$ink-muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Зээлийн хэмжээ, сарын хүү, хугацаагаа оруулаад сар бүр төлөх төлбөр болон нийт хүүгээ шууд харна уу.",
+                              "lineHeight": 1.5,
+                              "fontFamily": "$font-sans",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "AdI80",
+                          "name": "Form Card",
+                          "width": "fill_container",
+                          "fill": "$surface",
+                          "cornerRadius": "$radius-lg",
+                          "stroke": "$border",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "gap": "$space-5",
+                          "padding": "$space-6",
+                          "children": [
+                            {
+                              "id": "tldG9",
+                              "type": "ref",
+                              "ref": "hHeUx",
+                              "name": "Field — Зээлийн хэмжээ",
+                              "width": "fill_container",
+                              "descendants": {
+                                "EMVGg": {
+                                  "content": "Зээлийн хэмжээ"
+                                },
+                                "MaDsL": {
+                                  "content": "10,000,000"
+                                },
+                                "ArP4s": {
+                                  "content": "₮"
+                                }
+                              }
+                            },
+                            {
+                              "id": "B6roy",
+                              "type": "ref",
+                              "ref": "hHeUx",
+                              "name": "Field — Сарын хүү",
+                              "width": "fill_container",
+                              "descendants": {
+                                "EMVGg": {
+                                  "content": "Сарын хүү"
+                                },
+                                "MaDsL": {
+                                  "content": "2"
+                                },
+                                "ArP4s": {
+                                  "content": "%"
+                                }
+                              }
+                            },
+                            {
+                              "id": "qtwkE",
+                              "type": "ref",
+                              "ref": "hHeUx",
+                              "name": "Field — Хугацаа",
+                              "width": "fill_container",
+                              "descendants": {
+                                "EMVGg": {
+                                  "content": "Хугацаа"
+                                },
+                                "MaDsL": {
+                                  "content": "12"
+                                },
+                                "ArP4s": {
+                                  "content": "сар"
+                                }
+                              }
+                            },
+                            {
+                              "type": "frame",
+                              "id": "YLeeZ",
+                              "name": "Field — Эргэн төлөлтийн төрөл",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": "$space-2",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "tYjRj",
+                                  "name": "Field Label",
+                                  "fill": "$ink-muted",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Эргэн төлөлтийн төрөл",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": "$text-label",
+                                  "fontWeight": "500"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "OXSz7",
+                                  "name": "Segment Track",
+                                  "width": "fill_container",
+                                  "fill": "$surface-inset",
+                                  "cornerRadius": "$radius-md",
+                                  "stroke": "$border",
+                                  "strokeWidth": 1,
+                                  "gap": "$space-1",
+                                  "padding": "$space-1",
+                                  "children": [
+                                    {
+                                      "id": "n6VMfC",
+                                      "type": "ref",
+                                      "ref": "iEl3T",
+                                      "name": "Option — Тэнцүү төлбөрт",
+                                      "width": "fill_container",
+                                      "descendants": {
+                                        "PjIYH": {
+                                          "content": "Тэнцүү төлбөрт"
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "id": "WmU0W",
+                                      "type": "ref",
+                                      "ref": "iEl3T",
+                                      "name": "Option — Үндсэн төлбөр тэнцүү",
+                                      "width": "fill_container",
+                                      "fill": "$surface",
+                                      "stroke": "$accent",
+                                      "strokeWidth": 1,
+                                      "descendants": {
+                                        "PjIYH": {
+                                          "content": "Үндсэн төлбөр тэнцүү",
+                                          "fill": "$brand-deep",
+                                          "fontWeight": "600"
+                                        }
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "xW2Uc",
+                                  "name": "Field Hint",
+                                  "fill": "$ink-muted",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Үндсэн төлбөр сар бүр ижил, хүү үлдэгдлээс бодогдоно.",
+                                  "lineHeight": 1.45,
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": "$text-hint",
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "VWI9G",
+                      "name": "Result Panel",
+                      "width": 440,
+                      "fill": "$brand-deep",
+                      "cornerRadius": "$radius-lg",
+                      "layout": "vertical",
+                      "padding": "$space-6",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "dBjQZ",
+                          "name": "Hero Label",
+                          "fill": "$accent-bright",
+                          "content": "ЭХНИЙ САРЫН ТӨЛБӨР",
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-hint",
+                          "fontWeight": "600",
+                          "letterSpacing": 1.2
+                        },
+                        {
+                          "type": "frame",
+                          "id": "RRw9e",
+                          "name": "Hero Spacer",
+                          "width": "fill_container",
+                          "height": 8
+                        },
+                        {
+                          "type": "text",
+                          "id": "mwO7i",
+                          "name": "Hero Value",
+                          "fill": "$ink-inverse",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "1,033,333₮",
+                          "lineHeight": 1.1,
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-hero",
+                          "fontWeight": "700",
+                          "letterSpacing": -1.6
+                        },
+                        {
+                          "type": "frame",
+                          "id": "tcpIo",
+                          "name": "Hero Spacer 2",
+                          "width": "fill_container",
+                          "height": 24
+                        },
+                        {
+                          "type": "rectangle",
+                          "id": "GzVh0",
+                          "name": "Divider",
+                          "fill": "$brand-deep-soft",
+                          "width": "fill_container",
+                          "height": 1
+                        },
+                        {
+                          "id": "ykKMC",
+                          "type": "ref",
+                          "ref": "rQCpr",
+                          "name": "Result — Сүүлийн сарын төлбөр",
+                          "width": "fill_container",
+                          "descendants": {
+                            "v57JkI": {
+                              "content": "Сүүлийн сарын төлбөр"
+                            },
+                            "JCqd8": {
+                              "content": "850,004₮"
+                            }
+                          }
+                        },
+                        {
+                          "type": "rectangle",
+                          "id": "v1kChC",
+                          "name": "Divider",
+                          "fill": "$brand-deep-soft",
+                          "width": "fill_container",
+                          "height": 1
+                        },
+                        {
+                          "id": "vKEwp",
+                          "type": "ref",
+                          "ref": "rQCpr",
+                          "name": "Result — Нийт хүү",
+                          "width": "fill_container",
+                          "descendants": {
+                            "v57JkI": {
+                              "content": "Нийт хүү"
+                            },
+                            "JCqd8": {
+                              "content": "1,300,000₮",
+                              "fill": "$ink-inverse"
+                            }
+                          }
+                        },
+                        {
+                          "type": "rectangle",
+                          "id": "LQgx3",
+                          "name": "Divider",
+                          "fill": "$brand-deep-soft",
+                          "width": "fill_container",
+                          "height": 1
+                        },
+                        {
+                          "id": "fhOjn",
+                          "type": "ref",
+                          "ref": "rQCpr",
+                          "name": "Result — Нийт төлөх дүн",
+                          "width": "fill_container",
+                          "descendants": {
+                            "v57JkI": {
+                              "content": "Нийт төлөх дүн"
+                            },
+                            "JCqd8": {
+                              "content": "11,300,000₮",
+                              "fill": "$accent-bright"
+                            }
+                          }
+                        },
+                        {
+                          "type": "rectangle",
+                          "id": "pFKQl",
+                          "name": "Divider",
+                          "fill": "$brand-deep-soft",
+                          "width": "fill_container",
+                          "height": 1
+                        },
+                        {
+                          "type": "frame",
+                          "id": "bUvV4",
+                          "name": "Savings Block",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": "$space-2",
+                          "padding": [
+                            "$space-5",
+                            0,
+                            0,
+                            0
+                          ],
+                          "children": [
+                            {
+                              "id": "xpVV0",
+                              "type": "ref",
+                              "ref": "B9cFWX",
+                              "name": "Savings Strip"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Lugn3",
+                              "name": "Savings Caption",
+                              "fill": "$ink-inverse-muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Хоёр аргын нийт хүүгийн зөрүү. Тэнцүү төлбөрт аргатай харьцуулахад нийт хүү ийм дүнгээр бага гарлаа.",
+                              "lineHeight": 1.45,
+                              "fontFamily": "$font-sans",
+                              "fontSize": "$text-hint",
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "flagH",
+                          "name": "Panel Note",
+                          "width": "fill_container",
+                          "gap": "$space-2",
+                          "padding": [
+                            20,
+                            0,
+                            0,
+                            0
+                          ],
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "BPO0I",
+                              "name": "Note Icon",
+                              "width": 16,
+                              "height": 16,
+                              "icon": "info",
+                              "library": "lucide",
+                              "fill": "$ink-inverse-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "PBiCh",
+                              "name": "Note Text",
+                              "fill": "$ink-inverse-muted",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Үндсэн төлбөр тэнцүү аргаар тооцов. Дүн нь урьдчилсан тооцоо бөгөөд бүхэл төгрөгөөр дугуйлагдсан.",
+                              "lineHeight": 1.45,
+                              "fontFamily": "$font-sans",
+                              "fontSize": "$text-hint",
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "tosQT",
+                  "name": "Schedule Section",
+                  "width": "fill_container",
+                  "fill": "$surface",
+                  "cornerRadius": "$radius-lg",
+                  "stroke": "$border",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": "$space-5",
+                  "padding": "$space-6",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "H8JqI7",
+                      "name": "Section Head",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$space-1",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Nd13h",
+                          "name": "Section Title",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Эргэн төлөлтийн хуваарь",
+                          "fontFamily": "$font-sans",
+                          "fontSize": 20,
+                          "fontWeight": "600",
+                          "letterSpacing": -0.3
+                        },
+                        {
+                          "type": "text",
+                          "id": "l1zfE",
+                          "name": "Section Subtitle",
+                          "fill": "$ink-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Үндсэн төлбөр сар бүр ижил, хүү үлдэгдлээс бодогдох тул нийт төлбөр сар ирэх тусам буурна.",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-hint",
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "MvMz2",
+                      "name": "Schedule Table",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "children": [
+                        {
+                          "id": "V4oXV",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Header Row",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "САР",
+                              "fontSize": "$text-table-head",
+                              "fontWeight": "600",
+                              "letterSpacing": 0.6,
+                              "fill": "$ink-muted",
+                              "width": 90
+                            },
+                            "zhxqZ": {
+                              "content": "ТӨЛБӨР",
+                              "fontSize": "$text-table-head",
+                              "fontWeight": "600",
+                              "letterSpacing": 0.6,
+                              "fill": "$ink-muted",
+                              "width": 230
+                            },
+                            "remex": {
+                              "content": "ҮНДСЭН ТӨЛБӨР",
+                              "fontSize": "$text-table-head",
+                              "fontWeight": "600",
+                              "letterSpacing": 0.6,
+                              "fill": "$ink-muted",
+                              "width": 250
+                            },
+                            "QoXjL": {
+                              "content": "ХҮҮ",
+                              "fontSize": "$text-table-head",
+                              "fontWeight": "600",
+                              "letterSpacing": 0.6,
+                              "fill": "$ink-muted",
+                              "width": 200
+                            },
+                            "nDWpe": {
+                              "content": "ҮЛДЭГДЭЛ",
+                              "fontSize": "$text-table-head",
+                              "fontWeight": "600",
+                              "letterSpacing": 0.6,
+                              "fill": "$ink-muted",
+                              "width": 246
+                            }
+                          }
+                        },
+                        {
+                          "type": "rectangle",
+                          "id": "hs4Vt",
+                          "name": "Header Divider",
+                          "fill": "$border",
+                          "width": "fill_container",
+                          "height": 1
+                        },
+                        {
+                          "id": "xZN20",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Row 1",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "1",
+                              "width": 90
+                            },
+                            "zhxqZ": {
+                              "content": "1,033,333₮",
+                              "width": 230
+                            },
+                            "remex": {
+                              "content": "833,333₮",
+                              "width": 250
+                            },
+                            "QoXjL": {
+                              "content": "200,000₮",
+                              "width": 200
+                            },
+                            "nDWpe": {
+                              "content": "9,166,667₮",
+                              "width": 246
+                            }
+                          }
+                        },
+                        {
+                          "id": "Eponm",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Row 2",
+                          "fill": "$surface-stripe",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "2",
+                              "width": 90
+                            },
+                            "zhxqZ": {
+                              "content": "1,016,666₮",
+                              "width": 230
+                            },
+                            "remex": {
+                              "content": "833,333₮",
+                              "width": 250
+                            },
+                            "QoXjL": {
+                              "content": "183,333₮",
+                              "width": 200
+                            },
+                            "nDWpe": {
+                              "content": "8,333,334₮",
+                              "width": 246
+                            }
+                          }
+                        },
+                        {
+                          "id": "oxR1Z",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Row 3",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "3",
+                              "width": 90
+                            },
+                            "zhxqZ": {
+                              "content": "1,000,000₮",
+                              "width": 230
+                            },
+                            "remex": {
+                              "content": "833,333₮",
+                              "width": 250
+                            },
+                            "QoXjL": {
+                              "content": "166,667₮",
+                              "width": 200
+                            },
+                            "nDWpe": {
+                              "content": "7,500,001₮",
+                              "width": 246
+                            }
+                          }
+                        },
+                        {
+                          "id": "MGT0B",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Row 4",
+                          "fill": "$surface-stripe",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "4",
+                              "width": 90
+                            },
+                            "zhxqZ": {
+                              "content": "983,333₮",
+                              "width": 230
+                            },
+                            "remex": {
+                              "content": "833,333₮",
+                              "width": 250
+                            },
+                            "QoXjL": {
+                              "content": "150,000₮",
+                              "width": 200
+                            },
+                            "nDWpe": {
+                              "content": "6,666,668₮",
+                              "width": 246
+                            }
+                          }
+                        },
+                        {
+                          "id": "K23Ele",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Row 5",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "5",
+                              "width": 90
+                            },
+                            "zhxqZ": {
+                              "content": "966,666₮",
+                              "width": 230
+                            },
+                            "remex": {
+                              "content": "833,333₮",
+                              "width": 250
+                            },
+                            "QoXjL": {
+                              "content": "133,333₮",
+                              "width": 200
+                            },
+                            "nDWpe": {
+                              "content": "5,833,335₮",
+                              "width": 246
+                            }
+                          }
+                        },
+                        {
+                          "id": "B3wIIh",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Row 6",
+                          "fill": "$surface-stripe",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "6",
+                              "width": 90
+                            },
+                            "zhxqZ": {
+                              "content": "950,000₮",
+                              "width": 230
+                            },
+                            "remex": {
+                              "content": "833,333₮",
+                              "width": 250
+                            },
+                            "QoXjL": {
+                              "content": "116,667₮",
+                              "width": 200
+                            },
+                            "nDWpe": {
+                              "content": "5,000,002₮",
+                              "width": 246
+                            }
+                          }
+                        },
+                        {
+                          "id": "cyVoa",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Row 7",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "7",
+                              "width": 90
+                            },
+                            "zhxqZ": {
+                              "content": "933,333₮",
+                              "width": 230
+                            },
+                            "remex": {
+                              "content": "833,333₮",
+                              "width": 250
+                            },
+                            "QoXjL": {
+                              "content": "100,000₮",
+                              "width": 200
+                            },
+                            "nDWpe": {
+                              "content": "4,166,669₮",
+                              "width": 246
+                            }
+                          }
+                        },
+                        {
+                          "id": "qNkZD",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Row 8",
+                          "fill": "$surface-stripe",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "8",
+                              "width": 90
+                            },
+                            "zhxqZ": {
+                              "content": "916,666₮",
+                              "width": 230
+                            },
+                            "remex": {
+                              "content": "833,333₮",
+                              "width": 250
+                            },
+                            "QoXjL": {
+                              "content": "83,333₮",
+                              "width": 200
+                            },
+                            "nDWpe": {
+                              "content": "3,333,336₮",
+                              "width": 246
+                            }
+                          }
+                        },
+                        {
+                          "id": "zMbvq",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Row 9",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "9",
+                              "width": 90
+                            },
+                            "zhxqZ": {
+                              "content": "900,000₮",
+                              "width": 230
+                            },
+                            "remex": {
+                              "content": "833,333₮",
+                              "width": 250
+                            },
+                            "QoXjL": {
+                              "content": "66,667₮",
+                              "width": 200
+                            },
+                            "nDWpe": {
+                              "content": "2,500,003₮",
+                              "width": 246
+                            }
+                          }
+                        },
+                        {
+                          "id": "ePh3R",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Row 10",
+                          "fill": "$surface-stripe",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "10",
+                              "width": 90
+                            },
+                            "zhxqZ": {
+                              "content": "883,333₮",
+                              "width": 230
+                            },
+                            "remex": {
+                              "content": "833,333₮",
+                              "width": 250
+                            },
+                            "QoXjL": {
+                              "content": "50,000₮",
+                              "width": 200
+                            },
+                            "nDWpe": {
+                              "content": "1,666,670₮",
+                              "width": 246
+                            }
+                          }
+                        },
+                        {
+                          "id": "O6oeZ",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Row 11",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "11",
+                              "width": 90
+                            },
+                            "zhxqZ": {
+                              "content": "866,666₮",
+                              "width": 230
+                            },
+                            "remex": {
+                              "content": "833,333₮",
+                              "width": 250
+                            },
+                            "QoXjL": {
+                              "content": "33,333₮",
+                              "width": 200
+                            },
+                            "nDWpe": {
+                              "content": "833,337₮",
+                              "width": 246
+                            }
+                          }
+                        },
+                        {
+                          "id": "nTuOu",
+                          "type": "ref",
+                          "ref": "wpmhG",
+                          "name": "Row 12",
+                          "fill": "$surface-stripe",
+                          "descendants": {
+                            "qJv8r": {
+                              "content": "12",
+                              "width": 90,
+                              "fill": "$ink"
+                            },
+                            "zhxqZ": {
+                              "content": "850,004₮",
+                              "width": 230
+                            },
+                            "remex": {
+                              "content": "833,337₮",
+                              "width": 250
+                            },
+                            "QoXjL": {
+                              "content": "16,667₮",
+                              "width": 200
+                            },
+                            "nDWpe": {
+                              "content": "0₮",
+                              "width": 246,
+                              "fontWeight": "600",
+                              "fill": "$accent"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "pnVOB",
+          "x": 2290,
+          "y": 1565,
+          "name": "Artboard — Mobile 390 (Үндсэн төлбөр тэнцүү)",
+          "layout": "vertical",
+          "gap": "$space-3",
+          "children": [
+            {
+              "type": "text",
+              "id": "ADoHb",
+              "name": "Caption",
+              "fill": "$ink-muted",
+              "content": "MOBILE 390 — ҮНДСЭН ТӨЛБӨР ТЭНЦҮҮ (ҮР ДҮН)",
+              "fontFamily": "$font-sans",
+              "fontSize": "$text-label",
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "k22GcD",
+              "name": "Mobile Result — Үндсэн төлбөр тэнцүү",
+              "width": 390,
+              "fill": "$bg-page",
+              "layout": "vertical",
+              "padding": "$space-5",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "UMlo6",
+                  "name": "Result Panel",
+                  "width": "fill_container",
+                  "fill": "$brand-deep",
+                  "cornerRadius": "$radius-lg",
+                  "layout": "vertical",
+                  "padding": 20,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "lponz",
+                      "name": "Hero Label",
+                      "fill": "$accent-bright",
+                      "content": "ЭХНИЙ САРЫН ТӨЛБӨР",
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-hint",
+                      "fontWeight": "600",
+                      "letterSpacing": 1.2
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Bw8Fq",
+                      "name": "Hero Spacer",
+                      "width": "fill_container",
+                      "height": 6
+                    },
+                    {
+                      "type": "text",
+                      "id": "fGU7g",
+                      "name": "Hero Value",
+                      "fill": "$ink-inverse",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "1,033,333₮",
+                      "lineHeight": 1.1,
+                      "fontFamily": "$font-sans",
+                      "fontSize": 36,
+                      "fontWeight": "700",
+                      "letterSpacing": -1.2
+                    },
+                    {
+                      "type": "frame",
+                      "id": "qcDdd",
+                      "name": "Hero Spacer 2",
+                      "width": "fill_container",
+                      "height": 18
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "E93Sj",
+                      "name": "Divider",
+                      "fill": "$brand-deep-soft",
+                      "width": "fill_container",
+                      "height": 1
+                    },
+                    {
+                      "id": "OBr0E",
+                      "type": "ref",
+                      "ref": "rQCpr",
+                      "name": "Result — Сүүлийн сарын төлбөр",
+                      "width": "fill_container",
+                      "padding": [
+                        14,
+                        0
+                      ],
+                      "descendants": {
+                        "v57JkI": {
+                          "content": "Сүүлийн сарын төлбөр",
+                          "fontSize": 14
+                        },
+                        "JCqd8": {
+                          "content": "850,004₮",
+                          "fill": "$ink-inverse",
+                          "fontSize": 18
+                        }
+                      }
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "hUhoy",
+                      "name": "Divider",
+                      "fill": "$brand-deep-soft",
+                      "width": "fill_container",
+                      "height": 1
+                    },
+                    {
+                      "id": "Y9EJA",
+                      "type": "ref",
+                      "ref": "rQCpr",
+                      "name": "Result — Нийт хүү",
+                      "width": "fill_container",
+                      "padding": [
+                        14,
+                        0
+                      ],
+                      "descendants": {
+                        "v57JkI": {
+                          "content": "Нийт хүү",
+                          "fontSize": 14
+                        },
+                        "JCqd8": {
+                          "content": "1,300,000₮",
+                          "fill": "$ink-inverse",
+                          "fontSize": 18
+                        }
+                      }
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "tMXxk",
+                      "name": "Divider",
+                      "fill": "$brand-deep-soft",
+                      "width": "fill_container",
+                      "height": 1
+                    },
+                    {
+                      "id": "Zy9ba",
+                      "type": "ref",
+                      "ref": "rQCpr",
+                      "name": "Result — Нийт төлөх дүн",
+                      "width": "fill_container",
+                      "padding": [
+                        14,
+                        0
+                      ],
+                      "descendants": {
+                        "v57JkI": {
+                          "content": "Нийт төлөх дүн",
+                          "fontSize": 14
+                        },
+                        "JCqd8": {
+                          "content": "11,300,000₮",
+                          "fill": "$accent-bright",
+                          "fontSize": 18
+                        }
+                      }
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "KnyFI",
+                      "name": "Divider",
+                      "fill": "$brand-deep-soft",
+                      "width": "fill_container",
+                      "height": 1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "F7Xocr",
+                      "name": "Savings Block",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$space-2",
+                      "padding": [
+                        "$space-4",
+                        0,
+                        0,
+                        0
+                      ],
+                      "children": [
+                        {
+                          "id": "GFvHO",
+                          "type": "ref",
+                          "ref": "B9cFWX",
+                          "name": "Savings Strip",
+                          "width": "fill_container",
+                          "descendants": {
+                            "v5ERr": {
+                              "content": "47,153₮",
+                              "fontSize": 18
+                            }
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "id": "Aioao",
+                          "name": "Savings Caption",
+                          "fill": "$ink-inverse-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Хоёр аргын нийт хүүгийн зөрүү. Тэнцүү төлбөрт аргатай харьцуулахад нийт хүү ийм дүнгээр бага гарлаа.",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$font-sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "L4poY",
+                      "name": "Panel Note",
+                      "width": "fill_container",
+                      "gap": "$space-2",
+                      "padding": [
+                        16,
+                        0,
+                        0,
+                        0
+                      ],
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "ZxRdn",
+                          "name": "Note Icon",
+                          "width": 15,
+                          "height": 15,
+                          "icon": "info",
+                          "library": "lucide",
+                          "fill": "$ink-inverse-muted"
+                        },
+                        {
+                          "type": "text",
+                          "id": "xNUau",
+                          "name": "Note Text",
+                          "fill": "$ink-inverse-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Үндсэн төлбөр тэнцүү аргаар тооцсон урьдчилсан дүн. Төлбөр сар ирэх тусам буурна.",
                           "lineHeight": 1.45,
                           "fontFamily": "$font-sans",
                           "fontSize": 12,
