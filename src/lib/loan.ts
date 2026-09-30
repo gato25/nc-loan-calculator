@@ -105,14 +105,20 @@ export type ScheduleRow = {
  * @param amount Зээлийн хэмжээ (₮)
  * @param monthlyRatePercent Сарын хүү (%)
  * @param termMonths Хугацаа (сар)
+ * @param type Эргэн төлөлтийн арга — өгөгдмөл нь аннуитет
  */
 export function buildSchedule(
 	amount: number,
 	monthlyRatePercent: number,
-	termMonths: number
+	termMonths: number,
+	type: RepaymentType = 'annuity'
 ): ScheduleRow[] {
 	const r = monthlyRatePercent / 100;
-	const payment = Math.round(calculateLoan(amount, monthlyRatePercent, termMonths).monthlyPayment);
+	// Аннуитетэд төлбөр тогтмол, үндсэн төлбөр тэнцүү аргад үндсэн хэсэг нь тогтмол.
+	const fixed =
+		type === 'equalPrincipal'
+			? Math.round(amount / termMonths)
+			: Math.round(calculateLoan(amount, monthlyRatePercent, termMonths).monthlyPayment);
 
 	const rows: ScheduleRow[] = [];
 	let balance = amount;
@@ -127,9 +133,10 @@ export function buildSchedule(
 			break;
 		}
 
-		const principal = payment - interest;
+		// `Math.min` нь жижиг дүн + урт хугацаанд үлдэгдлийг сөрөг болгохоос сэргийлнэ.
+		const principal = type === 'equalPrincipal' ? Math.min(fixed, balance) : fixed - interest;
 		balance -= principal;
-		rows.push({ month, payment, principal, interest, balance });
+		rows.push({ month, payment: principal + interest, principal, interest, balance });
 	}
 
 	return rows;
