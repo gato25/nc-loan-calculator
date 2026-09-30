@@ -142,6 +142,26 @@ export function buildSchedule(
 	return rows;
 }
 
+/**
+ * Үндсэн төлбөр тэнцүү аргаар тооцвол аннуитеттэй харьцуулахад нийт хүү хэдэн
+ * төгрөгөөр бага гарахыг буцаана. Үндсэн төлбөр тэнцүү арга нийт хүү нь
+ * аннуитетээс хэзээ ч их байдаггүй тул үр дүн үргэлж сөрөг биш.
+ *
+ * @param amount Зээлийн хэмжээ (₮)
+ * @param monthlyRatePercent Сарын хүү (%)
+ * @param termMonths Хугацаа (сар)
+ */
+export function interestSavings(
+	amount: number,
+	monthlyRatePercent: number,
+	termMonths: number
+): number {
+	const annuity = calculateLoan(amount, monthlyRatePercent, termMonths, 'annuity');
+	const equal = calculateLoan(amount, monthlyRatePercent, termMonths, 'equalPrincipal');
+
+	return Math.max(0, annuity.totalInterest - equal.totalInterest);
+}
+
 /** Зээлийн хэмжээ 0-оос их бодит тоо байх ёстой. */
 export function isValidAmount(value: number | null): value is number {
 	return value !== null && Number.isFinite(value) && value > 0;
