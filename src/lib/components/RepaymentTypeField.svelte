@@ -75,6 +75,8 @@
 	}
 
 	.segment-option {
+		/* Нуугдсан radio нь энэ хайрцагт бэхлэгдэнэ — фокус авахад хуудас үсрэхгүй. */
+		position: relative;
 		display: flex;
 		flex: 1 1 0;
 		min-width: 0;
