@@ -1,8 +1,17 @@
 <script lang="ts">
 	import { formatGroupedInput, parseNumberInput } from '$lib/format';
-	import { buildSchedule, calculateLoan, isValidAmount, isValidRate, isValidTerm } from '$lib/loan';
+	import {
+		buildSchedule,
+		calculateLoan,
+		interestSavings,
+		isValidAmount,
+		isValidRate,
+		isValidTerm,
+		type RepaymentType
+	} from '$lib/loan';
 	import BrandMark from './BrandMark.svelte';
 	import Field from './Field.svelte';
+	import RepaymentTypeField from './RepaymentTypeField.svelte';
 	import ResultPanel from './ResultPanel.svelte';
 	import ScheduleTable from './ScheduleTable.svelte';
 
@@ -10,6 +19,7 @@
 	let amountRaw = $state('10,000,000');
 	let rateRaw = $state('2');
 	let termRaw = $state('12');
+	let repaymentType = $state<RepaymentType>('annuity');
 
 	let amount = $derived(parseNumberInput(amountRaw));
 	let rate = $derived(parseNumberInput(rateRaw));
@@ -19,17 +29,25 @@
 	let rateInvalid = $derived(!isValidRate(rate));
 	let termInvalid = $derived(!isValidTerm(term));
 
-	// "Тооцоолох" товч байхгүй — оролт өөрчлөгдөх бүрд $derived дахин тооцоолно.
+	// "Тооцоолох" товч байхгүй — оролт буюу эргэн төлөлтийн төрөл өөрчлөгдөх бүрд
+	// $derived дахин тооцоолно.
 	let result = $derived(
 		isValidAmount(amount) && isValidRate(rate) && isValidTerm(term)
-			? calculateLoan(amount, rate, term)
+			? calculateLoan(amount, rate, term, repaymentType)
 			: null
 	);
 
 	// Оролт зөв үед л хуваарь байгуулна — үр дүн байхгүй бол хүснэгт ч харагдахгүй.
 	let schedule = $derived(
 		result && isValidAmount(amount) && isValidRate(rate) && isValidTerm(term)
-			? buildSchedule(amount, rate, term)
+			? buildSchedule(amount, rate, term, repaymentType)
+			: null
+	);
+
+	// Хэмнэлт нь сонгосон аргаас хамаарахгүй — хоёр аргын нийт хүүгийн зөрүү.
+	let savings = $derived(
+		isValidAmount(amount) && isValidRate(rate) && isValidTerm(term)
+			? interestSavings(amount, rate, term)
 			: null
 	);
 
@@ -137,10 +155,14 @@
 					oninput={(event) =>
 						handleInput(event, stripDigits, identity, (next) => (termRaw = next))}
 				/>
+				<RepaymentTypeField
+					value={repaymentType}
+					onchange={(next) => (repaymentType = next)}
+				/>
 			</div>
 		</div>
 
-		<ResultPanel {result} />
+		<ResultPanel {result} type={repaymentType} {savings} />
 	</main>
 
 	{#if schedule}
@@ -148,8 +170,9 @@
 			<div class="schedule-head">
 				<h2 class="schedule-title">Эргэн төлөлтийн хуваарь</h2>
 				<p class="schedule-subtitle desktop-only">
-					Сар бүрийн төлбөр үндсэн зээл болон хүү хэрхэн хуваагдаж, үлдэгдэл хэрхэн буурахыг
-					харуулна.
+					{repaymentType === 'equalPrincipal'
+						? 'Үндсэн төлбөр сар бүр ижил, хүү үлдэгдлээс бодогдох тул нийт төлбөр сар ирэх тусам буурна.'
+						: 'Сар бүрийн төлбөр үндсэн зээл болон хүү хэрхэн хуваагдаж, үлдэгдэл хэрхэн буурахыг харуулна.'}
 				</p>
 				<p class="schedule-subtitle mobile-only">Сар бүрийн төлбөрийн задаргаа, үлдэгдэл.</p>
 			</div>
