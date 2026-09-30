@@ -1,40 +1,83 @@
 /**
- * Зээлийн тэнцүү төлбөрт (аннуитет) тооцоолол.
+ * Зээлийн эргэн төлөлтийн тооцоолол — тэнцүү төлбөрт (аннуитет) ба үндсэн
+ * төлбөр тэнцүү хоёр арга.
  *
  * Энэ файл UI-аас бүрэн хамааралгүй: Svelte, DOM, форматлалт, монгол хэлний
  * текст энд байхгүй. Зөвхөн дугуйлаагүй тоо буцаана — дугуйлалт харуулах үед
  * (`format.ts`) хийгдэнэ.
  */
 
+/**
+ * Эргэн төлөлтийн арга.
+ * - `annuity` — сар бүр ижил дүн төлнө.
+ * - `equalPrincipal` — үндсэн төлбөр сар бүр ижил, хүү үлдэгдлээс бодогдоно.
+ */
+export type RepaymentType = 'annuity' | 'equalPrincipal';
+
 export type LoanResult = {
-	/** Сар бүр төлөх тэнцүү төлбөр. */
+	/**
+	 * Сар бүр төлөх тэнцүү төлбөр. `equalPrincipal` үед ганц "сарын төлбөр"
+	 * гэж байхгүй тул `firstPayment`-тэй тэнцүү утга буцаана.
+	 */
 	monthlyPayment: number;
 	/** Хугацааны туршид төлөх нийт хүү. */
 	totalInterest: number;
 	/** Үндсэн зээл + нийт хүү. */
 	totalPayment: number;
+	/** Эхний сарын төлбөр. Аннуитет үед `monthlyPayment`-тэй тэнцүү. */
+	firstPayment: number;
+	/** Сүүлийн сарын төлбөр. Аннуитет үед `monthlyPayment`-тэй тэнцүү. */
+	lastPayment: number;
 };
 
 /**
- * Аннуитетийн томьёо: `P = L·r / (1 − (1+r)^−n)`, `r = сарын хүү / 100`.
- * `r = 0` үед `P = L / n`.
+ * Аннуитет: `P = L·r / (1 − (1+r)^−n)`, `r = сарын хүү / 100`. `r = 0` үед `P = L / n`.
+ *
+ * Үндсэн төлбөр тэнцүү: үндсэн зээл сар бүр `L/n`, хүү нь буурч буй үлдэгдлээс
+ * бодогдоно. Тиймээс `эхний төлбөр = L/n + L·r`, `сүүлийн төлбөр = L/n · (1+r)`,
+ * нийт хүү нь `r·L·(n+1)/2`.
  *
  * @param amount Зээлийн хэмжээ (₮)
  * @param monthlyRatePercent Сарын хүү (%)
  * @param termMonths Хугацаа (сар)
+ * @param type Эргэн төлөлтийн арга — өгөгдмөл нь аннуитет
  */
 export function calculateLoan(
 	amount: number,
 	monthlyRatePercent: number,
-	termMonths: number
+	termMonths: number,
+	type: RepaymentType = 'annuity'
 ): LoanResult {
 	const r = monthlyRatePercent / 100;
+
+	if (type === 'equalPrincipal') {
+		const basePrincipal = amount / termMonths;
+		const firstPayment = basePrincipal + amount * r;
+		const lastPayment = basePrincipal * (1 + r);
+		const totalInterest = (r * amount * (termMonths + 1)) / 2;
+		const totalPayment = amount + totalInterest;
+
+		return {
+			monthlyPayment: firstPayment,
+			totalInterest,
+			totalPayment,
+			firstPayment,
+			lastPayment
+		};
+	}
+
 	const monthlyPayment =
 		r === 0 ? amount / termMonths : (amount * r) / (1 - Math.pow(1 + r, -termMonths));
 	const totalPayment = monthlyPayment * termMonths;
 	const totalInterest = totalPayment - amount;
 
-	return { monthlyPayment, totalInterest, totalPayment };
+	return {
+		monthlyPayment,
+		totalInterest,
+		totalPayment,
+		firstPayment: monthlyPayment,
+		lastPayment: monthlyPayment
+	};
 }
 
 /** Эргэн төлөлтийн хуваарийн нэг мөр — бүх дүн бүхэл төгрөгөөр дугуйлагдсан. */
@@ -62,14 +105,20 @@ export type ScheduleRow = {
  * @param amount Зээлийн хэмжээ (₮)
  * @param monthlyRatePercent Сарын хүү (%)
  * @param termMonths Хугацаа (сар)
+ * @param type Эргэн төлөлтийн арга — өгөгдмөл нь аннуитет
  */
 export function buildSchedule(
 	amount: number,
 	monthlyRatePercent: number,
-	termMonths: number
+	termMonths: number,
+	type: RepaymentType = 'annuity'
 ): ScheduleRow[] {
 	const r = monthlyRatePercent / 100;
-	const payment = Math.round(calculateLoan(amount, monthlyRatePercent, termMonths).monthlyPayment);
+	// Аннуитетэд төлбөр тогтмол, үндсэн төлбөр тэнцүү аргад үндсэн хэсэг нь тогтмол.
+	const fixed =
+		type === 'equalPrincipal'
+			? Math.round(amount / termMonths)
+			: Math.round(calculateLoan(amount, monthlyRatePercent, termMonths).monthlyPayment);
 
 	const rows: ScheduleRow[] = [];
 	let balance = amount;
@@ -84,12 +133,33 @@ export function buildSchedule(
 			break;
 		}
 
-		const principal = payment - interest;
+		// `Math.min` нь жижиг дүн + урт хугацаанд үлдэгдлийг сөрөг болгохоос сэргийлнэ.
+		const principal = type === 'equalPrincipal' ? Math.min(fixed, balance) : fixed - interest;
 		balance -= principal;
-		rows.push({ month, payment, principal, interest, balance });
+		rows.push({ month, payment: principal + interest, principal, interest, balance });
 	}
 
 	return rows;
+}
+
+/**
+ * Үндсэн төлбөр тэнцүү аргаар тооцвол аннуитеттэй харьцуулахад нийт хүү хэдэн
+ * төгрөгөөр бага гарахыг буцаана. Үндсэн төлбөр тэнцүү арга нийт хүү нь
+ * аннуитетээс хэзээ ч их байдаггүй тул үр дүн үргэлж сөрөг биш.
+ *
+ * @param amount Зээлийн хэмжээ (₮)
+ * @param monthlyRatePercent Сарын хүү (%)
+ * @param termMonths Хугацаа (сар)
+ */
+export function interestSavings(
+	amount: number,
+	monthlyRatePercent: number,
+	termMonths: number
+): number {
+	const annuity = calculateLoan(amount, monthlyRatePercent, termMonths, 'annuity');
+	const equal = calculateLoan(amount, monthlyRatePercent, termMonths, 'equalPrincipal');
+
+	return Math.max(0, annuity.totalInterest - equal.totalInterest);
 }
 
 /** Зээлийн хэмжээ 0-оос их бодит тоо байх ёстой. */

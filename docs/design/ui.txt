@@ -43,10 +43,10 @@
 
 ## Canvas
 
-  frame [Canvas] fill=#E3E2DB width=2740 height=2024 layout=none
+  frame [Canvas] fill=#E3E2DB width=2740 height=3580 layout=none
     frame [Artboard — Components] layout=vertical gap=12
       text [Caption] content=КОМПОНЕНТ — FIELD, RESULT ROW fill=#5C6560 fontFamily=Inter fontSize=14 fontWeight=600
-      frame [Components — Field, Result Row] fill=#F1F0EB stroke=#DEDCD4 width=1980 gap=48 padding=48 cornerRadius=20
+      frame [Components — Field, Result Row] fill=#F1F0EB stroke=#DEDCD4 width=2364 gap=48 padding=48 cornerRadius=20
         frame [Field] width=fill_container layout=vertical gap=8
           text [Field Label] content=Зээлийн хэмжээ fill=#5C6560 width=fill_container fontFamily=Inter fontSize=14 fontWeight=500
           frame [Field Box] fill=#FFFFFF stroke=#8E8B80 width=fill_container gap=12 padding=[14,16] cornerRadius=12 justifyContent=space_between alignItems=center
@@ -91,6 +91,13 @@
               text [Cell Principal] content=760,508₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
               text [Cell Interest] content=185,088₮ fill=#141A17 width=110 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
               text [Cell Balance] content=8,493,896₮ fill=#141A17 width=128 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+        frame [Segment Control Context] width=336 layout=vertical gap=12
+          text [Context Caption] content=Segment Option fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=600
+          frame [Segment Track] fill=#F7F6F2 stroke=#DEDCD4 width=fill_container gap=4 padding=4 cornerRadius=12
+            frame [Segment Option] width=fill_container padding=["$space-3","$space-2"] cornerRadius=8 justifyContent=center alignItems=center
+              text [Segment Label] content=Тэнцүү төлбөрт fill=#5C6560 width=fill_container fontFamily=Inter fontSize=14 fontWeight=500 lineHeight=1.3 textAlign=center
+            frame [Segment Option — Сонгогдсон] ←Segment Option fill=#FFFFFF stroke=#248059 width=fill_container padding=["$space-3","$space-2"] cornerRadius=8 justifyContent=center alignItems=center
+              text [Segment Label] content=Үндсэн төлбөр тэнцүү fill=#0F3D2E width=fill_container fontFamily=Inter fontSize=14 fontWeight=600 lineHeight=1.3 textAlign=center
     frame [Artboard — Desktop] layout=vertical gap=12
       text [Caption] content=DESKTOP 1280 — ЗЭЭЛИЙН ХҮҮ ТООЦООЛУУР fill=#5C6560 fontFamily=Inter fontSize=14 fontWeight=600
       frame [Desktop Calculator] fill=#F1F0EB width=1280 layout=vertical gap=48 padding=[40,64,56,64]
@@ -123,6 +130,14 @@
                   text [Field Value] content=10,000,000 fill=#141A17 fontFamily=Inter fontSize=22 fontWeight=600
                   text [Field Unit] content=₮ fill=#5C6560 fontFamily=Inter fontSize=15 fontWeight=500
                 text [Field Hint] content=0-оос их дүн оруулна уу fill=#B4442F width=fill_container(300) fontFamily=Inter fontSize=13 fontWeight=normal
+              frame [Field — Эргэн төлөлтийн төрөл] width=fill_container layout=vertical gap=8
+                text [Field Label] content=Эргэн төлөлтийн төрөл fill=#5C6560 width=fill_container fontFamily=Inter fontSize=14 fontWeight=500
+                frame [Segment Track] fill=#F7F6F2 stroke=#DEDCD4 width=fill_container gap=4 padding=4 cornerRadius=12
+                  frame [Option — Тэнцүү төлбөрт] ←Segment Option fill=#FFFFFF stroke=#248059 width=fill_container padding=["$space-3","$space-2"] cornerRadius=8 justifyContent=center alignItems=center
+                    text [Segment Label] content=Тэнцүү төлбөрт fill=#0F3D2E width=fill_container fontFamily=Inter fontSize=14 fontWeight=600 lineHeight=1.3 textAlign=center
+                  frame [Option — Үндсэн төлбөр тэнцүү] ←Segment Option width=fill_container padding=["$space-3","$space-2"] cornerRadius=8 justifyContent=center alignItems=center
+                    text [Segment Label] content=Үндсэн төлбөр тэнцүү fill=#5C6560 width=fill_container fontFamily=Inter fontSize=14 fontWeight=500 lineHeight=1.3 textAlign=center
+                text [Field Hint] content=Сар бүр ижил дүн төлнө. fill=#5C6560 width=fill_container fontFamily=Inter fontSize=13 fontWeight=normal lineHeight=1.45
           frame [Result Panel] fill=#0F3D2E width=440 layout=vertical padding=32 cornerRadius=20
             text [Hero Label] content=САРЫН ТӨЛБӨР fill=#62D39B fontFamily=Inter fontSize=13 fontWeight=600
             frame [Hero Spacer] width=fill_container height=8
@@ -137,6 +152,13 @@
               text [Result Label] content=Нийт төлөх дүн fill=#A9C6B9 fontFamily=Inter fontSize=15 fontWeight=normal
               text [Result Value] content=11,347,153₮ fill=#62D39B fontFamily=Inter fontSize=20 fontWeight=600
             rectangle [Divider] fill=#1B5943 width=fill_container height=1
+            frame [Savings Block] width=fill_container layout=vertical gap=8 padding=["$space-5",0,0,0]
+              frame [Savings Strip] fill=#1B5943 width=fill_container gap=16 padding=["$space-3","$space-4"] cornerRadius=12 justifyContent=space_between alignItems=center
+                frame [Savings Left] gap=8 alignItems=center
+                  icon [Savings Icon] icon=trending-down fill=#62D39B width=16 height=16
+                  text [Savings Label] content=Хэмнэлт fill=#62D39B fontFamily=Inter fontSize=13 fontWeight=600
+                text [Savings Value] content=47,153₮ fill=#FFFFFF fontFamily=Inter fontSize=20 fontWeight=600
+              text [Savings Caption] content=Хоёр аргын нийт хүүгийн зөрүү. Үндсэн төлбөр тэнцүү аргаар тооцвол нийт хүү ийм дүнгээр бага гарна. fill=#A9C6B9 width=fill_container fontFamily=Inter fontSize=13 fontWeight=normal lineHeight=1.45
             frame [Panel Note] width=fill_container gap=8 padding=[20,0,0,0]
               icon [Note Icon] icon=info fill=#A9C6B9 width=16 height=16
               text [Note Text] content=Тэнцүү төлбөрт (аннуитет) аргаар тооцов. Дүн нь урьдчилсан тооцоо бөгөөд бүхэл төгрөгөөр дугуйлагдсан. fill=#A9C6B9 width=fill_container fontFamily=Inter fontSize=13 fontWeight=normal lineHeight=1.45
@@ -252,6 +274,14 @@
               text [Field Value] content=10,000,000 fill=#141A17 fontFamily=Inter fontSize=22 fontWeight=600
               text [Field Unit] content=₮ fill=#5C6560 fontFamily=Inter fontSize=15 fontWeight=500
             text [Field Hint] content=0-оос их дүн оруулна уу fill=#B4442F width=fill_container(300) fontFamily=Inter fontSize=13 fontWeight=normal
+          frame [Field — Эргэн төлөлтийн төрөл] width=fill_container layout=vertical gap=8
+            text [Field Label] content=Эргэн төлөлтийн төрөл fill=#5C6560 width=fill_container fontFamily=Inter fontSize=14 fontWeight=500
+            frame [Segment Track] fill=#F7F6F2 stroke=#DEDCD4 width=fill_container gap=4 padding=4 cornerRadius=12
+              frame [Option — Тэнцүү төлбөрт] ←Segment Option fill=#FFFFFF stroke=#248059 width=fill_container padding=["$space-3","$space-2"] cornerRadius=8 justifyContent=center alignItems=center
+                text [Segment Label] content=Тэнцүү төлбөрт fill=#0F3D2E width=fill_container fontFamily=Inter fontSize=13 fontWeight=600 lineHeight=1.3 textAlign=center
+              frame [Option — Үндсэн төлбөр тэнцүү] ←Segment Option width=fill_container padding=["$space-3","$space-2"] cornerRadius=8 justifyContent=center alignItems=center
+                text [Segment Label] content=Үндсэн төлбөр тэнцүү fill=#5C6560 width=fill_container fontFamily=Inter fontSize=13 fontWeight=500 lineHeight=1.3 textAlign=center
+            text [Field Hint] content=Сар бүр ижил дүн төлнө. fill=#5C6560 width=fill_container fontFamily=Inter fontSize=13 fontWeight=normal lineHeight=1.45
         frame [Result Panel] fill=#0F3D2E width=fill_container layout=vertical padding=20 cornerRadius=20
           text [Hero Label] content=САРЫН ТӨЛБӨР fill=#62D39B fontFamily=Inter fontSize=13 fontWeight=600
           frame [Hero Spacer] width=fill_container height=6
@@ -266,6 +296,13 @@
             text [Result Label] content=Нийт төлөх дүн fill=#A9C6B9 fontFamily=Inter fontSize=14 fontWeight=normal
             text [Result Value] content=11,347,153₮ fill=#62D39B fontFamily=Inter fontSize=18 fontWeight=600
           rectangle [Divider] fill=#1B5943 width=fill_container height=1
+          frame [Savings Block] width=fill_container layout=vertical gap=8 padding=["$space-4",0,0,0]
+            frame [Savings Strip] fill=#1B5943 width=fill_container gap=16 padding=["$space-3","$space-4"] cornerRadius=12 justifyContent=space_between alignItems=center
+              frame [Savings Left] gap=8 alignItems=center
+                icon [Savings Icon] icon=trending-down fill=#62D39B width=16 height=16
+                text [Savings Label] content=Хэмнэлт fill=#62D39B fontFamily=Inter fontSize=13 fontWeight=600
+              text [Savings Value] content=47,153₮ fill=#FFFFFF fontFamily=Inter fontSize=18 fontWeight=600
+            text [Savings Caption] content=Хоёр аргын нийт хүүгийн зөрүү. Үндсэн төлбөр тэнцүү аргаар нийт хүү ийм дүнгээр бага гарна. fill=#A9C6B9 width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
           frame [Panel Note] width=fill_container gap=8 padding=[16,0,0,0]
             icon [Note Icon] icon=info fill=#A9C6B9 width=15 height=15
             text [Note Text] content=Тэнцүү төлбөрт (аннуитет) аргаар тооцсон урьдчилсан дүн. fill=#A9C6B9 width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
@@ -385,6 +422,14 @@
               text [Field Value] content=10,000,000 fill=#141A17 fontFamily=Inter fontSize=22 fontWeight=600
               text [Field Unit] content=₮ fill=#5C6560 fontFamily=Inter fontSize=15 fontWeight=500
             text [Field Hint] content=0-оос их дүн оруулна уу fill=#B4442F width=fill_container(300) fontFamily=Inter fontSize=13 fontWeight=normal
+          frame [Field — Эргэн төлөлтийн төрөл] width=fill_container layout=vertical gap=8
+            text [Field Label] content=Эргэн төлөлтийн төрөл fill=#5C6560 width=fill_container fontFamily=Inter fontSize=14 fontWeight=500
+            frame [Segment Track] fill=#F7F6F2 stroke=#DEDCD4 width=fill_container gap=4 padding=4 cornerRadius=12
+              frame [Option — Тэнцүү төлбөрт] ←Segment Option fill=#FFFFFF stroke=#248059 width=fill_container padding=["$space-3","$space-2"] cornerRadius=8 justifyContent=center alignItems=center
+                text [Segment Label] content=Тэнцүү төлбөрт fill=#0F3D2E width=fill_container fontFamily=Inter fontSize=13 fontWeight=600 lineHeight=1.3 textAlign=center
+              frame [Option — Үндсэн төлбөр тэнцүү] ←Segment Option width=fill_container padding=["$space-3","$space-2"] cornerRadius=8 justifyContent=center alignItems=center
+                text [Segment Label] content=Үндсэн төлбөр тэнцүү fill=#5C6560 width=fill_container fontFamily=Inter fontSize=13 fontWeight=500 lineHeight=1.3 textAlign=center
+            text [Field Hint] content=Сар бүр ижил дүн төлнө. fill=#5C6560 width=fill_container fontFamily=Inter fontSize=13 fontWeight=normal lineHeight=1.45
         frame [Result Panel] fill=#0F3D2E width=fill_container layout=vertical padding=20 cornerRadius=20
           text [Hero Label] content=САРЫН ТӨЛБӨР fill=#62D39B fontFamily=Inter fontSize=13 fontWeight=600
           frame [Hero Spacer] width=fill_container height=6
@@ -399,6 +444,13 @@
             text [Result Label] content=Нийт төлөх дүн fill=#A9C6B9 fontFamily=Inter fontSize=14 fontWeight=normal
             text [Result Value] content=11,347,153₮ fill=#62D39B fontFamily=Inter fontSize=18 fontWeight=600
           rectangle [Divider] fill=#1B5943 width=fill_container height=1
+          frame [Savings Block] width=fill_container layout=vertical gap=8 padding=["$space-4",0,0,0]
+            frame [Savings Strip] fill=#1B5943 width=fill_container gap=16 padding=["$space-3","$space-4"] cornerRadius=12 justifyContent=space_between alignItems=center
+              frame [Savings Left] gap=8 alignItems=center
+                icon [Savings Icon] icon=trending-down fill=#62D39B width=16 height=16
+                text [Savings Label] content=Хэмнэлт fill=#62D39B fontFamily=Inter fontSize=13 fontWeight=600
+              text [Savings Value] content=47,153₮ fill=#FFFFFF fontFamily=Inter fontSize=18 fontWeight=600
+            text [Savings Caption] content=Хоёр аргын нийт хүүгийн зөрүү. Үндсэн төлбөр тэнцүү аргаар нийт хүү ийм дүнгээр бага гарна. fill=#A9C6B9 width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
           frame [Panel Note] width=fill_container gap=8 padding=[16,0,0,0]
             icon [Note Icon] icon=info fill=#A9C6B9 width=15 height=15
             text [Note Text] content=Тэнцүү төлбөрт (аннуитет) аргаар тооцсон урьдчилсан дүн. fill=#A9C6B9 width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
@@ -518,6 +570,14 @@
               text [Field Value] content=10,000,000 fill=#141A17 fontFamily=Inter fontSize=22 fontWeight=600
               text [Field Unit] content=₮ fill=#5C6560 fontFamily=Inter fontSize=15 fontWeight=500
             text [Field Hint] content=0-оос их дүн оруулна уу fill=#B4442F width=fill_container(300) fontFamily=Inter fontSize=13 fontWeight=normal
+          frame [Field — Эргэн төлөлтийн төрөл] width=fill_container layout=vertical gap=8
+            text [Field Label] content=Эргэн төлөлтийн төрөл fill=#5C6560 width=fill_container fontFamily=Inter fontSize=14 fontWeight=500
+            frame [Segment Track] fill=#F7F6F2 stroke=#DEDCD4 width=fill_container gap=4 padding=4 cornerRadius=12
+              frame [Option — Тэнцүү төлбөрт] ←Segment Option fill=#FFFFFF stroke=#248059 width=fill_container padding=["$space-3","$space-2"] cornerRadius=8 justifyContent=center alignItems=center
+                text [Segment Label] content=Тэнцүү төлбөрт fill=#0F3D2E width=fill_container fontFamily=Inter fontSize=13 fontWeight=600 lineHeight=1.3 textAlign=center
+              frame [Option — Үндсэн төлбөр тэнцүү] ←Segment Option width=fill_container padding=["$space-3","$space-2"] cornerRadius=8 justifyContent=center alignItems=center
+                text [Segment Label] content=Үндсэн төлбөр тэнцүү fill=#5C6560 width=fill_container fontFamily=Inter fontSize=13 fontWeight=500 lineHeight=1.3 textAlign=center
+            text [Field Hint] content=Сар бүр ижил дүн төлнө. fill=#5C6560 width=fill_container fontFamily=Inter fontSize=13 fontWeight=normal lineHeight=1.45
         frame [Result Panel] fill=#0F3D2E width=fill_container layout=vertical padding=20 cornerRadius=20
           text [Hero Label] content=САРЫН ТӨЛБӨР fill=#62D39B fontFamily=Inter fontSize=13 fontWeight=600
           frame [Hero Spacer] width=fill_container height=6
@@ -532,6 +592,195 @@
             text [Result Label] content=Нийт төлөх дүн fill=#A9C6B9 fontFamily=Inter fontSize=14 fontWeight=normal
             text [Result Value] content=— fill=#A9C6B9 fontFamily=Inter fontSize=18 fontWeight=600
           rectangle [Divider] fill=#1B5943 width=fill_container height=1
+          frame [Savings Block] width=fill_container layout=vertical gap=8 padding=["$space-4",0,0,0]
+            frame [Savings Strip] fill=#1B5943 width=fill_container gap=16 padding=["$space-3","$space-4"] cornerRadius=12 justifyContent=space_between alignItems=center
+              frame [Savings Left] gap=8 alignItems=center
+                icon [Savings Icon] icon=trending-down fill=#62D39B width=16 height=16
+                text [Savings Label] content=Хэмнэлт fill=#62D39B fontFamily=Inter fontSize=13 fontWeight=600
+              text [Savings Value] content=— fill=#FFFFFF fontFamily=Inter fontSize=18 fontWeight=600
           frame [Panel Note] width=fill_container gap=8 padding=[16,0,0,0]
             icon [Note Icon] icon=info fill=#A9C6B9 width=15 height=15
             text [Note Text] content=Утга зөв болмогц үр дүн шууд тооцоологдоно. fill=#A9C6B9 width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+    frame [Artboard — Desktop (Үндсэн төлбөр тэнцүү)] layout=vertical gap=12
+      text [Caption] content=DESKTOP 1280 — ҮНДСЭН ТӨЛБӨР ТЭНЦҮҮ fill=#5C6560 fontFamily=Inter fontSize=14 fontWeight=600
+      frame [Desktop Calculator] fill=#F1F0EB width=1280 layout=vertical gap=48 padding=[40,64,56,64]
+        frame [Header] width=fill_container justifyContent=space_between alignItems=center
+          frame [Brand] gap=8 alignItems=center
+            icon [Brand Mark] icon=chart-no-axes-combined fill=#248059 width=22 height=22
+            text [Brand Name] content=NetCapital fill=#141A17 fontFamily=Inter fontSize=19 fontWeight=700
+          text [Header Note] content=Зээлийн урьдчилсан тооцоо fill=#5C6560 fontFamily=Inter fontSize=15 fontWeight=normal
+        frame [Main] width=fill_container gap=32
+          frame [Form Column] width=fill_container layout=vertical gap=24
+            frame [Intro] width=fill_container layout=vertical gap=12
+              text [Page Title] content=Зээлийн хүү тооцоолуур fill=#141A17 width=fill_container fontFamily=Inter fontSize=34 fontWeight=700 lineHeight=1.15
+              text [Page Subtitle] content=Зээлийн хэмжээ, сарын хүү, хугацаагаа оруулаад сар бүр төлөх төлбөр болон нийт хүүгээ шууд харна уу. fill=#5C6560 width=fill_container fontFamily=Inter fontSize=16 fontWeight=normal lineHeight=1.5
+            frame [Form Card] fill=#FFFFFF stroke=#DEDCD4 width=fill_container layout=vertical gap=24 padding=32 cornerRadius=20
+              frame [Field — Зээлийн хэмжээ] ←Field width=fill_container layout=vertical gap=8
+                text [Field Label] content=Зээлийн хэмжээ fill=#5C6560 width=fill_container fontFamily=Inter fontSize=14 fontWeight=500
+                frame [Field Box] fill=#FFFFFF stroke=#8E8B80 width=fill_container gap=12 padding=[14,16] cornerRadius=12 justifyContent=space_between alignItems=center
+                  text [Field Value] content=10,000,000 fill=#141A17 fontFamily=Inter fontSize=22 fontWeight=600
+                  text [Field Unit] content=₮ fill=#5C6560 fontFamily=Inter fontSize=15 fontWeight=500
+                text [Field Hint] content=0-оос их дүн оруулна уу fill=#B4442F width=fill_container(300) fontFamily=Inter fontSize=13 fontWeight=normal
+              frame [Field — Сарын хүү] ←Field width=fill_container layout=vertical gap=8
+                text [Field Label] content=Сарын хүү fill=#5C6560 width=fill_container fontFamily=Inter fontSize=14 fontWeight=500
+                frame [Field Box] fill=#FFFFFF stroke=#8E8B80 width=fill_container gap=12 padding=[14,16] cornerRadius=12 justifyContent=space_between alignItems=center
+                  text [Field Value] content=10,000,000 fill=#141A17 fontFamily=Inter fontSize=22 fontWeight=600
+                  text [Field Unit] content=₮ fill=#5C6560 fontFamily=Inter fontSize=15 fontWeight=500
+                text [Field Hint] content=0-оос их дүн оруулна уу fill=#B4442F width=fill_container(300) fontFamily=Inter fontSize=13 fontWeight=normal
+              frame [Field — Хугацаа] ←Field width=fill_container layout=vertical gap=8
+                text [Field Label] content=Хугацаа fill=#5C6560 width=fill_container fontFamily=Inter fontSize=14 fontWeight=500
+                frame [Field Box] fill=#FFFFFF stroke=#8E8B80 width=fill_container gap=12 padding=[14,16] cornerRadius=12 justifyContent=space_between alignItems=center
+                  text [Field Value] content=10,000,000 fill=#141A17 fontFamily=Inter fontSize=22 fontWeight=600
+                  text [Field Unit] content=₮ fill=#5C6560 fontFamily=Inter fontSize=15 fontWeight=500
+                text [Field Hint] content=0-оос их дүн оруулна уу fill=#B4442F width=fill_container(300) fontFamily=Inter fontSize=13 fontWeight=normal
+              frame [Field — Эргэн төлөлтийн төрөл] width=fill_container layout=vertical gap=8
+                text [Field Label] content=Эргэн төлөлтийн төрөл fill=#5C6560 width=fill_container fontFamily=Inter fontSize=14 fontWeight=500
+                frame [Segment Track] fill=#F7F6F2 stroke=#DEDCD4 width=fill_container gap=4 padding=4 cornerRadius=12
+                  frame [Option — Тэнцүү төлбөрт] ←Segment Option width=fill_container padding=["$space-3","$space-2"] cornerRadius=8 justifyContent=center alignItems=center
+                    text [Segment Label] content=Тэнцүү төлбөрт fill=#5C6560 width=fill_container fontFamily=Inter fontSize=14 fontWeight=500 lineHeight=1.3 textAlign=center
+                  frame [Option — Үндсэн төлбөр тэнцүү] ←Segment Option fill=#FFFFFF stroke=#248059 width=fill_container padding=["$space-3","$space-2"] cornerRadius=8 justifyContent=center alignItems=center
+                    text [Segment Label] content=Үндсэн төлбөр тэнцүү fill=#0F3D2E width=fill_container fontFamily=Inter fontSize=14 fontWeight=600 lineHeight=1.3 textAlign=center
+                text [Field Hint] content=Үндсэн төлбөр сар бүр ижил, хүү үлдэгдлээс бодогдоно. fill=#5C6560 width=fill_container fontFamily=Inter fontSize=13 fontWeight=normal lineHeight=1.45
+          frame [Result Panel] fill=#0F3D2E width=440 layout=vertical padding=32 cornerRadius=20
+            text [Hero Label] content=ЭХНИЙ САРЫН ТӨЛБӨР fill=#62D39B fontFamily=Inter fontSize=13 fontWeight=600
+            frame [Hero Spacer] width=fill_container height=8
+            text [Hero Value] content=1,033,333₮ fill=#FFFFFF width=fill_container fontFamily=Inter fontSize=44 fontWeight=700 lineHeight=1.1
+            frame [Hero Spacer 2] width=fill_container height=24
+            rectangle [Divider] fill=#1B5943 width=fill_container height=1
+            frame [Result — Сүүлийн сарын төлбөр] ←Result Row width=fill_container gap=16 padding=[16,0] justifyContent=space_between alignItems=center
+              text [Result Label] content=Сүүлийн сарын төлбөр fill=#A9C6B9 fontFamily=Inter fontSize=15 fontWeight=normal
+              text [Result Value] content=850,004₮ fill=#FFFFFF fontFamily=Inter fontSize=20 fontWeight=600
+            rectangle [Divider] fill=#1B5943 width=fill_container height=1
+            frame [Result — Нийт хүү] ←Result Row width=fill_container gap=16 padding=[16,0] justifyContent=space_between alignItems=center
+              text [Result Label] content=Нийт хүү fill=#A9C6B9 fontFamily=Inter fontSize=15 fontWeight=normal
+              text [Result Value] content=1,300,000₮ fill=#FFFFFF fontFamily=Inter fontSize=20 fontWeight=600
+            rectangle [Divider] fill=#1B5943 width=fill_container height=1
+            frame [Result — Нийт төлөх дүн] ←Result Row width=fill_container gap=16 padding=[16,0] justifyContent=space_between alignItems=center
+              text [Result Label] content=Нийт төлөх дүн fill=#A9C6B9 fontFamily=Inter fontSize=15 fontWeight=normal
+              text [Result Value] content=11,300,000₮ fill=#62D39B fontFamily=Inter fontSize=20 fontWeight=600
+            rectangle [Divider] fill=#1B5943 width=fill_container height=1
+            frame [Savings Block] width=fill_container layout=vertical gap=8 padding=["$space-5",0,0,0]
+              frame [Savings Strip] fill=#1B5943 width=fill_container gap=16 padding=["$space-3","$space-4"] cornerRadius=12 justifyContent=space_between alignItems=center
+                frame [Savings Left] gap=8 alignItems=center
+                  icon [Savings Icon] icon=trending-down fill=#62D39B width=16 height=16
+                  text [Savings Label] content=Хэмнэлт fill=#62D39B fontFamily=Inter fontSize=13 fontWeight=600
+                text [Savings Value] content=47,153₮ fill=#FFFFFF fontFamily=Inter fontSize=20 fontWeight=600
+              text [Savings Caption] content=Хоёр аргын нийт хүүгийн зөрүү. Тэнцүү төлбөрт аргатай харьцуулахад нийт хүү ийм дүнгээр бага гарлаа. fill=#A9C6B9 width=fill_container fontFamily=Inter fontSize=13 fontWeight=normal lineHeight=1.45
+            frame [Panel Note] width=fill_container gap=8 padding=[20,0,0,0]
+              icon [Note Icon] icon=info fill=#A9C6B9 width=16 height=16
+              text [Note Text] content=Үндсэн төлбөр тэнцүү аргаар тооцов. Дүн нь урьдчилсан тооцоо бөгөөд бүхэл төгрөгөөр дугуйлагдсан. fill=#A9C6B9 width=fill_container fontFamily=Inter fontSize=13 fontWeight=normal lineHeight=1.45
+        frame [Schedule Section] fill=#FFFFFF stroke=#DEDCD4 width=fill_container layout=vertical gap=24 padding=32 cornerRadius=20
+          frame [Section Head] width=fill_container layout=vertical gap=4
+            text [Section Title] content=Эргэн төлөлтийн хуваарь fill=#141A17 width=fill_container fontFamily=Inter fontSize=20 fontWeight=600
+            text [Section Subtitle] content=Үндсэн төлбөр сар бүр ижил, хүү үлдэгдлээс бодогдох тул нийт төлбөр сар ирэх тусам буурна. fill=#5C6560 width=fill_container fontFamily=Inter fontSize=13 fontWeight=normal lineHeight=1.45
+          frame [Schedule Table] width=fill_container layout=vertical
+            frame [Header Row] ←Schedule Row gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=САР fill=#5C6560 width=90 fontFamily=Inter fontSize=12 fontWeight=600
+              text [Cell Payment] content=ТӨЛБӨР fill=#5C6560 width=230 fontFamily=Inter fontSize=12 fontWeight=600 textAlign=right
+              text [Cell Principal] content=ҮНДСЭН ТӨЛБӨР fill=#5C6560 width=250 fontFamily=Inter fontSize=12 fontWeight=600 textAlign=right
+              text [Cell Interest] content=ХҮҮ fill=#5C6560 width=200 fontFamily=Inter fontSize=12 fontWeight=600 textAlign=right
+              text [Cell Balance] content=ҮЛДЭГДЭЛ fill=#5C6560 width=246 fontFamily=Inter fontSize=12 fontWeight=600 textAlign=right
+            rectangle [Header Divider] fill=#DEDCD4 width=fill_container height=1
+            frame [Row 1] ←Schedule Row gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=1 fill=#5C6560 width=90 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=1,033,333₮ fill=#141A17 width=230 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=833,333₮ fill=#141A17 width=250 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=200,000₮ fill=#141A17 width=200 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=9,166,667₮ fill=#141A17 width=246 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+            frame [Row 2] ←Schedule Row fill=#FAF9F6 gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=2 fill=#5C6560 width=90 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=1,016,666₮ fill=#141A17 width=230 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=833,333₮ fill=#141A17 width=250 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=183,333₮ fill=#141A17 width=200 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=8,333,334₮ fill=#141A17 width=246 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+            frame [Row 3] ←Schedule Row gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=3 fill=#5C6560 width=90 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=1,000,000₮ fill=#141A17 width=230 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=833,333₮ fill=#141A17 width=250 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=166,667₮ fill=#141A17 width=200 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=7,500,001₮ fill=#141A17 width=246 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+            frame [Row 4] ←Schedule Row fill=#FAF9F6 gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=4 fill=#5C6560 width=90 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=983,333₮ fill=#141A17 width=230 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=833,333₮ fill=#141A17 width=250 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=150,000₮ fill=#141A17 width=200 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=6,666,668₮ fill=#141A17 width=246 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+            frame [Row 5] ←Schedule Row gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=5 fill=#5C6560 width=90 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=966,666₮ fill=#141A17 width=230 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=833,333₮ fill=#141A17 width=250 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=133,333₮ fill=#141A17 width=200 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=5,833,335₮ fill=#141A17 width=246 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+            frame [Row 6] ←Schedule Row fill=#FAF9F6 gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=6 fill=#5C6560 width=90 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=950,000₮ fill=#141A17 width=230 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=833,333₮ fill=#141A17 width=250 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=116,667₮ fill=#141A17 width=200 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=5,000,002₮ fill=#141A17 width=246 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+            frame [Row 7] ←Schedule Row gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=7 fill=#5C6560 width=90 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=933,333₮ fill=#141A17 width=230 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=833,333₮ fill=#141A17 width=250 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=100,000₮ fill=#141A17 width=200 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=4,166,669₮ fill=#141A17 width=246 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+            frame [Row 8] ←Schedule Row fill=#FAF9F6 gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=8 fill=#5C6560 width=90 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=916,666₮ fill=#141A17 width=230 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=833,333₮ fill=#141A17 width=250 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=83,333₮ fill=#141A17 width=200 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=3,333,336₮ fill=#141A17 width=246 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+            frame [Row 9] ←Schedule Row gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=9 fill=#5C6560 width=90 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=900,000₮ fill=#141A17 width=230 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=833,333₮ fill=#141A17 width=250 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=66,667₮ fill=#141A17 width=200 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=2,500,003₮ fill=#141A17 width=246 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+            frame [Row 10] ←Schedule Row fill=#FAF9F6 gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=10 fill=#5C6560 width=90 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=883,333₮ fill=#141A17 width=230 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=833,333₮ fill=#141A17 width=250 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=50,000₮ fill=#141A17 width=200 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=1,666,670₮ fill=#141A17 width=246 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+            frame [Row 11] ←Schedule Row gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=11 fill=#5C6560 width=90 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=866,666₮ fill=#141A17 width=230 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=833,333₮ fill=#141A17 width=250 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=33,333₮ fill=#141A17 width=200 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=833,337₮ fill=#141A17 width=246 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+            frame [Row 12] ←Schedule Row fill=#FAF9F6 gap=12 padding=["$table-row-y",12] alignItems=center
+              text [Cell Month] content=12 fill=#141A17 width=90 fontFamily=Inter fontSize=14 fontWeight=600
+              text [Cell Payment] content=850,004₮ fill=#141A17 width=230 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Principal] content=833,337₮ fill=#141A17 width=250 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Interest] content=16,667₮ fill=#141A17 width=200 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
+              text [Cell Balance] content=0₮ fill=#248059 width=246 fontFamily=Inter fontSize=14 fontWeight=600 textAlign=right
+    frame [Artboard — Mobile 390 (Үндсэн төлбөр тэнцүү)] layout=vertical gap=12
+      text [Caption] content=MOBILE 390 — ҮНДСЭН ТӨЛБӨР ТЭНЦҮҮ (ҮР ДҮН) fill=#5C6560 fontFamily=Inter fontSize=14 fontWeight=600
+      frame [Mobile Result — Үндсэн төлбөр тэнцүү] fill=#F1F0EB width=390 layout=vertical padding=24
+        frame [Result Panel] fill=#0F3D2E width=fill_container layout=vertical padding=20 cornerRadius=20
+          text [Hero Label] content=ЭХНИЙ САРЫН ТӨЛБӨР fill=#62D39B fontFamily=Inter fontSize=13 fontWeight=600
+          frame [Hero Spacer] width=fill_container height=6
+          text [Hero Value] content=1,033,333₮ fill=#FFFFFF width=fill_container fontFamily=Inter fontSize=36 fontWeight=700 lineHeight=1.1
+          frame [Hero Spacer 2] width=fill_container height=18
+          rectangle [Divider] fill=#1B5943 width=fill_container height=1
+          frame [Result — Сүүлийн сарын төлбөр] ←Result Row width=fill_container gap=16 padding=[14,0] justifyContent=space_between alignItems=center
+            text [Result Label] content=Сүүлийн сарын төлбөр fill=#A9C6B9 fontFamily=Inter fontSize=14 fontWeight=normal
+            text [Result Value] content=850,004₮ fill=#FFFFFF fontFamily=Inter fontSize=18 fontWeight=600
+          rectangle [Divider] fill=#1B5943 width=fill_container height=1
+          frame [Result — Нийт хүү] ←Result Row width=fill_container gap=16 padding=[14,0] justifyContent=space_between alignItems=center
+            text [Result Label] content=Нийт хүү fill=#A9C6B9 fontFamily=Inter fontSize=14 fontWeight=normal
+            text [Result Value] content=1,300,000₮ fill=#FFFFFF fontFamily=Inter fontSize=18 fontWeight=600
+          rectangle [Divider] fill=#1B5943 width=fill_container height=1
+          frame [Result — Нийт төлөх дүн] ←Result Row width=fill_container gap=16 padding=[14,0] justifyContent=space_between alignItems=center
+            text [Result Label] content=Нийт төлөх дүн fill=#A9C6B9 fontFamily=Inter fontSize=14 fontWeight=normal
+            text [Result Value] content=11,300,000₮ fill=#62D39B fontFamily=Inter fontSize=18 fontWeight=600
+          rectangle [Divider] fill=#1B5943 width=fill_container height=1
+          frame [Savings Block] width=fill_container layout=vertical gap=8 padding=["$space-4",0,0,0]
+            frame [Savings Strip] fill=#1B5943 width=fill_container gap=16 padding=["$space-3","$space-4"] cornerRadius=12 justifyContent=space_between alignItems=center
+              frame [Savings Left] gap=8 alignItems=center
+                icon [Savings Icon] icon=trending-down fill=#62D39B width=16 height=16
+                text [Savings Label] content=Хэмнэлт fill=#62D39B fontFamily=Inter fontSize=13 fontWeight=600
+              text [Savings Value] content=47,153₮ fill=#FFFFFF fontFamily=Inter fontSize=18 fontWeight=600
+            text [Savings Caption] content=Хоёр аргын нийт хүүгийн зөрүү. Тэнцүү төлбөрт аргатай харьцуулахад нийт хүү ийм дүнгээр бага гарлаа. fill=#A9C6B9 width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+          frame [Panel Note] width=fill_container gap=8 padding=[16,0,0,0]
+            icon [Note Icon] icon=info fill=#A9C6B9 width=15 height=15
+            text [Note Text] content=Үндсэн төлбөр тэнцүү аргаар тооцсон урьдчилсан дүн. Төлбөр сар ирэх тусам буурна. fill=#A9C6B9 width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45

@@ -1,26 +1,68 @@
 <script lang="ts">
 	import { formatTugrik } from '$lib/format';
-	import type { LoanResult } from '$lib/loan';
+	import type { LoanResult, RepaymentType } from '$lib/loan';
 	import InfoIcon from './InfoIcon.svelte';
+	import TrendingDownIcon from './TrendingDownIcon.svelte';
 
 	/**
-	 * Дизайны `Result Panel`: hero + 3 зураас + 2 үр дүнгийн мөр + тайлбар.
-	 * `result` нь `null` үед (оролт буруу) гурвуулаа `—` болно.
+	 * Дизайны `Result Panel`: hero + үр дүнгийн мөрүүд + хэмнэлтийн зурвас + тайлбар.
+	 * `result` нь `null` үед (оролт буруу) бүх тоо `—` болж, тайлбар өгүүлбэрүүд
+	 * алга болно. Үндсэн төлбөр тэнцүү горимд hero нь эхний сарын төлбөрийг
+	 * уншиж, "Сүүлийн сарын төлбөр" нэмэлт мөр гарна.
 	 */
-	let { result }: { result: LoanResult | null } = $props();
+	let {
+		result,
+		type = 'annuity',
+		savings = null
+	}: { result: LoanResult | null; type?: RepaymentType; savings?: number | null } = $props();
 
 	const EMPTY = '—';
 
-	let monthly = $derived(result ? formatTugrik(result.monthlyPayment) : EMPTY);
+	let equalPrincipal = $derived(type === 'equalPrincipal');
+
+	let hero = $derived(result ? formatTugrik(result.firstPayment) : EMPTY);
+	let last = $derived(result ? formatTugrik(result.lastPayment) : EMPTY);
 	let interest = $derived(result ? formatTugrik(result.totalInterest) : EMPTY);
 	let total = $derived(result ? formatTugrik(result.totalPayment) : EMPTY);
+	let savingsValue = $derived(result && savings !== null ? formatTugrik(savings) : EMPTY);
+
+	let savingsCaptionDesktop = $derived(
+		equalPrincipal
+			? 'Хоёр аргын нийт хүүгийн зөрүү. Тэнцүү төлбөрт аргатай харьцуулахад нийт хүү ийм дүнгээр бага гарлаа.'
+			: 'Хоёр аргын нийт хүүгийн зөрүү. Үндсэн төлбөр тэнцүү аргаар тооцвол нийт хүү ийм дүнгээр бага гарна.'
+	);
+	let savingsCaptionMobile = $derived(
+		equalPrincipal
+			? 'Хоёр аргын нийт хүүгийн зөрүү. Тэнцүү төлбөрт аргатай харьцуулахад нийт хүү ийм дүнгээр бага гарлаа.'
+			: 'Хоёр аргын нийт хүүгийн зөрүү. Үндсэн төлбөр тэнцүү аргаар нийт хүү ийм дүнгээр бага гарна.'
+	);
+
+	let noteDesktop = $derived(
+		equalPrincipal
+			? 'Үндсэн төлбөр тэнцүү аргаар тооцов. Дүн нь урьдчилсан тооцоо бөгөөд бүхэл төгрөгөөр дугуйлагдсан.'
+			: 'Тэнцүү төлбөрт (аннуитет) аргаар тооцов. Дүн нь урьдчилсан тооцоо бөгөөд бүхэл төгрөгөөр дугуйлагдсан.'
+	);
+	let noteMobile = $derived(
+		equalPrincipal
+			? 'Үндсэн төлбөр тэнцүү аргаар тооцсон урьдчилсан дүн. Төлбөр сар ирэх тусам буурна.'
+			: 'Тэнцүү төлбөрт (аннуитет) аргаар тооцсон урьдчилсан дүн.'
+	);
 </script>
 
 <section class="panel" aria-live="polite">
-	<p class="hero-label">САРЫН ТӨЛБӨР</p>
-	<p class="hero-value" class:empty={!result}>{monthly}</p>
+	<p class="hero-label">{equalPrincipal ? 'ЭХНИЙ САРЫН ТӨЛБӨР' : 'САРЫН ТӨЛБӨР'}</p>
+	<p class="hero-value" class:empty={!result}>{hero}</p>
 
 	<hr class="divider" />
+
+	{#if equalPrincipal}
+		<div class="row">
+			<span class="row-label">Сүүлийн сарын төлбөр</span>
+			<span class="row-value" class:empty={!result}>{last}</span>
+		</div>
+
+		<hr class="divider" />
+	{/if}
 
 	<div class="row">
 		<span class="row-label">Нийт хүү</span>
@@ -36,16 +78,25 @@
 
 	<hr class="divider" />
 
+	<div class="savings">
+		<div class="savings-strip">
+			<span class="savings-left">
+				<TrendingDownIcon size={16} />
+				<span class="savings-label">Хэмнэлт</span>
+			</span>
+			<span class="savings-value" class:empty={!result}>{savingsValue}</span>
+		</div>
+		{#if result}
+			<p class="savings-caption desktop-only">{savingsCaptionDesktop}</p>
+			<p class="savings-caption mobile-only">{savingsCaptionMobile}</p>
+		{/if}
+	</div>
+
 	<div class="note">
 		<InfoIcon size={16} />
 		{#if result}
-			<p class="note-text desktop-only">
-				Тэнцүү төлбөрт (аннуитет) аргаар тооцов. Дүн нь урьдчилсан тооцоо бөгөөд бүхэл төгрөгөөр
-				дугуйлагдсан.
-			</p>
-			<p class="note-text mobile-only">
-				Тэнцүү төлбөрт (аннуитет) аргаар тооцсон урьдчилсан дүн.
-			</p>
+			<p class="note-text desktop-only">{noteDesktop}</p>
+			<p class="note-text mobile-only">{noteMobile}</p>
 		{:else}
 			<p class="note-text">Утга зөв болмогц үр дүн шууд тооцоологдоно.</p>
 		{/if}
@@ -130,6 +181,68 @@
 		color: var(--ink-inverse-muted);
 	}
 
+	.savings {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-2);
+		min-width: 0;
+		padding-top: var(--space-4);
+	}
+
+	.savings-strip {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--space-4);
+		min-width: 0;
+		padding: var(--space-3) var(--space-4);
+		background: var(--brand-deep-soft);
+		border-radius: var(--radius-md);
+	}
+
+	.savings-left {
+		display: flex;
+		flex: 0 1 auto;
+		align-items: center;
+		gap: var(--space-2);
+		min-width: 0;
+	}
+
+	.savings-label {
+		min-width: 0;
+		color: var(--accent-bright);
+		font-size: var(--text-hint);
+		font-weight: 600;
+		line-height: 1.3;
+		overflow-wrap: anywhere;
+	}
+
+	.savings-value {
+		flex: 0 1 auto;
+		min-width: 0;
+		color: var(--ink-inverse);
+		font-size: 18px;
+		font-weight: 600;
+		line-height: 1.3;
+		text-align: right;
+		font-variant-numeric: tabular-nums;
+		overflow-wrap: anywhere;
+	}
+
+	.savings-value.empty {
+		color: var(--ink-inverse-muted);
+	}
+
+	.savings-caption {
+		margin: 0;
+		min-width: 0;
+		color: var(--ink-inverse-muted);
+		font-size: 12px;
+		font-weight: normal;
+		line-height: 1.45;
+		overflow-wrap: anywhere;
+	}
+
 	.note {
 		display: flex;
 		align-items: flex-start;
@@ -182,6 +295,18 @@
 
 		.row-value {
 			font-size: var(--text-result);
+		}
+
+		.savings {
+			padding-top: var(--space-5);
+		}
+
+		.savings-value {
+			font-size: var(--text-result);
+		}
+
+		.savings-caption {
+			font-size: var(--text-hint);
 		}
 
 		.note {
