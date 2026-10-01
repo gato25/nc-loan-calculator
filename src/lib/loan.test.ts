@@ -5,7 +5,8 @@ import {
 	interestSavings,
 	isValidAmount,
 	isValidRate,
-	isValidTerm
+	isValidTerm,
+	paymentBreakdown
 } from './loan';
 
 describe('calculateLoan', () => {
@@ -266,6 +267,46 @@ describe('interestSavings', () => {
 		] as const) {
 			expect(interestSavings(amount, rate, term)).toBeGreaterThanOrEqual(0);
 		}
+	});
+});
+
+describe('paymentBreakdown', () => {
+	it('ХАШ 4 — 10,000,000₮ / 2% / 12 сар / аннуитет дээр хүү ≈ 11.9%', () => {
+		const breakdown = paymentBreakdown(10_000_000, 2, 12);
+
+		expect(Number(breakdown.interestShare.toFixed(1))).toBe(11.9);
+		expect(breakdown.totalPrincipal).toBe(10_000_000);
+		expect(breakdown.totalPayment).toBe(breakdown.totalPrincipal + breakdown.totalInterest);
+	});
+
+	it('хоёр хувийн нийлбэр дугуйлаагүйгээр 100', () => {
+		for (const type of ['annuity', 'equalPrincipal'] as const) {
+			const { principalShare, interestShare } = paymentBreakdown(7_500_000, 1.4, 36, type);
+			expect(principalShare + interestShare).toBeCloseTo(100, 10);
+		}
+	});
+
+	it('мөрийн тоо хугацаатай тэнцүү, эхний мөр 1 дүгээр сар', () => {
+		const { months } = paymentBreakdown(10_000_000, 2, 24);
+
+		expect(months.length).toBe(24);
+		expect(months[0].month).toBe(1);
+		expect(months[23].month).toBe(24);
+	});
+
+	it('үндсэн төлбөр тэнцүү аргын хүүгийн хувь аннуитетээс бага', () => {
+		const annuity = paymentBreakdown(10_000_000, 2, 12, 'annuity');
+		const equal = paymentBreakdown(10_000_000, 2, 12, 'equalPrincipal');
+
+		expect(equal.interestShare).toBeLessThan(annuity.interestShare);
+	});
+
+	it('хүү 0 үед бүх төлбөр үндсэн зээл', () => {
+		const { totalInterest, interestShare, principalShare } = paymentBreakdown(12_000_000, 0, 24);
+
+		expect(totalInterest).toBe(0);
+		expect(interestShare).toBe(0);
+		expect(principalShare).toBe(100);
 	});
 });
 
