@@ -7,9 +7,11 @@
 		isValidAmount,
 		isValidRate,
 		isValidTerm,
+		paymentBreakdown,
 		type RepaymentType
 	} from '$lib/loan';
 	import BrandMark from './BrandMark.svelte';
+	import BreakdownChart from './BreakdownChart.svelte';
 	import Field from './Field.svelte';
 	import RepaymentTypeField from './RepaymentTypeField.svelte';
 	import ResultPanel from './ResultPanel.svelte';
@@ -41,6 +43,13 @@
 	let schedule = $derived(
 		result && isValidAmount(amount) && isValidRate(rate) && isValidTerm(term)
 			? buildSchedule(amount, rate, term, repaymentType)
+			: null
+	);
+
+	// График нь хуваарийн дугуйлсан мөрүүдээс гардаг тул доорх хүснэгттэйгээ таарна.
+	let breakdown = $derived(
+		isValidAmount(amount) && isValidRate(rate) && isValidTerm(term)
+			? paymentBreakdown(amount, rate, term, repaymentType)
 			: null
 	);
 
@@ -165,6 +174,26 @@
 		<ResultPanel {result} type={repaymentType} {savings} />
 	</main>
 
+	{#if breakdown}
+		<section class="chart-card">
+			<div class="chart-head">
+				<h2 class="chart-title">Төлбөрийн бүтэц</h2>
+				<p class="chart-subtitle desktop-only">
+					{repaymentType === 'equalPrincipal'
+						? 'Үндсэн төлбөр сар бүр тэнцүү тул багана аажим намсана: хүү үлдэгдлээс бодогдож буурна. Нийт хүү аннуитет аргаас бага.'
+						: 'Сар бүр төлөх дүн үндсэн зээл ба хүүд хэрхэн хуваагдахыг харуулна. Эхний саруудад хүүгийн эзлэх хувь өндөр, хугацаа өнгөрөх тусам буурна.'}
+				</p>
+				<p class="chart-subtitle mobile-only">
+					{repaymentType === 'equalPrincipal'
+						? 'Үндсэн төлбөр тэнцүү тул сарын төлбөр аажим буурна.'
+						: 'Сар бүрийн төлбөр үндсэн зээл ба хүүд хэрхэн хуваагдаж байгааг харуулна.'}
+				</p>
+			</div>
+
+			<BreakdownChart {breakdown} />
+		</section>
+	{/if}
+
 	{#if schedule}
 		<section class="schedule-card">
 			<div class="schedule-head">
@@ -286,6 +315,47 @@
 	}
 
 	/*
+	 * Графикийн карт — хуваарийн карттай ижил хэв маяг. Дотор нь гүйлгэдэг зүйл
+	 * байхгүй тул хэвтээ padding нь блокуудад бус картдаа.
+	 */
+	.chart-card {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-4);
+		min-width: 0;
+		padding: 20px 16px;
+		background: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-lg);
+	}
+
+	.chart-head {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-1);
+		min-width: 0;
+	}
+
+	.chart-title {
+		margin: 0;
+		color: var(--ink);
+		font-size: 17px;
+		font-weight: 600;
+		line-height: 1.2;
+		overflow-wrap: anywhere;
+	}
+
+	.chart-subtitle {
+		margin: 0;
+		min-width: 0;
+		color: var(--ink-muted);
+		font-size: var(--text-hint);
+		font-weight: normal;
+		line-height: 1.45;
+		overflow-wrap: anywhere;
+	}
+
+	/*
 	 * Хуваарийн карт нь main-ий доор бүтэн өргөнөөр. Хэвтээ padding-ыг картад бус
 	 * дотоод блокуудад өгнө — хүснэгт өөрөө картын ирмэг хүртэл дүүрч гүйлгэгдэнэ.
 	 */
@@ -385,6 +455,15 @@
 		.form-card {
 			gap: var(--space-5);
 			padding: var(--space-6);
+		}
+
+		.chart-card {
+			gap: var(--space-5);
+			padding: var(--space-6);
+		}
+
+		.chart-title {
+			font-size: var(--text-result);
 		}
 
 		.schedule-card {
