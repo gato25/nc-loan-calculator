@@ -49,6 +49,13 @@
 
 	--table-row-y: 11px;
 	--table-min-width: 610px;
+
+	--chart-principal: var(--accent);
+	--chart-interest: #c8832e;
+	--chart-bar-radius: 3px;
+	--chart-height-desktop: 180px;
+	--chart-height-mobile: 132px;
+	--text-chart-axis: 11px;
 }
 
 *,

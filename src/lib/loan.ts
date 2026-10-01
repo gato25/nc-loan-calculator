@@ -142,6 +142,71 @@ export function buildSchedule(
 	return rows;
 }
 
+/** Төлбөрийн бүтцийн нэг сар — графикийн нэг багана. */
+export type BreakdownMonth = {
+	/** Сарын дугаар, 1-ээс `termMonths` хүртэл. */
+	month: number;
+	/** Тухайн сарын төлбөрийн үндсэн зээлд ногдох хэсэг. */
+	principal: number;
+	/** Тухайн сарын төлбөрийн хүүд ногдох хэсэг. */
+	interest: number;
+};
+
+/** Нийт төлбөр үндсэн зээл ба хүүд хэрхэн хуваагдах бүтэц. */
+export type PaymentBreakdown = {
+	/** Сар бүрийн задаргаа, `termMonths` мөр. */
+	months: BreakdownMonth[];
+	/** Үндсэн зээлийн нийлбэр. */
+	totalPrincipal: number;
+	/** Хүүгийн нийлбэр. */
+	totalInterest: number;
+	/** Үндсэн зээл + хүү. */
+	totalPayment: number;
+	/** Үндсэн зээлийн нийт төлбөрт эзлэх хувь (0..100), дугуйлаагүй. */
+	principalShare: number;
+	/** Хүүгийн нийт төлбөрт эзлэх хувь (0..100), дугуйлаагүй. */
+	interestShare: number;
+};
+
+/**
+ * Графикт зориулсан төлбөрийн бүтэц. `buildSchedule`-ийн дугуйлсан мөрүүдээс
+ * байгуулагддаг тул графикийн тоо доорх хуваарийн хүснэгттэй үргэлж таарна
+ * (`calculateLoan`-ы дугуйлаагүй дүнгээс хэдэн төгрөгөөр зөрж болно).
+ *
+ * `totalPayment = 0` үед хоёр хувь хоёулаа `0`.
+ *
+ * @param amount Зээлийн хэмжээ (₮)
+ * @param monthlyRatePercent Сарын хүү (%)
+ * @param termMonths Хугацаа (сар)
+ * @param type Эргэн төлөлтийн арга — өгөгдмөл нь аннуитет
+ */
+export function paymentBreakdown(
+	amount: number,
+	monthlyRatePercent: number,
+	termMonths: number,
+	type: RepaymentType = 'annuity'
+): PaymentBreakdown {
+	const rows = buildSchedule(amount, monthlyRatePercent, termMonths, type);
+
+	const months = rows.map(({ month, principal, interest }) => ({ month, principal, interest }));
+	const totalPrincipal = months.reduce((sum, row) => sum + row.principal, 0);
+	const totalInterest = months.reduce((sum, row) => sum + row.interest, 0);
+	const totalPayment = totalPrincipal + totalInterest;
+
+	// Хуваагч 0 үед хувь утгагүй — хоёуланг нь 0 гэж үзнэ.
+	const principalShare = totalPayment === 0 ? 0 : (totalPrincipal / totalPayment) * 100;
+	const interestShare = totalPayment === 0 ? 0 : (totalInterest / totalPayment) * 100;
+
+	return {
+		months,
+		totalPrincipal,
+		totalInterest,
+		totalPayment,
+		principalShare,
+		interestShare
+	};
+}
+
 /**
  * Үндсэн төлбөр тэнцүү аргаар тооцвол аннуитеттэй харьцуулахад нийт хүү хэдэн
  * төгрөгөөр бага гарахыг буцаана. Үндсэн төлбөр тэнцүү арга нийт хүү нь
