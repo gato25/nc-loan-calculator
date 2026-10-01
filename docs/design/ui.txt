@@ -40,13 +40,19 @@
   table-row-y: 11
   table-min-width: 610
   surface-stripe: #FAF9F6
+  chart-principal: $accent
+  chart-interest: #C8832E
+  chart-bar-radius: 3
+  chart-height-desktop: 180
+  chart-height-mobile: 132
+  text-chart-axis: 11
 
 ## Canvas
 
-  frame [Canvas] fill=#E3E2DB width=2740 height=3580 layout=none
+  frame [Canvas] fill=#E3E2DB width=2832 height=4472 layout=none
     frame [Artboard — Components] layout=vertical gap=12
-      text [Caption] content=КОМПОНЕНТ — FIELD, RESULT ROW fill=#5C6560 fontFamily=Inter fontSize=14 fontWeight=600
-      frame [Components — Field, Result Row] fill=#F1F0EB stroke=#DEDCD4 width=2364 gap=48 padding=48 cornerRadius=20
+      text [Caption] content=КОМПОНЕНТ — FIELD, RESULT ROW, CHART LEGEND fill=#5C6560 fontFamily=Inter fontSize=14 fontWeight=600
+      frame [Components — Field, Result Row] fill=#F1F0EB stroke=#DEDCD4 width=2712 gap=48 padding=48 cornerRadius=20
         frame [Field] width=fill_container layout=vertical gap=8
           text [Field Label] content=Зээлийн хэмжээ fill=#5C6560 width=fill_container fontFamily=Inter fontSize=14 fontWeight=500
           frame [Field Box] fill=#FFFFFF stroke=#8E8B80 width=fill_container gap=12 padding=[14,16] cornerRadius=12 justifyContent=space_between alignItems=center
@@ -98,6 +104,13 @@
               text [Segment Label] content=Тэнцүү төлбөрт fill=#5C6560 width=fill_container fontFamily=Inter fontSize=14 fontWeight=500 lineHeight=1.3 textAlign=center
             frame [Segment Option — Сонгогдсон] ←Segment Option fill=#FFFFFF stroke=#248059 width=fill_container padding=["$space-3","$space-2"] cornerRadius=8 justifyContent=center alignItems=center
               text [Segment Label] content=Үндсэн төлбөр тэнцүү fill=#0F3D2E width=fill_container fontFamily=Inter fontSize=14 fontWeight=600 lineHeight=1.3 textAlign=center
+        frame [Chart Legend Context] fill=#FFFFFF stroke=#DEDCD4 width=300 layout=vertical padding=24 cornerRadius=12
+          frame [Chart Legend Item] width=fill_container gap=12
+            frame [Swatch Holder] layout=vertical padding=[4,0,0,0]
+              rectangle [Legend Swatch] fill=$accent width=12 height=12 cornerRadius=4
+            frame [Legend Text] layout=vertical gap=2
+              text [Legend Label] content=Үндсэн төлбөр fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+              text [Legend Value] content=10,000,000₮ · 88.1% fill=#141A17 fontFamily=Inter fontSize=15 fontWeight=600
     frame [Artboard — Desktop] layout=vertical gap=12
       text [Caption] content=DESKTOP 1280 — ЗЭЭЛИЙН ХҮҮ ТООЦООЛУУР fill=#5C6560 fontFamily=Inter fontSize=14 fontWeight=600
       frame [Desktop Calculator] fill=#F1F0EB width=1280 layout=vertical gap=48 padding=[40,64,56,64]
@@ -162,6 +175,66 @@
             frame [Panel Note] width=fill_container gap=8 padding=[20,0,0,0]
               icon [Note Icon] icon=info fill=#A9C6B9 width=16 height=16
               text [Note Text] content=Тэнцүү төлбөрт (аннуитет) аргаар тооцов. Дүн нь урьдчилсан тооцоо бөгөөд бүхэл төгрөгөөр дугуйлагдсан. fill=#A9C6B9 width=fill_container fontFamily=Inter fontSize=13 fontWeight=normal lineHeight=1.45
+        frame [Composition Section] fill=#FFFFFF stroke=#DEDCD4 width=fill_container layout=vertical gap=24 padding=32 cornerRadius=20
+          frame [Section Head] width=fill_container layout=vertical gap=4
+            text [Section Title] content=Төлбөрийн бүтэц fill=#141A17 width=fill_container fontFamily=Inter fontSize=20 fontWeight=600
+            text [Section Subtitle] content=Сар бүр төлөх дүн үндсэн зээл ба хүүд хэрхэн хуваагдахыг харуулна. Эхний саруудад хүүгийн эзлэх хувь өндөр, хугацаа өнгөрөх тусам буурна. fill=#5C6560 width=fill_container fontFamily=Inter fontSize=13 fontWeight=normal lineHeight=1.45
+          frame [Legend] width=fill_container gap=48
+            frame [Legend — Үндсэн төлбөр] ←Chart Legend Item width=fit_content gap=12
+              frame [Swatch Holder] layout=vertical padding=[4,0,0,0]
+                rectangle [Legend Swatch] fill=$accent width=12 height=12 cornerRadius=4
+              frame [Legend Text] layout=vertical gap=2
+                text [Legend Label] content=Үндсэн төлбөр fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+                text [Legend Value] content=10,000,000₮ · 88.1% fill=#141A17 fontFamily=Inter fontSize=15 fontWeight=600
+            frame [Legend — Нийт хүү] ←Chart Legend Item width=fit_content gap=12
+              frame [Swatch Holder] layout=vertical padding=[4,0,0,0]
+                rectangle [Legend Swatch] fill=$accent width=12 height=12 cornerRadius=4
+              frame [Legend Text] layout=vertical gap=2
+                text [Legend Label] content=Үндсэн төлбөр fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+                text [Legend Value] content=10,000,000₮ · 88.1% fill=#141A17 fontFamily=Inter fontSize=15 fontWeight=600
+          frame [Chart] width=fill_container layout=vertical gap=8
+            frame [Plot] width=fill_container gap=15 alignItems=end
+              frame [Bar 1] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=38 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=142
+              frame [Bar 2] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=35 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=145
+              frame [Bar 3] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=32 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=148
+              frame [Bar 4] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=29 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=151
+              frame [Bar 5] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=26 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=154
+              frame [Bar 6] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=23 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=157
+              frame [Bar 7] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=20 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=160
+              frame [Bar 8] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=17 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=163
+              frame [Bar 9] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=14 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=166
+              frame [Bar 10] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=10 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=170
+              frame [Bar 11] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=7 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=173
+              frame [Bar 12] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=4 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=176
+            rectangle [Baseline] fill=#8E8B80 width=fill_container height=1
+            frame [Axis] width=fill_container
+              text [Axis 1] content=1 сар fill=#5C6560 width=fill_container fontFamily=Inter fontSize=11 fontWeight=normal
+              text [Axis 2] content=6 сар fill=#5C6560 width=fill_container fontFamily=Inter fontSize=11 fontWeight=normal textAlign=center
+              text [Axis 3] content=12 сар fill=#5C6560 width=fill_container fontFamily=Inter fontSize=11 fontWeight=normal textAlign=right
         frame [Schedule Section] fill=#FFFFFF stroke=#DEDCD4 width=fill_container layout=vertical gap=24 padding=32 cornerRadius=20
           frame [Section Head] width=fill_container layout=vertical gap=4
             text [Section Title] content=Эргэн төлөлтийн хуваарь fill=#141A17 width=fill_container fontFamily=Inter fontSize=20 fontWeight=600
@@ -306,6 +379,66 @@
           frame [Panel Note] width=fill_container gap=8 padding=[16,0,0,0]
             icon [Note Icon] icon=info fill=#A9C6B9 width=15 height=15
             text [Note Text] content=Тэнцүү төлбөрт (аннуитет) аргаар тооцсон урьдчилсан дүн. fill=#A9C6B9 width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+        frame [Composition Section] fill=#FFFFFF stroke=#DEDCD4 width=fill_container layout=vertical gap=16 padding=[20,16] cornerRadius=20
+          frame [Section Head] width=fill_container layout=vertical gap=4
+            text [Section Title] content=Төлбөрийн бүтэц fill=#141A17 width=fill_container fontFamily=Inter fontSize=17 fontWeight=600
+            text [Section Subtitle] content=Сар бүрийн төлбөр үндсэн зээл ба хүүд хэрхэн хуваагдаж байгааг харуулна. fill=#5C6560 width=fill_container fontFamily=Inter fontSize=13 fontWeight=normal lineHeight=1.45
+          frame [Legend] width=fill_container layout=vertical gap=12
+            frame [Legend — Үндсэн төлбөр] ←Chart Legend Item width=fit_content gap=12
+              frame [Swatch Holder] layout=vertical padding=[4,0,0,0]
+                rectangle [Legend Swatch] fill=$accent width=12 height=12 cornerRadius=4
+              frame [Legend Text] layout=vertical gap=2
+                text [Legend Label] content=Үндсэн төлбөр fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+                text [Legend Value] content=10,000,000₮ · 88.1% fill=#141A17 fontFamily=Inter fontSize=15 fontWeight=600
+            frame [Legend — Нийт хүү] ←Chart Legend Item width=fit_content gap=12
+              frame [Swatch Holder] layout=vertical padding=[4,0,0,0]
+                rectangle [Legend Swatch] fill=$accent width=12 height=12 cornerRadius=4
+              frame [Legend Text] layout=vertical gap=2
+                text [Legend Label] content=Үндсэн төлбөр fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+                text [Legend Value] content=10,000,000₮ · 88.1% fill=#141A17 fontFamily=Inter fontSize=15 fontWeight=600
+          frame [Chart] width=fill_container layout=vertical gap=8
+            frame [Plot] width=fill_container gap=4 alignItems=end
+              frame [Bar 1] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=28 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=104
+              frame [Bar 2] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=26 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=106
+              frame [Bar 3] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=24 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=108
+              frame [Bar 4] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=22 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=110
+              frame [Bar 5] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=19 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=113
+              frame [Bar 6] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=17 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=115
+              frame [Bar 7] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=15 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=117
+              frame [Bar 8] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=12 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=120
+              frame [Bar 9] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=10 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=122
+              frame [Bar 10] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=8 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=124
+              frame [Bar 11] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=5 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=127
+              frame [Bar 12] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=3 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=129
+            rectangle [Baseline] fill=#8E8B80 width=fill_container height=1
+            frame [Axis] width=fill_container
+              text [Axis 1] content=1 сар fill=#5C6560 width=fill_container fontFamily=Inter fontSize=11 fontWeight=normal
+              text [Axis 2] content=6 сар fill=#5C6560 width=fill_container fontFamily=Inter fontSize=11 fontWeight=normal textAlign=center
+              text [Axis 3] content=12 сар fill=#5C6560 width=fill_container fontFamily=Inter fontSize=11 fontWeight=normal textAlign=right
         frame [Schedule Card] fill=#FFFFFF stroke=#DEDCD4 width=fill_container layout=vertical gap=16 padding=[20,0] cornerRadius=20
           frame [Section Head] width=fill_container layout=vertical gap=4 padding=[0,16]
             text [Section Title] content=Эргэн төлөлтийн хуваарь fill=#141A17 width=fill_container fontFamily=Inter fontSize=17 fontWeight=600
@@ -454,6 +587,66 @@
           frame [Panel Note] width=fill_container gap=8 padding=[16,0,0,0]
             icon [Note Icon] icon=info fill=#A9C6B9 width=15 height=15
             text [Note Text] content=Тэнцүү төлбөрт (аннуитет) аргаар тооцсон урьдчилсан дүн. fill=#A9C6B9 width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+        frame [Composition Section] fill=#FFFFFF stroke=#DEDCD4 width=fill_container layout=vertical gap=16 padding=[20,16] cornerRadius=20
+          frame [Section Head] width=fill_container layout=vertical gap=4
+            text [Section Title] content=Төлбөрийн бүтэц fill=#141A17 width=fill_container fontFamily=Inter fontSize=17 fontWeight=600
+            text [Section Subtitle] content=Сар бүрийн төлбөр үндсэн зээл ба хүүд хэрхэн хуваагдаж байгааг харуулна. fill=#5C6560 width=fill_container fontFamily=Inter fontSize=13 fontWeight=normal lineHeight=1.45
+          frame [Legend] width=fill_container layout=vertical gap=12
+            frame [Legend — Үндсэн төлбөр] ←Chart Legend Item width=fit_content gap=12
+              frame [Swatch Holder] layout=vertical padding=[4,0,0,0]
+                rectangle [Legend Swatch] fill=$accent width=12 height=12 cornerRadius=4
+              frame [Legend Text] layout=vertical gap=2
+                text [Legend Label] content=Үндсэн төлбөр fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+                text [Legend Value] content=10,000,000₮ · 88.1% fill=#141A17 fontFamily=Inter fontSize=15 fontWeight=600
+            frame [Legend — Нийт хүү] ←Chart Legend Item width=fit_content gap=12
+              frame [Swatch Holder] layout=vertical padding=[4,0,0,0]
+                rectangle [Legend Swatch] fill=$accent width=12 height=12 cornerRadius=4
+              frame [Legend Text] layout=vertical gap=2
+                text [Legend Label] content=Үндсэн төлбөр fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+                text [Legend Value] content=10,000,000₮ · 88.1% fill=#141A17 fontFamily=Inter fontSize=15 fontWeight=600
+          frame [Chart] width=fill_container layout=vertical gap=8
+            frame [Plot] width=fill_container gap=4 alignItems=end
+              frame [Bar 1] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=28 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=104
+              frame [Bar 2] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=26 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=106
+              frame [Bar 3] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=24 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=108
+              frame [Bar 4] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=22 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=110
+              frame [Bar 5] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=19 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=113
+              frame [Bar 6] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=17 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=115
+              frame [Bar 7] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=15 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=117
+              frame [Bar 8] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=12 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=120
+              frame [Bar 9] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=10 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=122
+              frame [Bar 10] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=8 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=124
+              frame [Bar 11] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=5 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=127
+              frame [Bar 12] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=3 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=129
+            rectangle [Baseline] fill=#8E8B80 width=fill_container height=1
+            frame [Axis] width=fill_container
+              text [Axis 1] content=1 сар fill=#5C6560 width=fill_container fontFamily=Inter fontSize=11 fontWeight=normal
+              text [Axis 2] content=6 сар fill=#5C6560 width=fill_container fontFamily=Inter fontSize=11 fontWeight=normal textAlign=center
+              text [Axis 3] content=12 сар fill=#5C6560 width=fill_container fontFamily=Inter fontSize=11 fontWeight=normal textAlign=right
         frame [Schedule Card] fill=#FFFFFF stroke=#DEDCD4 width=fill_container layout=vertical gap=16 padding=[20,0] cornerRadius=20
           frame [Section Head] width=fill_container layout=vertical gap=4 padding=[0,16]
             text [Section Title] content=Эргэн төлөлтийн хуваарь fill=#141A17 width=fill_container fontFamily=Inter fontSize=17 fontWeight=600
@@ -669,6 +862,66 @@
             frame [Panel Note] width=fill_container gap=8 padding=[20,0,0,0]
               icon [Note Icon] icon=info fill=#A9C6B9 width=16 height=16
               text [Note Text] content=Үндсэн төлбөр тэнцүү аргаар тооцов. Дүн нь урьдчилсан тооцоо бөгөөд бүхэл төгрөгөөр дугуйлагдсан. fill=#A9C6B9 width=fill_container fontFamily=Inter fontSize=13 fontWeight=normal lineHeight=1.45
+        frame [Composition Section] fill=#FFFFFF stroke=#DEDCD4 width=fill_container layout=vertical gap=24 padding=32 cornerRadius=20
+          frame [Section Head] width=fill_container layout=vertical gap=4
+            text [Section Title] content=Төлбөрийн бүтэц fill=#141A17 width=fill_container fontFamily=Inter fontSize=20 fontWeight=600
+            text [Section Subtitle] content=Үндсэн төлбөр сар бүр тэнцүү тул багана аажим намсана: хүү үлдэгдлээс бодогдож буурна. Нийт хүү аннуитет аргаас бага. fill=#5C6560 width=fill_container fontFamily=Inter fontSize=13 fontWeight=normal lineHeight=1.45
+          frame [Legend] width=fill_container gap=48
+            frame [Legend — Үндсэн төлбөр] ←Chart Legend Item width=fit_content gap=12
+              frame [Swatch Holder] layout=vertical padding=[4,0,0,0]
+                rectangle [Legend Swatch] fill=$accent width=12 height=12 cornerRadius=4
+              frame [Legend Text] layout=vertical gap=2
+                text [Legend Label] content=Үндсэн төлбөр fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+                text [Legend Value] content=10,000,000₮ · 88.1% fill=#141A17 fontFamily=Inter fontSize=15 fontWeight=600
+            frame [Legend — Нийт хүү] ←Chart Legend Item width=fit_content gap=12
+              frame [Swatch Holder] layout=vertical padding=[4,0,0,0]
+                rectangle [Legend Swatch] fill=$accent width=12 height=12 cornerRadius=4
+              frame [Legend Text] layout=vertical gap=2
+                text [Legend Label] content=Үндсэн төлбөр fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+                text [Legend Value] content=10,000,000₮ · 88.1% fill=#141A17 fontFamily=Inter fontSize=15 fontWeight=600
+          frame [Chart] width=fill_container layout=vertical gap=8
+            frame [Plot] width=fill_container gap=15 alignItems=end
+              frame [Bar 1] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=35 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=145
+              frame [Bar 2] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=32 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=145
+              frame [Bar 3] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=29 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=145
+              frame [Bar 4] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=26 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=145
+              frame [Bar 5] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=23 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=145
+              frame [Bar 6] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=20 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=145
+              frame [Bar 7] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=17 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=146
+              frame [Bar 8] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=15 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=145
+              frame [Bar 9] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=12 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=145
+              frame [Bar 10] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=9 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=145
+              frame [Bar 11] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=6 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=145
+              frame [Bar 12] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=3 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=145
+            rectangle [Baseline] fill=#8E8B80 width=fill_container height=1
+            frame [Axis] width=fill_container
+              text [Axis 1] content=1 сар fill=#5C6560 width=fill_container fontFamily=Inter fontSize=11 fontWeight=normal
+              text [Axis 2] content=6 сар fill=#5C6560 width=fill_container fontFamily=Inter fontSize=11 fontWeight=normal textAlign=center
+              text [Axis 3] content=12 сар fill=#5C6560 width=fill_container fontFamily=Inter fontSize=11 fontWeight=normal textAlign=right
         frame [Schedule Section] fill=#FFFFFF stroke=#DEDCD4 width=fill_container layout=vertical gap=24 padding=32 cornerRadius=20
           frame [Section Head] width=fill_container layout=vertical gap=4
             text [Section Title] content=Эргэн төлөлтийн хуваарь fill=#141A17 width=fill_container fontFamily=Inter fontSize=20 fontWeight=600
@@ -754,8 +1007,8 @@
               text [Cell Interest] content=16,667₮ fill=#141A17 width=200 fontFamily=Inter fontSize=14 fontWeight=normal textAlign=right
               text [Cell Balance] content=0₮ fill=#248059 width=246 fontFamily=Inter fontSize=14 fontWeight=600 textAlign=right
     frame [Artboard — Mobile 390 (Үндсэн төлбөр тэнцүү)] layout=vertical gap=12
-      text [Caption] content=MOBILE 390 — ҮНДСЭН ТӨЛБӨР ТЭНЦҮҮ (ҮР ДҮН) fill=#5C6560 fontFamily=Inter fontSize=14 fontWeight=600
-      frame [Mobile Result — Үндсэн төлбөр тэнцүү] fill=#F1F0EB width=390 layout=vertical padding=24
+      text [Caption] content=MOBILE 390 — ҮНДСЭН ТӨЛБӨР ТЭНЦҮҮ (ҮР ДҮН + ГРАФИК) fill=#5C6560 fontFamily=Inter fontSize=14 fontWeight=600
+      frame [Mobile Result — Үндсэн төлбөр тэнцүү] fill=#F1F0EB width=390 layout=vertical gap=24 padding=24
         frame [Result Panel] fill=#0F3D2E width=fill_container layout=vertical padding=20 cornerRadius=20
           text [Hero Label] content=ЭХНИЙ САРЫН ТӨЛБӨР fill=#62D39B fontFamily=Inter fontSize=13 fontWeight=600
           frame [Hero Spacer] width=fill_container height=6
@@ -784,3 +1037,451 @@
           frame [Panel Note] width=fill_container gap=8 padding=[16,0,0,0]
             icon [Note Icon] icon=info fill=#A9C6B9 width=15 height=15
             text [Note Text] content=Үндсэн төлбөр тэнцүү аргаар тооцсон урьдчилсан дүн. Төлбөр сар ирэх тусам буурна. fill=#A9C6B9 width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+        frame [Composition Section] fill=#FFFFFF stroke=#DEDCD4 width=fill_container layout=vertical gap=16 padding=[20,16] cornerRadius=20
+          frame [Section Head] width=fill_container layout=vertical gap=4
+            text [Section Title] content=Төлбөрийн бүтэц fill=#141A17 width=fill_container fontFamily=Inter fontSize=17 fontWeight=600
+            text [Section Subtitle] content=Үндсэн төлбөр тэнцүү тул сарын төлбөр аажим буурна. fill=#5C6560 width=fill_container fontFamily=Inter fontSize=13 fontWeight=normal lineHeight=1.45
+          frame [Legend] width=fill_container layout=vertical gap=12
+            frame [Legend — Үндсэн төлбөр] ←Chart Legend Item width=fit_content gap=12
+              frame [Swatch Holder] layout=vertical padding=[4,0,0,0]
+                rectangle [Legend Swatch] fill=$accent width=12 height=12 cornerRadius=4
+              frame [Legend Text] layout=vertical gap=2
+                text [Legend Label] content=Үндсэн төлбөр fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+                text [Legend Value] content=10,000,000₮ · 88.1% fill=#141A17 fontFamily=Inter fontSize=15 fontWeight=600
+            frame [Legend — Нийт хүү] ←Chart Legend Item width=fit_content gap=12
+              frame [Swatch Holder] layout=vertical padding=[4,0,0,0]
+                rectangle [Legend Swatch] fill=$accent width=12 height=12 cornerRadius=4
+              frame [Legend Text] layout=vertical gap=2
+                text [Legend Label] content=Үндсэн төлбөр fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+                text [Legend Value] content=10,000,000₮ · 88.1% fill=#141A17 fontFamily=Inter fontSize=15 fontWeight=600
+          frame [Chart] width=fill_container layout=vertical gap=8
+            frame [Plot] width=fill_container gap=4 alignItems=end
+              frame [Bar 1] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=26 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=106
+              frame [Bar 2] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=23 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=107
+              frame [Bar 3] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=21 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=107
+              frame [Bar 4] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=19 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=107
+              frame [Bar 5] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=17 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=106
+              frame [Bar 6] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=15 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=106
+              frame [Bar 7] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=13 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=106
+              frame [Bar 8] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=11 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=106
+              frame [Bar 9] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=9 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=106
+              frame [Bar 10] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=6 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=107
+              frame [Bar 11] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=4 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=107
+              frame [Bar 12] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=2 cornerRadius=[2,2,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=107
+            rectangle [Baseline] fill=#8E8B80 width=fill_container height=1
+            frame [Axis] width=fill_container
+              text [Axis 1] content=1 сар fill=#5C6560 width=fill_container fontFamily=Inter fontSize=11 fontWeight=normal
+              text [Axis 2] content=6 сар fill=#5C6560 width=fill_container fontFamily=Inter fontSize=11 fontWeight=normal textAlign=center
+              text [Axis 3] content=12 сар fill=#5C6560 width=fill_container fontFamily=Inter fontSize=11 fontWeight=normal textAlign=right
+    frame [Artboard — Mobile 320 (120 сар)] layout=vertical gap=12
+      text [Caption] content=MOBILE 320 — 120 САР (ГРАФИК ГҮЙЛГЭЛТГҮЙ БАГТАНА) fill=#5C6560 fontFamily=Inter fontSize=14 fontWeight=600
+      frame [Mobile Chart — 120 сар] fill=#F1F0EB width=320 layout=vertical padding=16
+        frame [Composition Section] fill=#FFFFFF stroke=#DEDCD4 width=fill_container layout=vertical gap=16 padding=[20,16] cornerRadius=20
+          frame [Section Head] width=fill_container layout=vertical gap=4
+            text [Section Title] content=Төлбөрийн бүтэц fill=#141A17 width=fill_container fontFamily=Inter fontSize=17 fontWeight=600
+            text [Section Subtitle] content=120 сарын хувьд ч бүх багана дэлгэцэнд багтана — хэвтээ гүйлгэлт шаардлагагүй. fill=#5C6560 width=fill_container fontFamily=Inter fontSize=13 fontWeight=normal lineHeight=1.45
+          frame [Legend] width=fill_container layout=vertical gap=12
+            frame [Legend — Үндсэн төлбөр] ←Chart Legend Item width=fit_content gap=12
+              frame [Swatch Holder] layout=vertical padding=[4,0,0,0]
+                rectangle [Legend Swatch] fill=$accent width=12 height=12 cornerRadius=4
+              frame [Legend Text] layout=vertical gap=2
+                text [Legend Label] content=Үндсэн төлбөр fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+                text [Legend Value] content=10,000,000₮ · 88.1% fill=#141A17 fontFamily=Inter fontSize=15 fontWeight=600
+            frame [Legend — Нийт хүү] ←Chart Legend Item width=fit_content gap=12
+              frame [Swatch Holder] layout=vertical padding=[4,0,0,0]
+                rectangle [Legend Swatch] fill=$accent width=12 height=12 cornerRadius=4
+              frame [Legend Text] layout=vertical gap=2
+                text [Legend Label] content=Үндсэн төлбөр fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+                text [Legend Value] content=10,000,000₮ · 88.1% fill=#141A17 fontFamily=Inter fontSize=15 fontWeight=600
+          frame [Chart] width=fill_container layout=vertical gap=8
+            frame [Plot] width=fill_container alignItems=end
+              frame [Bar 1] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=120 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=12
+              frame [Bar 2] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=119 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=13
+              frame [Bar 3] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=119 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=13
+              frame [Bar 4] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=119 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=13
+              frame [Bar 5] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=119 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=13
+              frame [Bar 6] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=118 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=14
+              frame [Bar 7] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=118 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=14
+              frame [Bar 8] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=118 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=14
+              frame [Bar 9] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=118 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=14
+              frame [Bar 10] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=117 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=15
+              frame [Bar 11] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=117 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=15
+              frame [Bar 12] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=117 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=15
+              frame [Bar 13] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=116 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=16
+              frame [Bar 14] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=116 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=16
+              frame [Bar 15] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=116 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=16
+              frame [Bar 16] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=115 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=17
+              frame [Bar 17] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=115 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=17
+              frame [Bar 18] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=115 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=17
+              frame [Bar 19] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=114 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=18
+              frame [Bar 20] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=114 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=18
+              frame [Bar 21] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=114 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=18
+              frame [Bar 22] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=113 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=19
+              frame [Bar 23] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=113 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=19
+              frame [Bar 24] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=113 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=19
+              frame [Bar 25] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=112 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=20
+              frame [Bar 26] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=112 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=20
+              frame [Bar 27] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=111 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=21
+              frame [Bar 28] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=111 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=21
+              frame [Bar 29] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=111 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=21
+              frame [Bar 30] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=110 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=22
+              frame [Bar 31] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=110 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=22
+              frame [Bar 32] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=109 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=23
+              frame [Bar 33] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=109 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=23
+              frame [Bar 34] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=108 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=24
+              frame [Bar 35] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=108 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=24
+              frame [Bar 36] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=107 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=25
+              frame [Bar 37] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=107 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=25
+              frame [Bar 38] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=106 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=26
+              frame [Bar 39] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=106 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=26
+              frame [Bar 40] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=105 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=27
+              frame [Bar 41] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=105 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=27
+              frame [Bar 42] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=104 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=28
+              frame [Bar 43] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=104 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=28
+              frame [Bar 44] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=103 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=29
+              frame [Bar 45] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=103 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=29
+              frame [Bar 46] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=102 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=30
+              frame [Bar 47] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=102 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=30
+              frame [Bar 48] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=101 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=31
+              frame [Bar 49] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=100 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=32
+              frame [Bar 50] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=100 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=32
+              frame [Bar 51] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=99 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=33
+              frame [Bar 52] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=98 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=34
+              frame [Bar 53] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=98 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=34
+              frame [Bar 54] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=97 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=35
+              frame [Bar 55] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=96 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=36
+              frame [Bar 56] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=96 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=36
+              frame [Bar 57] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=95 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=37
+              frame [Bar 58] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=94 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=38
+              frame [Bar 59] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=93 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=39
+              frame [Bar 60] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=93 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=39
+              frame [Bar 61] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=92 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=40
+              frame [Bar 62] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=91 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=41
+              frame [Bar 63] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=90 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=42
+              frame [Bar 64] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=89 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=43
+              frame [Bar 65] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=88 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=44
+              frame [Bar 66] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=88 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=44
+              frame [Bar 67] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=87 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=45
+              frame [Bar 68] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=86 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=46
+              frame [Bar 69] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=85 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=47
+              frame [Bar 70] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=84 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=48
+              frame [Bar 71] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=83 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=49
+              frame [Bar 72] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=82 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=50
+              frame [Bar 73] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=81 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=51
+              frame [Bar 74] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=80 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=52
+              frame [Bar 75] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=79 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=53
+              frame [Bar 76] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=78 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=54
+              frame [Bar 77] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=77 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=55
+              frame [Bar 78] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=76 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=56
+              frame [Bar 79] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=75 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=57
+              frame [Bar 80] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=73 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=59
+              frame [Bar 81] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=72 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=60
+              frame [Bar 82] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=71 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=61
+              frame [Bar 83] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=70 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=62
+              frame [Bar 84] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=69 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=63
+              frame [Bar 85] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=67 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=65
+              frame [Bar 86] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=66 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=66
+              frame [Bar 87] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=65 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=67
+              frame [Bar 88] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=63 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=69
+              frame [Bar 89] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=62 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=70
+              frame [Bar 90] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=61 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=71
+              frame [Bar 91] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=59 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=73
+              frame [Bar 92] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=58 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=74
+              frame [Bar 93] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=56 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=76
+              frame [Bar 94] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=55 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=77
+              frame [Bar 95] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=53 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=79
+              frame [Bar 96] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=52 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=80
+              frame [Bar 97] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=50 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=82
+              frame [Bar 98] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=48 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=84
+              frame [Bar 99] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=47 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=85
+              frame [Bar 100] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=45 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=87
+              frame [Bar 101] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=43 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=89
+              frame [Bar 102] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=41 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=91
+              frame [Bar 103] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=40 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=92
+              frame [Bar 104] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=38 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=94
+              frame [Bar 105] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=36 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=96
+              frame [Bar 106] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=34 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=98
+              frame [Bar 107] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=32 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=100
+              frame [Bar 108] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=30 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=102
+              frame [Bar 109] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=28 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=104
+              frame [Bar 110] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=26 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=106
+              frame [Bar 111] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=24 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=108
+              frame [Bar 112] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=22 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=110
+              frame [Bar 113] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=19 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=113
+              frame [Bar 114] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=17 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=115
+              frame [Bar 115] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=15 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=117
+              frame [Bar 116] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=12 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=120
+              frame [Bar 117] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=10 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=122
+              frame [Bar 118] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=8 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=124
+              frame [Bar 119] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=5 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=127
+              frame [Bar 120] width=fill_container layout=vertical
+                rectangle [Interest] fill=#C8832E width=fill_container height=3 cornerRadius=[1,1,0,0]
+                rectangle [Principal] fill=$accent width=fill_container height=129
+            rectangle [Baseline] fill=#8E8B80 width=fill_container height=1
+            frame [Axis] width=fill_container
+              text [Axis 1] content=1 сар fill=#5C6560 width=fill_container fontFamily=Inter fontSize=11 fontWeight=normal
+              text [Axis 2] content=60 сар fill=#5C6560 width=fill_container fontFamily=Inter fontSize=11 fontWeight=normal textAlign=center
+              text [Axis 3] content=120 сар fill=#5C6560 width=fill_container fontFamily=Inter fontSize=11 fontWeight=normal textAlign=right
+      text [Spec Note] content=Багана бүр ижил өргөнтэй, дэлгэцийн өргөнд хуваагдана. Багана хоорондын зай нь багананы өргөний 20% — 120 сарын үед 1 пикселээс бага болж, багана нийлж харагдана. fill=#5C6560 width=320 fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
