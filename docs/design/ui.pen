@@ -1,5 +1,5 @@
 {
-  "version": "2.17",
+  "version": "2.19",
   "children": [
     {
       "type": "frame",
@@ -7,8 +7,8 @@
       "x": 0,
       "y": 0,
       "name": "Canvas",
-      "width": 2740,
-      "height": 3580,
+      "width": 2832,
+      "height": 4410,
       "fill": "#E3E2DB",
       "layout": "none",
       "children": [
@@ -26,7 +26,7 @@
               "id": "Z548ph",
               "name": "Caption",
               "fill": "$ink-muted",
-              "content": "КОМПОНЕНТ — FIELD, RESULT ROW",
+              "content": "КОМПОНЕНТ — FIELD, RESULT ROW, CHART BAR",
               "fontFamily": "$font-sans",
               "fontSize": 14,
               "fontWeight": "600",
@@ -36,7 +36,7 @@
               "type": "frame",
               "id": "EQyOk",
               "name": "Components — Field, Result Row",
-              "width": 2364,
+              "width": 2712,
               "fill": "$bg-page",
               "cornerRadius": "$radius-lg",
               "stroke": "$border",
@@ -483,6 +483,143 @@
                               "fontWeight": "600"
                             }
                           }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "tXAVj",
+                  "name": "Payment Chart Context",
+                  "width": 300,
+                  "layout": "vertical",
+                  "gap": "$space-3",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Y8ZgD2",
+                      "name": "Context Caption",
+                      "fill": "$ink-muted",
+                      "content": "Chart Bar · Legend Item",
+                      "fontFamily": "$font-sans",
+                      "fontSize": "$text-hint",
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Qp42a",
+                      "name": "Card",
+                      "width": "fill_container",
+                      "fill": "$surface",
+                      "cornerRadius": "$radius-md",
+                      "stroke": "$border",
+                      "strokeWidth": 1,
+                      "gap": "$space-5",
+                      "padding": "$space-5",
+                      "alignItems": "end",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "qIKBX",
+                          "name": "Chart Bar",
+                          "reusable": true,
+                          "width": 24,
+                          "layout": "vertical",
+                          "gap": "$chart-segment-gap",
+                          "children": [
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": [
+                                "$chart-bar-radius",
+                                "$chart-bar-radius",
+                                0,
+                                0
+                              ],
+                              "id": "FOnhj",
+                              "name": "Interest",
+                              "fill": "$chart-interest",
+                              "width": "fill_container",
+                              "height": 24
+                            },
+                            {
+                              "type": "rectangle",
+                              "id": "brHwK",
+                              "name": "Principal",
+                              "fill": "$chart-principal",
+                              "width": "fill_container",
+                              "height": 96
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "odNAz",
+                          "name": "Legend Item",
+                          "reusable": true,
+                          "width": 180,
+                          "layout": "vertical",
+                          "gap": "$space-2",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "m7ceI",
+                              "name": "Legend Key",
+                              "gap": "$space-2",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "rectangle",
+                                  "cornerRadius": 3,
+                                  "id": "BnkiY",
+                                  "name": "Swatch",
+                                  "fill": "$chart-principal",
+                                  "width": 10,
+                                  "height": 10
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "b2MUt",
+                                  "name": "Legend Label",
+                                  "fill": "$ink-muted",
+                                  "content": "Үндсэн төлбөр",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": "$text-hint",
+                                  "fontWeight": "500"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "uIWZl",
+                              "name": "Legend Values",
+                              "layout": "vertical",
+                              "gap": 2,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "ueEqn",
+                                  "name": "Legend Percent",
+                                  "fill": "$ink",
+                                  "content": "88.1%",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": "$text-result",
+                                  "fontWeight": "700",
+                                  "letterSpacing": -0.3
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "I58FET",
+                                  "name": "Legend Amount",
+                                  "fill": "$ink-muted",
+                                  "content": "10,000,000₮",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": "$text-hint",
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
                         }
                       ]
                     }
@@ -1005,6 +1142,405 @@
                               "fontFamily": "$font-sans",
                               "fontSize": "$text-hint",
                               "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "u8xMm",
+                  "name": "Payment Structure Section",
+                  "width": "fill_container",
+                  "fill": "$surface",
+                  "cornerRadius": "$radius-lg",
+                  "stroke": "$border",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": "$space-5",
+                  "padding": "$space-6",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "mzMcv",
+                      "name": "Section Head",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$space-1",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "wwuod",
+                          "name": "Section Title",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Төлбөрийн бүтэц",
+                          "fontFamily": "$font-sans",
+                          "fontSize": 20,
+                          "fontWeight": "600",
+                          "letterSpacing": -0.3
+                        },
+                        {
+                          "type": "text",
+                          "id": "k448iM",
+                          "name": "Section Subtitle",
+                          "fill": "$ink-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Сар бүрийн төлбөрийн хэдэн хэсэг нь үндсэн зээл, хэдэн хэсэг нь хүү болохыг харуулна.",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-hint",
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "S1JVn",
+                      "name": "Chart Body",
+                      "width": "fill_container",
+                      "gap": "$space-7",
+                      "alignItems": "end",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "qeiwB",
+                          "name": "Plot Column",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": "$space-2",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "BfBzQ",
+                              "name": "Plot",
+                              "width": "fill_container",
+                              "height": 200,
+                              "gap": 12,
+                              "alignItems": "end",
+                              "children": [
+                                {
+                                  "id": "cswPr",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 1",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 42
+                                    },
+                                    "brHwK": {
+                                      "height": 156
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "IZ1DL",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 2",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 39
+                                    },
+                                    "brHwK": {
+                                      "height": 159
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "HodW5",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 3",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 36
+                                    },
+                                    "brHwK": {
+                                      "height": 162
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "uXsE4",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 4",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 33
+                                    },
+                                    "brHwK": {
+                                      "height": 165
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "iBAb5",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 5",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 29
+                                    },
+                                    "brHwK": {
+                                      "height": 169
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "G9rFvg",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 6",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 26
+                                    },
+                                    "brHwK": {
+                                      "height": 172
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "Z3q3g",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 7",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 22
+                                    },
+                                    "brHwK": {
+                                      "height": 176
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "VZ8Lq",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 8",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 19
+                                    },
+                                    "brHwK": {
+                                      "height": 179
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "A4XzB",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 9",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 15
+                                    },
+                                    "brHwK": {
+                                      "height": 183
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "IOijf",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 10",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 12
+                                    },
+                                    "brHwK": {
+                                      "height": 186
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "w4sMQf",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 11",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 8
+                                    },
+                                    "brHwK": {
+                                      "height": 190
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "o0zSfg",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 12",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 4
+                                    },
+                                    "brHwK": {
+                                      "height": 194
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "rectangle",
+                              "id": "jrsQX",
+                              "name": "Baseline",
+                              "fill": "$border-strong",
+                              "width": "fill_container",
+                              "height": 1
+                            },
+                            {
+                              "type": "frame",
+                              "id": "hoq0O",
+                              "name": "Axis",
+                              "width": "fill_container",
+                              "justifyContent": "space_between",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "u1dqTY",
+                                  "name": "Axis Label",
+                                  "fill": "$ink-muted",
+                                  "content": "1-р сар",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "vjRBC",
+                                  "name": "Axis Label",
+                                  "fill": "$ink-muted",
+                                  "content": "12-р сар",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "xIRD1",
+                          "name": "Legend",
+                          "width": 260,
+                          "layout": "vertical",
+                          "gap": "$space-4",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "cXyTK",
+                              "name": "Legend Row",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": "$space-4",
+                              "children": [
+                                {
+                                  "id": "D7urro",
+                                  "type": "ref",
+                                  "ref": "odNAz",
+                                  "name": "Legend — Үндсэн төлбөр",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "BnkiY": {
+                                      "fill": "$chart-principal"
+                                    },
+                                    "b2MUt": {
+                                      "content": "Үндсэн төлбөр"
+                                    },
+                                    "ueEqn": {
+                                      "content": "88.1%"
+                                    },
+                                    "I58FET": {
+                                      "content": "10,000,000₮"
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "oPMk6",
+                                  "type": "ref",
+                                  "ref": "odNAz",
+                                  "name": "Legend — Нийт хүү",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "BnkiY": {
+                                      "fill": "$chart-interest"
+                                    },
+                                    "b2MUt": {
+                                      "content": "Нийт хүү"
+                                    },
+                                    "ueEqn": {
+                                      "content": "11.9%"
+                                    },
+                                    "I58FET": {
+                                      "content": "1,347,153₮"
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "rectangle",
+                              "id": "wUKMu",
+                              "name": "Legend Divider",
+                              "fill": "$border",
+                              "width": "fill_container",
+                              "height": 1
+                            },
+                            {
+                              "type": "frame",
+                              "id": "A0c6h",
+                              "name": "Legend Total",
+                              "width": "fill_container",
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "ueZja",
+                                  "name": "Total Label",
+                                  "fill": "$ink-muted",
+                                  "content": "Нийт төлөх дүн",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": "$text-hint",
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "PKf40",
+                                  "name": "Total Value",
+                                  "fill": "$ink",
+                                  "content": "11,347,153₮",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": "$text-hint",
+                                  "fontWeight": "600"
+                                }
+                              ]
                             }
                           ]
                         }
@@ -1924,6 +2460,407 @@
                           "fontFamily": "$font-sans",
                           "fontSize": 12,
                           "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "BC84Q",
+                  "name": "Payment Structure Section",
+                  "width": "fill_container",
+                  "fill": "$surface",
+                  "cornerRadius": "$radius-lg",
+                  "stroke": "$border",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": "$space-4",
+                  "padding": [
+                    20,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "i4dSH",
+                      "name": "Section Head",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$space-1",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "i9htj",
+                          "name": "Section Title",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Төлбөрийн бүтэц",
+                          "fontFamily": "$font-sans",
+                          "fontSize": 17,
+                          "fontWeight": "600",
+                          "letterSpacing": -0.2
+                        },
+                        {
+                          "type": "text",
+                          "id": "AHlXB",
+                          "name": "Section Subtitle",
+                          "fill": "$ink-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Сар бүрийн төлбөрийн үндсэн зээл ба хүүгийн хэсэг.",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$font-sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "AQHog",
+                      "name": "Chart Body",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$space-5",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "MIFwL",
+                          "name": "Plot Column",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": "$space-2",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "Q4nKsE",
+                              "name": "Plot",
+                              "width": "fill_container",
+                              "height": 140,
+                              "gap": 4,
+                              "alignItems": "end",
+                              "children": [
+                                {
+                                  "id": "Oq600",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 1",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 30
+                                    },
+                                    "brHwK": {
+                                      "height": 108
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "KEFEq",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 2",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 27
+                                    },
+                                    "brHwK": {
+                                      "height": 111
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "GVx6H",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 3",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 25
+                                    },
+                                    "brHwK": {
+                                      "height": 113
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "AVTrs",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 4",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 23
+                                    },
+                                    "brHwK": {
+                                      "height": 115
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "LmHUT",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 5",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 21
+                                    },
+                                    "brHwK": {
+                                      "height": 117
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "rt4sg",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 6",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 18
+                                    },
+                                    "brHwK": {
+                                      "height": 120
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "CNTaA",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 7",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 16
+                                    },
+                                    "brHwK": {
+                                      "height": 122
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "C6aWo",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 8",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 13
+                                    },
+                                    "brHwK": {
+                                      "height": 125
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "pgRhr",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 9",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 11
+                                    },
+                                    "brHwK": {
+                                      "height": 127
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "ZOkhe",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 10",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 8
+                                    },
+                                    "brHwK": {
+                                      "height": 130
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "nHOh0",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 11",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 5
+                                    },
+                                    "brHwK": {
+                                      "height": 133
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "zokXv",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 12",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 3
+                                    },
+                                    "brHwK": {
+                                      "height": 135
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "rectangle",
+                              "id": "bLG34",
+                              "name": "Baseline",
+                              "fill": "$border-strong",
+                              "width": "fill_container",
+                              "height": 1
+                            },
+                            {
+                              "type": "frame",
+                              "id": "nvPj9",
+                              "name": "Axis",
+                              "width": "fill_container",
+                              "justifyContent": "space_between",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "xwlaY",
+                                  "name": "Axis Label",
+                                  "fill": "$ink-muted",
+                                  "content": "1-р сар",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "VL2DR",
+                                  "name": "Axis Label",
+                                  "fill": "$ink-muted",
+                                  "content": "12-р сар",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "F4Hcd",
+                          "name": "Legend",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": "$space-4",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "K6SKhY",
+                              "name": "Legend Row",
+                              "width": "fill_container",
+                              "gap": "$space-4",
+                              "children": [
+                                {
+                                  "id": "cvpyt",
+                                  "type": "ref",
+                                  "ref": "odNAz",
+                                  "name": "Legend — Үндсэн төлбөр",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "BnkiY": {
+                                      "fill": "$chart-principal"
+                                    },
+                                    "b2MUt": {
+                                      "content": "Үндсэн төлбөр"
+                                    },
+                                    "ueEqn": {
+                                      "content": "88.1%"
+                                    },
+                                    "I58FET": {
+                                      "content": "10,000,000₮"
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "NMhtL",
+                                  "type": "ref",
+                                  "ref": "odNAz",
+                                  "name": "Legend — Нийт хүү",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "BnkiY": {
+                                      "fill": "$chart-interest"
+                                    },
+                                    "b2MUt": {
+                                      "content": "Нийт хүү"
+                                    },
+                                    "ueEqn": {
+                                      "content": "11.9%"
+                                    },
+                                    "I58FET": {
+                                      "content": "1,347,153₮"
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "rectangle",
+                              "id": "iO9y9",
+                              "name": "Legend Divider",
+                              "fill": "$border",
+                              "width": "fill_container",
+                              "height": 1
+                            },
+                            {
+                              "type": "frame",
+                              "id": "jnlcv",
+                              "name": "Legend Total",
+                              "width": "fill_container",
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "F6s63",
+                                  "name": "Total Label",
+                                  "fill": "$ink-muted",
+                                  "content": "Нийт төлөх дүн",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": "$text-hint",
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "h2nJu",
+                                  "name": "Total Value",
+                                  "fill": "$ink",
+                                  "content": "11,347,153₮",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": "$text-hint",
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            }
+                          ]
                         }
                       ]
                     }
@@ -2879,6 +3816,407 @@
                           "fontFamily": "$font-sans",
                           "fontSize": 12,
                           "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "XHLWR",
+                  "name": "Payment Structure Section",
+                  "width": "fill_container",
+                  "fill": "$surface",
+                  "cornerRadius": "$radius-lg",
+                  "stroke": "$border",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": "$space-4",
+                  "padding": [
+                    20,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "H72F33",
+                      "name": "Section Head",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$space-1",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "p6w1kh",
+                          "name": "Section Title",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Төлбөрийн бүтэц",
+                          "fontFamily": "$font-sans",
+                          "fontSize": 17,
+                          "fontWeight": "600",
+                          "letterSpacing": -0.2
+                        },
+                        {
+                          "type": "text",
+                          "id": "pbvBo",
+                          "name": "Section Subtitle",
+                          "fill": "$ink-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Сар бүрийн төлбөрийн үндсэн зээл ба хүүгийн хэсэг.",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$font-sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "H69oeT",
+                      "name": "Chart Body",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$space-5",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "M3V5n",
+                          "name": "Plot Column",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": "$space-2",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "tPWz8",
+                              "name": "Plot",
+                              "width": "fill_container",
+                              "height": 140,
+                              "gap": 4,
+                              "alignItems": "end",
+                              "children": [
+                                {
+                                  "id": "xGaZU",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 1",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 30
+                                    },
+                                    "brHwK": {
+                                      "height": 108
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "Y7fcZ0",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 2",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 27
+                                    },
+                                    "brHwK": {
+                                      "height": 111
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "XHuFU",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 3",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 25
+                                    },
+                                    "brHwK": {
+                                      "height": 113
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "E7VXKs",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 4",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 23
+                                    },
+                                    "brHwK": {
+                                      "height": 115
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "egBau",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 5",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 21
+                                    },
+                                    "brHwK": {
+                                      "height": 117
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "wOaDZ",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 6",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 18
+                                    },
+                                    "brHwK": {
+                                      "height": 120
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "KeWcE",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 7",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 16
+                                    },
+                                    "brHwK": {
+                                      "height": 122
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "a5F3Sn",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 8",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 13
+                                    },
+                                    "brHwK": {
+                                      "height": 125
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "qsUo4",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 9",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 11
+                                    },
+                                    "brHwK": {
+                                      "height": 127
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "nfMfE",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 10",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 8
+                                    },
+                                    "brHwK": {
+                                      "height": 130
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "FDWiB",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 11",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 5
+                                    },
+                                    "brHwK": {
+                                      "height": 133
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "D5xG0",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 12",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 3
+                                    },
+                                    "brHwK": {
+                                      "height": 135
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "rectangle",
+                              "id": "yj7Vr",
+                              "name": "Baseline",
+                              "fill": "$border-strong",
+                              "width": "fill_container",
+                              "height": 1
+                            },
+                            {
+                              "type": "frame",
+                              "id": "eX4MQ",
+                              "name": "Axis",
+                              "width": "fill_container",
+                              "justifyContent": "space_between",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "s5hz3",
+                                  "name": "Axis Label",
+                                  "fill": "$ink-muted",
+                                  "content": "1-р сар",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "Gp0Ts",
+                                  "name": "Axis Label",
+                                  "fill": "$ink-muted",
+                                  "content": "12-р сар",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "T3gZkh",
+                          "name": "Legend",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": "$space-4",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "yxEfM",
+                              "name": "Legend Row",
+                              "width": "fill_container",
+                              "gap": "$space-4",
+                              "children": [
+                                {
+                                  "id": "zxBAi",
+                                  "type": "ref",
+                                  "ref": "odNAz",
+                                  "name": "Legend — Үндсэн төлбөр",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "BnkiY": {
+                                      "fill": "$chart-principal"
+                                    },
+                                    "b2MUt": {
+                                      "content": "Үндсэн төлбөр"
+                                    },
+                                    "ueEqn": {
+                                      "content": "88.1%"
+                                    },
+                                    "I58FET": {
+                                      "content": "10,000,000₮"
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "r0coN",
+                                  "type": "ref",
+                                  "ref": "odNAz",
+                                  "name": "Legend — Нийт хүү",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "BnkiY": {
+                                      "fill": "$chart-interest"
+                                    },
+                                    "b2MUt": {
+                                      "content": "Нийт хүү"
+                                    },
+                                    "ueEqn": {
+                                      "content": "11.9%"
+                                    },
+                                    "I58FET": {
+                                      "content": "1,347,153₮"
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "rectangle",
+                              "id": "M6VSV",
+                              "name": "Legend Divider",
+                              "fill": "$border",
+                              "width": "fill_container",
+                              "height": 1
+                            },
+                            {
+                              "type": "frame",
+                              "id": "DCyWU",
+                              "name": "Legend Total",
+                              "width": "fill_container",
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "YVr3N",
+                                  "name": "Total Label",
+                                  "fill": "$ink-muted",
+                                  "content": "Нийт төлөх дүн",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": "$text-hint",
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "Uj4pB",
+                                  "name": "Total Value",
+                                  "fill": "$ink",
+                                  "content": "11,347,153₮",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": "$text-hint",
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            }
+                          ]
                         }
                       ]
                     }
@@ -3843,7 +5181,7 @@
           "type": "frame",
           "id": "IfOf3",
           "x": 60,
-          "y": 2006,
+          "y": 2421,
           "name": "Artboard — Desktop (Үндсэн төлбөр тэнцүү)",
           "layout": "vertical",
           "gap": "$space-3",
@@ -4324,6 +5662,405 @@
                               "fontFamily": "$font-sans",
                               "fontSize": "$text-hint",
                               "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "emg4Z",
+                  "name": "Payment Structure Section",
+                  "width": "fill_container",
+                  "fill": "$surface",
+                  "cornerRadius": "$radius-lg",
+                  "stroke": "$border",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": "$space-5",
+                  "padding": "$space-6",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "vpMh9",
+                      "name": "Section Head",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$space-1",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ZvnqC",
+                          "name": "Section Title",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Төлбөрийн бүтэц",
+                          "fontFamily": "$font-sans",
+                          "fontSize": 20,
+                          "fontWeight": "600",
+                          "letterSpacing": -0.3
+                        },
+                        {
+                          "type": "text",
+                          "id": "IIAjY",
+                          "name": "Section Subtitle",
+                          "fill": "$ink-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Сар бүрийн төлбөрийн хэдэн хэсэг нь үндсэн зээл, хэдэн хэсэг нь хүү болохыг харуулна.",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$font-sans",
+                          "fontSize": "$text-hint",
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "l0H6kh",
+                      "name": "Chart Body",
+                      "width": "fill_container",
+                      "gap": "$space-7",
+                      "alignItems": "end",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "H89aNk",
+                          "name": "Plot Column",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": "$space-2",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "P9faEo",
+                              "name": "Plot",
+                              "width": "fill_container",
+                              "height": 200,
+                              "gap": 12,
+                              "alignItems": "end",
+                              "children": [
+                                {
+                                  "id": "XzIBR",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 1",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 39
+                                    },
+                                    "brHwK": {
+                                      "height": 159
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "Vk9kj",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 2",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 36
+                                    },
+                                    "brHwK": {
+                                      "height": 159
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "AcXI9",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 3",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 32
+                                    },
+                                    "brHwK": {
+                                      "height": 160
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "N8wKn",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 4",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 29
+                                    },
+                                    "brHwK": {
+                                      "height": 159
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "dD5PO",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 5",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 26
+                                    },
+                                    "brHwK": {
+                                      "height": 159
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "znpRx",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 6",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 23
+                                    },
+                                    "brHwK": {
+                                      "height": 159
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "dpw3r",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 7",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 19
+                                    },
+                                    "brHwK": {
+                                      "height": 160
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "X0578",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 8",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 16
+                                    },
+                                    "brHwK": {
+                                      "height": 159
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "b1Mhc",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 9",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 13
+                                    },
+                                    "brHwK": {
+                                      "height": 159
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "v5AQKq",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 10",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 10
+                                    },
+                                    "brHwK": {
+                                      "height": 159
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "RKVOV",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 11",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 6
+                                    },
+                                    "brHwK": {
+                                      "height": 160
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "ZcC4V",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 12",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 3
+                                    },
+                                    "brHwK": {
+                                      "height": 160
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "rectangle",
+                              "id": "qMJnJ",
+                              "name": "Baseline",
+                              "fill": "$border-strong",
+                              "width": "fill_container",
+                              "height": 1
+                            },
+                            {
+                              "type": "frame",
+                              "id": "OxfGA",
+                              "name": "Axis",
+                              "width": "fill_container",
+                              "justifyContent": "space_between",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "G7Uxn",
+                                  "name": "Axis Label",
+                                  "fill": "$ink-muted",
+                                  "content": "1-р сар",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "Rh2vm",
+                                  "name": "Axis Label",
+                                  "fill": "$ink-muted",
+                                  "content": "12-р сар",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "pDAdc",
+                          "name": "Legend",
+                          "width": 260,
+                          "layout": "vertical",
+                          "gap": "$space-4",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "IAIXX",
+                              "name": "Legend Row",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": "$space-4",
+                              "children": [
+                                {
+                                  "id": "owsZq",
+                                  "type": "ref",
+                                  "ref": "odNAz",
+                                  "name": "Legend — Үндсэн төлбөр",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "BnkiY": {
+                                      "fill": "$chart-principal"
+                                    },
+                                    "b2MUt": {
+                                      "content": "Үндсэн төлбөр"
+                                    },
+                                    "ueEqn": {
+                                      "content": "88.5%"
+                                    },
+                                    "I58FET": {
+                                      "content": "10,000,000₮"
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "g7vEWL",
+                                  "type": "ref",
+                                  "ref": "odNAz",
+                                  "name": "Legend — Нийт хүү",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "BnkiY": {
+                                      "fill": "$chart-interest"
+                                    },
+                                    "b2MUt": {
+                                      "content": "Нийт хүү"
+                                    },
+                                    "ueEqn": {
+                                      "content": "11.5%"
+                                    },
+                                    "I58FET": {
+                                      "content": "1,300,000₮"
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "rectangle",
+                              "id": "G0CVb",
+                              "name": "Legend Divider",
+                              "fill": "$border",
+                              "width": "fill_container",
+                              "height": 1
+                            },
+                            {
+                              "type": "frame",
+                              "id": "nquYH",
+                              "name": "Legend Total",
+                              "width": "fill_container",
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "rjYCa",
+                                  "name": "Total Label",
+                                  "fill": "$ink-muted",
+                                  "content": "Нийт төлөх дүн",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": "$text-hint",
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "N9MrU",
+                                  "name": "Total Value",
+                                  "fill": "$ink",
+                                  "content": "11,300,000₮",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": "$text-hint",
+                                  "fontWeight": "600"
+                                }
+                              ]
                             }
                           ]
                         }
@@ -5056,6 +6793,2303 @@
               ]
             }
           ]
+        },
+        {
+          "type": "frame",
+          "id": "z6tgF",
+          "x": 2290,
+          "y": 2184,
+          "name": "Artboard — Mobile 320 (120 сар)",
+          "layout": "vertical",
+          "gap": "$space-3",
+          "children": [
+            {
+              "type": "text",
+              "id": "Yn0IV",
+              "name": "Caption",
+              "fill": "$ink-muted",
+              "content": "MOBILE 320 — 120 САР",
+              "fontFamily": "$font-sans",
+              "fontSize": 14,
+              "fontWeight": "600",
+              "letterSpacing": 0.6
+            },
+            {
+              "type": "frame",
+              "id": "j5H0lP",
+              "name": "Mobile Chart — 120 сар",
+              "clip": true,
+              "width": 320,
+              "fill": "$bg-page",
+              "layout": "vertical",
+              "padding": [
+                24,
+                16
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "oYUEY",
+                  "name": "Payment Structure Section",
+                  "width": "fill_container",
+                  "fill": "$surface",
+                  "cornerRadius": "$radius-lg",
+                  "stroke": "$border",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": "$space-4",
+                  "padding": [
+                    20,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "gFSJB",
+                      "name": "Section Head",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$space-1",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "nfAuo",
+                          "name": "Section Title",
+                          "fill": "$ink",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Төлбөрийн бүтэц",
+                          "fontFamily": "$font-sans",
+                          "fontSize": 17,
+                          "fontWeight": "600",
+                          "letterSpacing": -0.2
+                        },
+                        {
+                          "type": "text",
+                          "id": "o2u4pB",
+                          "name": "Section Subtitle",
+                          "fill": "$ink-muted",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Сар бүрийн төлбөрийн үндсэн зээл ба хүүгийн хэсэг.",
+                          "lineHeight": 1.45,
+                          "fontFamily": "$font-sans",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "zoX9T",
+                      "name": "Chart Body",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": "$space-5",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "b7vbrF",
+                          "name": "Plot Column",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": "$space-2",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "m6hpZ",
+                              "name": "Plot",
+                              "width": "fill_container",
+                              "height": 140,
+                              "alignItems": "end",
+                              "children": [
+                                {
+                                  "id": "EHv8Q",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 1",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 127,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 12
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "K6O8t",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 2",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 127,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 12
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "Kz5zH",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 3",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 126,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 13
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "k6ocY",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 4",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 126,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 13
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "kZYFO",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 5",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 126,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 13
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "oGg7V",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 6",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 126,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 13
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "Uc57N",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 7",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 125,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 14
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "k2ait7",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 8",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 125,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 14
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "pAupn",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 9",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 125,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 14
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "H8L8Z",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 10",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 124,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 15
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "axbIh",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 11",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 124,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 15
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "frsaW",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 12",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 124,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 15
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "AVRj5",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 13",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 124,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 15
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "pLxFh",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 14",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 123,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 16
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "jnVnG",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 15",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 123,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 16
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "RwphD",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 16",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 122,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 17
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "yaYfD",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 17",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 122,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 17
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "X6jtQ",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 18",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 122,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 17
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "M06bZ",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 19",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 121,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 18
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "gUgqD",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 20",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 121,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 18
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "lJrHh",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 21",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 121,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 18
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "XzjPH",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 22",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 120,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 19
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "N7lGj",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 23",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 120,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 19
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "YxMG5",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 24",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 119,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 20
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "gHVnI",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 25",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 119,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 20
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "s73f6w",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 26",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 119,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 20
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "P4kK8N",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 27",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 118,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 21
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "g9jl9o",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 28",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 118,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 21
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "fo28L",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 29",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 117,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 22
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "CTmoE",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 30",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 117,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 22
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "qXyMM",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 31",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 116,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 23
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "nC1zT",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 32",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 116,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 23
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "kkdpv",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 33",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 115,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 24
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "WXCj7",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 34",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 115,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 24
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "f6zZR8",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 35",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 115,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 24
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "EiecM",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 36",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 114,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 25
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "DnKXE",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 37",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 113,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 26
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "Cz8gb",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 38",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 113,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 26
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "jwrkt",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 39",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 112,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 27
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "Ytr9X",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 40",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 112,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 27
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "MkgqI",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 41",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 111,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 28
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "r0hOTD",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 42",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 111,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 28
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "w0bZx",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 43",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 110,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 29
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "zGRrC",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 44",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 110,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 29
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "Q1UR1s",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 45",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 109,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 30
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "yAUsQ",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 46",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 108,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 31
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "O1yRks",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 47",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 108,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 31
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "k0rv5",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 48",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 107,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 32
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "sPXO4",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 49",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 106,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 33
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "RxRCb",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 50",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 106,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 33
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "mtnVR",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 51",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 105,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 34
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "y9FQn",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 52",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 104,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 35
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "r80Bn",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 53",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 104,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 35
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "S1eR3",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 54",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 103,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 36
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "lCnrK",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 55",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 102,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 37
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "XmizQ",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 56",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 101,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 38
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "F9sr0e",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 57",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 101,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 38
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "Qa2Kh",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 58",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 100,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 39
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "KFGBR",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 59",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 99,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 40
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "d4kBJ",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 60",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 98,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 41
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "nGHcw",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 61",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 97,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 42
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "sPXGl",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 62",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 96,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 43
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "Bb8wo",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 63",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 96,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 43
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "bBrJD",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 64",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 95,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 44
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "GiOlh",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 65",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 94,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 45
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "c5GeW",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 66",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 93,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 46
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "i9lGI",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 67",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 92,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 47
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "ZI8lW",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 68",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 91,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 48
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "ZJoQK",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 69",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 90,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 49
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "DcZet",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 70",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 89,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 50
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "SjtOb",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 71",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 88,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 51
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "vV9cI",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 72",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 87,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 52
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "jKZEc",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 73",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 86,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 53
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "ieBBU",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 74",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 85,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 54
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "vJbnu",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 75",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 84,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 55
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "kyLqR",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 76",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 83,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 56
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "I0dA1",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 77",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 81,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 58
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "K36fW",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 78",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 80,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 59
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "Oqd8m",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 79",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 79,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 60
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "z74M4",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 80",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 78,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 61
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "roZMD",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 81",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 77,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 62
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "iyTVJ",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 82",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 75,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 64
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "McvJ6",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 83",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 74,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 65
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "ODBQl",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 84",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 73,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 66
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "TtTIv",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 85",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 71,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 68
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "i9WlM",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 86",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 70,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 69
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "SiDpI",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 87",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 69,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 70
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "Yxt5W",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 88",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 67,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 72
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "bq6FZ",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 89",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 66,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 73
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "gbYce",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 90",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 64,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 75
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "ZCWvq",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 91",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 63,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 76
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "qPwOb",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 92",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 61,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 78
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "Tlnhs",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 93",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 60,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 79
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "Jzdwg",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 94",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 58,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 81
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "fyW7u",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 95",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 56,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 83
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "uDPq5",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 96",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 55,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 84
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "pxET8",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 97",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 53,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 86
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "t3iPYU",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 98",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 51,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 88
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "GlCsL",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 99",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 49,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 90
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "RrhCj",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 100",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 48,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 91
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "h1WZzY",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 101",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 46,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 93
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "yOss6",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 102",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 44,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 95
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "HJ5Ao",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 103",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 42,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 97
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "kLep7",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 104",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 40,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 99
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "JiAzX",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 105",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 38,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 101
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "t3YdU",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 106",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 36,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 103
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "cQaM7",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 107",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 34,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 105
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "LQbLU",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 108",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 32,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 107
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "i1RILd",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 109",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 30,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 109
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "TolrI",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 110",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 27,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 112
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "GXqKr",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 111",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 25,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 114
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "scRem",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 112",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 23,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 116
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "G8aVAF",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 113",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 21,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 118
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "CRCaZ",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 114",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 18,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 121
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "o8PIH",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 115",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 16,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 123
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "L2C359",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 116",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 13,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 126
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "tLW08",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 117",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 11,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 128
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "D9qKOa",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 118",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 8,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 131
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "vcuVA",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 119",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 5,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 134
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "vBJFd",
+                                  "type": "ref",
+                                  "ref": "qIKBX",
+                                  "name": "Bar 120",
+                                  "width": "fill_container",
+                                  "gap": 1,
+                                  "descendants": {
+                                    "FOnhj": {
+                                      "height": 3,
+                                      "cornerRadius": 0
+                                    },
+                                    "brHwK": {
+                                      "height": 136
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "rectangle",
+                              "id": "IDtlw",
+                              "name": "Baseline",
+                              "fill": "$border-strong",
+                              "width": "fill_container",
+                              "height": 1
+                            },
+                            {
+                              "type": "frame",
+                              "id": "Pj2It",
+                              "name": "Axis",
+                              "width": "fill_container",
+                              "justifyContent": "space_between",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "j4MH0Y",
+                                  "name": "Axis Label",
+                                  "fill": "$ink-muted",
+                                  "content": "1-р сар",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "b1SIEJ",
+                                  "name": "Axis Label",
+                                  "fill": "$ink-muted",
+                                  "content": "120-р сар",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "VBicv",
+                          "name": "Legend",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": "$space-4",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "z8Cls8",
+                              "name": "Legend Row",
+                              "width": "fill_container",
+                              "gap": "$space-4",
+                              "children": [
+                                {
+                                  "id": "sGdGj",
+                                  "type": "ref",
+                                  "ref": "odNAz",
+                                  "name": "Legend — Үндсэн төлбөр",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "BnkiY": {
+                                      "fill": "$chart-principal"
+                                    },
+                                    "b2MUt": {
+                                      "content": "Үндсэн төлбөр"
+                                    },
+                                    "ueEqn": {
+                                      "content": "37.8%"
+                                    },
+                                    "I58FET": {
+                                      "content": "10,000,000₮"
+                                    }
+                                  }
+                                },
+                                {
+                                  "id": "lE3UL",
+                                  "type": "ref",
+                                  "ref": "odNAz",
+                                  "name": "Legend — Нийт хүү",
+                                  "width": "fill_container",
+                                  "descendants": {
+                                    "BnkiY": {
+                                      "fill": "$chart-interest"
+                                    },
+                                    "b2MUt": {
+                                      "content": "Нийт хүү"
+                                    },
+                                    "ueEqn": {
+                                      "content": "62.2%"
+                                    },
+                                    "I58FET": {
+                                      "content": "16,457,716₮"
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "rectangle",
+                              "id": "ApYx4",
+                              "name": "Legend Divider",
+                              "fill": "$border",
+                              "width": "fill_container",
+                              "height": 1
+                            },
+                            {
+                              "type": "frame",
+                              "id": "C5CA3",
+                              "name": "Legend Total",
+                              "width": "fill_container",
+                              "justifyContent": "space_between",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "x5WMAu",
+                                  "name": "Total Label",
+                                  "fill": "$ink-muted",
+                                  "content": "Нийт төлөх дүн",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": "$text-hint",
+                                  "fontWeight": "normal"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "pTGRl",
+                                  "name": "Total Value",
+                                  "fill": "$ink",
+                                  "content": "26,457,716₮",
+                                  "fontFamily": "$font-sans",
+                                  "fontSize": "$text-hint",
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     }
@@ -5212,6 +9246,22 @@
     "surface-stripe": {
       "type": "color",
       "value": "#FAF9F6"
+    },
+    "chart-principal": {
+      "type": "color",
+      "value": "$accent"
+    },
+    "chart-interest": {
+      "type": "color",
+      "value": "$accent-bright"
+    },
+    "chart-segment-gap": {
+      "type": "number",
+      "value": 2
+    },
+    "chart-bar-radius": {
+      "type": "number",
+      "value": 4
     }
   },
   "fileToken": "78ae1295-9b66-46ce-b965-d008a61a00a7"

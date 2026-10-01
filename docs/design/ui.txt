@@ -40,13 +40,17 @@
   table-row-y: 11
   table-min-width: 610
   surface-stripe: #FAF9F6
+  chart-principal: $accent
+  chart-interest: $accent-bright
+  chart-segment-gap: 2
+  chart-bar-radius: 4
 
 ## Canvas
 
-  frame [Canvas] fill=#E3E2DB width=2740 height=3580 layout=none
+  frame [Canvas] fill=#E3E2DB width=2832 height=4410 layout=none
     frame [Artboard — Components] layout=vertical gap=12
-      text [Caption] content=КОМПОНЕНТ — FIELD, RESULT ROW fill=#5C6560 fontFamily=Inter fontSize=14 fontWeight=600
-      frame [Components — Field, Result Row] fill=#F1F0EB stroke=#DEDCD4 width=2364 gap=48 padding=48 cornerRadius=20
+      text [Caption] content=КОМПОНЕНТ — FIELD, RESULT ROW, CHART BAR fill=#5C6560 fontFamily=Inter fontSize=14 fontWeight=600
+      frame [Components — Field, Result Row] fill=#F1F0EB stroke=#DEDCD4 width=2712 gap=48 padding=48 cornerRadius=20
         frame [Field] width=fill_container layout=vertical gap=8
           text [Field Label] content=Зээлийн хэмжээ fill=#5C6560 width=fill_container fontFamily=Inter fontSize=14 fontWeight=500
           frame [Field Box] fill=#FFFFFF stroke=#8E8B80 width=fill_container gap=12 padding=[14,16] cornerRadius=12 justifyContent=space_between alignItems=center
@@ -98,6 +102,19 @@
               text [Segment Label] content=Тэнцүү төлбөрт fill=#5C6560 width=fill_container fontFamily=Inter fontSize=14 fontWeight=500 lineHeight=1.3 textAlign=center
             frame [Segment Option — Сонгогдсон] ←Segment Option fill=#FFFFFF stroke=#248059 width=fill_container padding=["$space-3","$space-2"] cornerRadius=8 justifyContent=center alignItems=center
               text [Segment Label] content=Үндсэн төлбөр тэнцүү fill=#0F3D2E width=fill_container fontFamily=Inter fontSize=14 fontWeight=600 lineHeight=1.3 textAlign=center
+        frame [Payment Chart Context] width=300 layout=vertical gap=12
+          text [Context Caption] content=Chart Bar · Legend Item fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=600
+          frame [Card] fill=#FFFFFF stroke=#DEDCD4 width=fill_container gap=24 padding=24 cornerRadius=12 alignItems=end
+            frame [Chart Bar] width=24 layout=vertical gap=2
+              rectangle [Interest] fill=$accent-bright width=fill_container height=24 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+              rectangle [Principal] fill=$accent width=fill_container height=96
+            frame [Legend Item] width=180 layout=vertical gap=8
+              frame [Legend Key] gap=8 alignItems=center
+                rectangle [Swatch] fill=$accent width=10 height=10 cornerRadius=3
+                text [Legend Label] content=Үндсэн төлбөр fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=500
+              frame [Legend Values] layout=vertical gap=2
+                text [Legend Percent] content=88.1% fill=#141A17 fontFamily=Inter fontSize=20 fontWeight=700
+                text [Legend Amount] content=10,000,000₮ fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
     frame [Artboard — Desktop] layout=vertical gap=12
       text [Caption] content=DESKTOP 1280 — ЗЭЭЛИЙН ХҮҮ ТООЦООЛУУР fill=#5C6560 fontFamily=Inter fontSize=14 fontWeight=600
       frame [Desktop Calculator] fill=#F1F0EB width=1280 layout=vertical gap=48 padding=[40,64,56,64]
@@ -162,6 +179,73 @@
             frame [Panel Note] width=fill_container gap=8 padding=[20,0,0,0]
               icon [Note Icon] icon=info fill=#A9C6B9 width=16 height=16
               text [Note Text] content=Тэнцүү төлбөрт (аннуитет) аргаар тооцов. Дүн нь урьдчилсан тооцоо бөгөөд бүхэл төгрөгөөр дугуйлагдсан. fill=#A9C6B9 width=fill_container fontFamily=Inter fontSize=13 fontWeight=normal lineHeight=1.45
+        frame [Payment Structure Section] fill=#FFFFFF stroke=#DEDCD4 width=fill_container layout=vertical gap=24 padding=32 cornerRadius=20
+          frame [Section Head] width=fill_container layout=vertical gap=4
+            text [Section Title] content=Төлбөрийн бүтэц fill=#141A17 width=fill_container fontFamily=Inter fontSize=20 fontWeight=600
+            text [Section Subtitle] content=Сар бүрийн төлбөрийн хэдэн хэсэг нь үндсэн зээл, хэдэн хэсэг нь хүү болохыг харуулна. fill=#5C6560 width=fill_container fontFamily=Inter fontSize=13 fontWeight=normal lineHeight=1.45
+          frame [Chart Body] width=fill_container gap=48 alignItems=end
+            frame [Plot Column] width=fill_container layout=vertical gap=8
+              frame [Plot] width=fill_container height=200 gap=12 alignItems=end
+                frame [Bar 1] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=42 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=156
+                frame [Bar 2] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=39 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=159
+                frame [Bar 3] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=36 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=162
+                frame [Bar 4] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=33 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=165
+                frame [Bar 5] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=29 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=169
+                frame [Bar 6] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=26 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=172
+                frame [Bar 7] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=22 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=176
+                frame [Bar 8] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=19 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=179
+                frame [Bar 9] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=15 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=183
+                frame [Bar 10] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=12 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=186
+                frame [Bar 11] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=8 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=190
+                frame [Bar 12] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=4 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=194
+              rectangle [Baseline] fill=#8E8B80 width=fill_container height=1
+              frame [Axis] width=fill_container justifyContent=space_between
+                text [Axis Label] content=1-р сар fill=#5C6560 fontFamily=Inter fontSize=12 fontWeight=normal
+                text [Axis Label] content=12-р сар fill=#5C6560 fontFamily=Inter fontSize=12 fontWeight=normal
+            frame [Legend] width=260 layout=vertical gap=16
+              frame [Legend Row] width=fill_container layout=vertical gap=16
+                frame [Legend — Үндсэн төлбөр] ←Legend Item width=fill_container layout=vertical gap=8
+                  frame [Legend Key] gap=8 alignItems=center
+                    rectangle [Swatch] fill=$accent width=10 height=10 cornerRadius=3
+                    text [Legend Label] content=Үндсэн төлбөр fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=500
+                  frame [Legend Values] layout=vertical gap=2
+                    text [Legend Percent] content=88.1% fill=#141A17 fontFamily=Inter fontSize=20 fontWeight=700
+                    text [Legend Amount] content=10,000,000₮ fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+                frame [Legend — Нийт хүү] ←Legend Item width=fill_container layout=vertical gap=8
+                  frame [Legend Key] gap=8 alignItems=center
+                    rectangle [Swatch] fill=$accent width=10 height=10 cornerRadius=3
+                    text [Legend Label] content=Үндсэн төлбөр fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=500
+                  frame [Legend Values] layout=vertical gap=2
+                    text [Legend Percent] content=88.1% fill=#141A17 fontFamily=Inter fontSize=20 fontWeight=700
+                    text [Legend Amount] content=10,000,000₮ fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+              rectangle [Legend Divider] fill=#DEDCD4 width=fill_container height=1
+              frame [Legend Total] width=fill_container justifyContent=space_between alignItems=center
+                text [Total Label] content=Нийт төлөх дүн fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+                text [Total Value] content=11,347,153₮ fill=#141A17 fontFamily=Inter fontSize=13 fontWeight=600
         frame [Schedule Section] fill=#FFFFFF stroke=#DEDCD4 width=fill_container layout=vertical gap=24 padding=32 cornerRadius=20
           frame [Section Head] width=fill_container layout=vertical gap=4
             text [Section Title] content=Эргэн төлөлтийн хуваарь fill=#141A17 width=fill_container fontFamily=Inter fontSize=20 fontWeight=600
@@ -306,6 +390,73 @@
           frame [Panel Note] width=fill_container gap=8 padding=[16,0,0,0]
             icon [Note Icon] icon=info fill=#A9C6B9 width=15 height=15
             text [Note Text] content=Тэнцүү төлбөрт (аннуитет) аргаар тооцсон урьдчилсан дүн. fill=#A9C6B9 width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+        frame [Payment Structure Section] fill=#FFFFFF stroke=#DEDCD4 width=fill_container layout=vertical gap=16 padding=[20,16] cornerRadius=20
+          frame [Section Head] width=fill_container layout=vertical gap=4
+            text [Section Title] content=Төлбөрийн бүтэц fill=#141A17 width=fill_container fontFamily=Inter fontSize=17 fontWeight=600
+            text [Section Subtitle] content=Сар бүрийн төлбөрийн үндсэн зээл ба хүүгийн хэсэг. fill=#5C6560 width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+          frame [Chart Body] width=fill_container layout=vertical gap=24
+            frame [Plot Column] width=fill_container layout=vertical gap=8
+              frame [Plot] width=fill_container height=140 gap=4 alignItems=end
+                frame [Bar 1] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=30 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=108
+                frame [Bar 2] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=27 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=111
+                frame [Bar 3] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=25 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=113
+                frame [Bar 4] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=23 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=115
+                frame [Bar 5] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=21 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=117
+                frame [Bar 6] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=18 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=120
+                frame [Bar 7] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=16 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=122
+                frame [Bar 8] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=13 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=125
+                frame [Bar 9] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=11 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=127
+                frame [Bar 10] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=8 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=130
+                frame [Bar 11] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=5 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=133
+                frame [Bar 12] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=3 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=135
+              rectangle [Baseline] fill=#8E8B80 width=fill_container height=1
+              frame [Axis] width=fill_container justifyContent=space_between
+                text [Axis Label] content=1-р сар fill=#5C6560 fontFamily=Inter fontSize=12 fontWeight=normal
+                text [Axis Label] content=12-р сар fill=#5C6560 fontFamily=Inter fontSize=12 fontWeight=normal
+            frame [Legend] width=fill_container layout=vertical gap=16
+              frame [Legend Row] width=fill_container gap=16
+                frame [Legend — Үндсэн төлбөр] ←Legend Item width=fill_container layout=vertical gap=8
+                  frame [Legend Key] gap=8 alignItems=center
+                    rectangle [Swatch] fill=$accent width=10 height=10 cornerRadius=3
+                    text [Legend Label] content=Үндсэн төлбөр fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=500
+                  frame [Legend Values] layout=vertical gap=2
+                    text [Legend Percent] content=88.1% fill=#141A17 fontFamily=Inter fontSize=20 fontWeight=700
+                    text [Legend Amount] content=10,000,000₮ fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+                frame [Legend — Нийт хүү] ←Legend Item width=fill_container layout=vertical gap=8
+                  frame [Legend Key] gap=8 alignItems=center
+                    rectangle [Swatch] fill=$accent width=10 height=10 cornerRadius=3
+                    text [Legend Label] content=Үндсэн төлбөр fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=500
+                  frame [Legend Values] layout=vertical gap=2
+                    text [Legend Percent] content=88.1% fill=#141A17 fontFamily=Inter fontSize=20 fontWeight=700
+                    text [Legend Amount] content=10,000,000₮ fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+              rectangle [Legend Divider] fill=#DEDCD4 width=fill_container height=1
+              frame [Legend Total] width=fill_container justifyContent=space_between alignItems=center
+                text [Total Label] content=Нийт төлөх дүн fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+                text [Total Value] content=11,347,153₮ fill=#141A17 fontFamily=Inter fontSize=13 fontWeight=600
         frame [Schedule Card] fill=#FFFFFF stroke=#DEDCD4 width=fill_container layout=vertical gap=16 padding=[20,0] cornerRadius=20
           frame [Section Head] width=fill_container layout=vertical gap=4 padding=[0,16]
             text [Section Title] content=Эргэн төлөлтийн хуваарь fill=#141A17 width=fill_container fontFamily=Inter fontSize=17 fontWeight=600
@@ -454,6 +605,73 @@
           frame [Panel Note] width=fill_container gap=8 padding=[16,0,0,0]
             icon [Note Icon] icon=info fill=#A9C6B9 width=15 height=15
             text [Note Text] content=Тэнцүү төлбөрт (аннуитет) аргаар тооцсон урьдчилсан дүн. fill=#A9C6B9 width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+        frame [Payment Structure Section] fill=#FFFFFF stroke=#DEDCD4 width=fill_container layout=vertical gap=16 padding=[20,16] cornerRadius=20
+          frame [Section Head] width=fill_container layout=vertical gap=4
+            text [Section Title] content=Төлбөрийн бүтэц fill=#141A17 width=fill_container fontFamily=Inter fontSize=17 fontWeight=600
+            text [Section Subtitle] content=Сар бүрийн төлбөрийн үндсэн зээл ба хүүгийн хэсэг. fill=#5C6560 width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+          frame [Chart Body] width=fill_container layout=vertical gap=24
+            frame [Plot Column] width=fill_container layout=vertical gap=8
+              frame [Plot] width=fill_container height=140 gap=4 alignItems=end
+                frame [Bar 1] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=30 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=108
+                frame [Bar 2] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=27 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=111
+                frame [Bar 3] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=25 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=113
+                frame [Bar 4] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=23 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=115
+                frame [Bar 5] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=21 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=117
+                frame [Bar 6] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=18 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=120
+                frame [Bar 7] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=16 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=122
+                frame [Bar 8] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=13 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=125
+                frame [Bar 9] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=11 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=127
+                frame [Bar 10] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=8 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=130
+                frame [Bar 11] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=5 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=133
+                frame [Bar 12] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=3 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=135
+              rectangle [Baseline] fill=#8E8B80 width=fill_container height=1
+              frame [Axis] width=fill_container justifyContent=space_between
+                text [Axis Label] content=1-р сар fill=#5C6560 fontFamily=Inter fontSize=12 fontWeight=normal
+                text [Axis Label] content=12-р сар fill=#5C6560 fontFamily=Inter fontSize=12 fontWeight=normal
+            frame [Legend] width=fill_container layout=vertical gap=16
+              frame [Legend Row] width=fill_container gap=16
+                frame [Legend — Үндсэн төлбөр] ←Legend Item width=fill_container layout=vertical gap=8
+                  frame [Legend Key] gap=8 alignItems=center
+                    rectangle [Swatch] fill=$accent width=10 height=10 cornerRadius=3
+                    text [Legend Label] content=Үндсэн төлбөр fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=500
+                  frame [Legend Values] layout=vertical gap=2
+                    text [Legend Percent] content=88.1% fill=#141A17 fontFamily=Inter fontSize=20 fontWeight=700
+                    text [Legend Amount] content=10,000,000₮ fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+                frame [Legend — Нийт хүү] ←Legend Item width=fill_container layout=vertical gap=8
+                  frame [Legend Key] gap=8 alignItems=center
+                    rectangle [Swatch] fill=$accent width=10 height=10 cornerRadius=3
+                    text [Legend Label] content=Үндсэн төлбөр fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=500
+                  frame [Legend Values] layout=vertical gap=2
+                    text [Legend Percent] content=88.1% fill=#141A17 fontFamily=Inter fontSize=20 fontWeight=700
+                    text [Legend Amount] content=10,000,000₮ fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+              rectangle [Legend Divider] fill=#DEDCD4 width=fill_container height=1
+              frame [Legend Total] width=fill_container justifyContent=space_between alignItems=center
+                text [Total Label] content=Нийт төлөх дүн fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+                text [Total Value] content=11,347,153₮ fill=#141A17 fontFamily=Inter fontSize=13 fontWeight=600
         frame [Schedule Card] fill=#FFFFFF stroke=#DEDCD4 width=fill_container layout=vertical gap=16 padding=[20,0] cornerRadius=20
           frame [Section Head] width=fill_container layout=vertical gap=4 padding=[0,16]
             text [Section Title] content=Эргэн төлөлтийн хуваарь fill=#141A17 width=fill_container fontFamily=Inter fontSize=17 fontWeight=600
@@ -669,6 +887,73 @@
             frame [Panel Note] width=fill_container gap=8 padding=[20,0,0,0]
               icon [Note Icon] icon=info fill=#A9C6B9 width=16 height=16
               text [Note Text] content=Үндсэн төлбөр тэнцүү аргаар тооцов. Дүн нь урьдчилсан тооцоо бөгөөд бүхэл төгрөгөөр дугуйлагдсан. fill=#A9C6B9 width=fill_container fontFamily=Inter fontSize=13 fontWeight=normal lineHeight=1.45
+        frame [Payment Structure Section] fill=#FFFFFF stroke=#DEDCD4 width=fill_container layout=vertical gap=24 padding=32 cornerRadius=20
+          frame [Section Head] width=fill_container layout=vertical gap=4
+            text [Section Title] content=Төлбөрийн бүтэц fill=#141A17 width=fill_container fontFamily=Inter fontSize=20 fontWeight=600
+            text [Section Subtitle] content=Сар бүрийн төлбөрийн хэдэн хэсэг нь үндсэн зээл, хэдэн хэсэг нь хүү болохыг харуулна. fill=#5C6560 width=fill_container fontFamily=Inter fontSize=13 fontWeight=normal lineHeight=1.45
+          frame [Chart Body] width=fill_container gap=48 alignItems=end
+            frame [Plot Column] width=fill_container layout=vertical gap=8
+              frame [Plot] width=fill_container height=200 gap=12 alignItems=end
+                frame [Bar 1] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=39 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=159
+                frame [Bar 2] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=36 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=159
+                frame [Bar 3] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=32 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=160
+                frame [Bar 4] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=29 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=159
+                frame [Bar 5] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=26 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=159
+                frame [Bar 6] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=23 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=159
+                frame [Bar 7] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=19 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=160
+                frame [Bar 8] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=16 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=159
+                frame [Bar 9] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=13 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=159
+                frame [Bar 10] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=10 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=159
+                frame [Bar 11] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=6 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=160
+                frame [Bar 12] ←Chart Bar width=fill_container layout=vertical gap=2
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=3 cornerRadius=["$chart-bar-radius","$chart-bar-radius",0,0]
+                  rectangle [Principal] fill=$accent width=fill_container height=160
+              rectangle [Baseline] fill=#8E8B80 width=fill_container height=1
+              frame [Axis] width=fill_container justifyContent=space_between
+                text [Axis Label] content=1-р сар fill=#5C6560 fontFamily=Inter fontSize=12 fontWeight=normal
+                text [Axis Label] content=12-р сар fill=#5C6560 fontFamily=Inter fontSize=12 fontWeight=normal
+            frame [Legend] width=260 layout=vertical gap=16
+              frame [Legend Row] width=fill_container layout=vertical gap=16
+                frame [Legend — Үндсэн төлбөр] ←Legend Item width=fill_container layout=vertical gap=8
+                  frame [Legend Key] gap=8 alignItems=center
+                    rectangle [Swatch] fill=$accent width=10 height=10 cornerRadius=3
+                    text [Legend Label] content=Үндсэн төлбөр fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=500
+                  frame [Legend Values] layout=vertical gap=2
+                    text [Legend Percent] content=88.1% fill=#141A17 fontFamily=Inter fontSize=20 fontWeight=700
+                    text [Legend Amount] content=10,000,000₮ fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+                frame [Legend — Нийт хүү] ←Legend Item width=fill_container layout=vertical gap=8
+                  frame [Legend Key] gap=8 alignItems=center
+                    rectangle [Swatch] fill=$accent width=10 height=10 cornerRadius=3
+                    text [Legend Label] content=Үндсэн төлбөр fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=500
+                  frame [Legend Values] layout=vertical gap=2
+                    text [Legend Percent] content=88.1% fill=#141A17 fontFamily=Inter fontSize=20 fontWeight=700
+                    text [Legend Amount] content=10,000,000₮ fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+              rectangle [Legend Divider] fill=#DEDCD4 width=fill_container height=1
+              frame [Legend Total] width=fill_container justifyContent=space_between alignItems=center
+                text [Total Label] content=Нийт төлөх дүн fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+                text [Total Value] content=11,300,000₮ fill=#141A17 fontFamily=Inter fontSize=13 fontWeight=600
         frame [Schedule Section] fill=#FFFFFF stroke=#DEDCD4 width=fill_container layout=vertical gap=24 padding=32 cornerRadius=20
           frame [Section Head] width=fill_container layout=vertical gap=4
             text [Section Title] content=Эргэн төлөлтийн хуваарь fill=#141A17 width=fill_container fontFamily=Inter fontSize=20 fontWeight=600
@@ -784,3 +1069,397 @@
           frame [Panel Note] width=fill_container gap=8 padding=[16,0,0,0]
             icon [Note Icon] icon=info fill=#A9C6B9 width=15 height=15
             text [Note Text] content=Үндсэн төлбөр тэнцүү аргаар тооцсон урьдчилсан дүн. Төлбөр сар ирэх тусам буурна. fill=#A9C6B9 width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+    frame [Artboard — Mobile 320 (120 сар)] layout=vertical gap=12
+      text [Caption] content=MOBILE 320 — 120 САР fill=#5C6560 fontFamily=Inter fontSize=14 fontWeight=600
+      frame [Mobile Chart — 120 сар] fill=#F1F0EB width=320 layout=vertical padding=[24,16]
+        frame [Payment Structure Section] fill=#FFFFFF stroke=#DEDCD4 width=fill_container layout=vertical gap=16 padding=[20,16] cornerRadius=20
+          frame [Section Head] width=fill_container layout=vertical gap=4
+            text [Section Title] content=Төлбөрийн бүтэц fill=#141A17 width=fill_container fontFamily=Inter fontSize=17 fontWeight=600
+            text [Section Subtitle] content=Сар бүрийн төлбөрийн үндсэн зээл ба хүүгийн хэсэг. fill=#5C6560 width=fill_container fontFamily=Inter fontSize=12 fontWeight=normal lineHeight=1.45
+          frame [Chart Body] width=fill_container layout=vertical gap=24
+            frame [Plot Column] width=fill_container layout=vertical gap=8
+              frame [Plot] width=fill_container height=140 alignItems=end
+                frame [Bar 1] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=127 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=12
+                frame [Bar 2] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=127 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=12
+                frame [Bar 3] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=126 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=13
+                frame [Bar 4] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=126 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=13
+                frame [Bar 5] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=126 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=13
+                frame [Bar 6] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=126 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=13
+                frame [Bar 7] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=125 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=14
+                frame [Bar 8] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=125 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=14
+                frame [Bar 9] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=125 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=14
+                frame [Bar 10] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=124 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=15
+                frame [Bar 11] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=124 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=15
+                frame [Bar 12] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=124 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=15
+                frame [Bar 13] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=124 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=15
+                frame [Bar 14] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=123 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=16
+                frame [Bar 15] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=123 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=16
+                frame [Bar 16] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=122 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=17
+                frame [Bar 17] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=122 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=17
+                frame [Bar 18] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=122 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=17
+                frame [Bar 19] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=121 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=18
+                frame [Bar 20] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=121 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=18
+                frame [Bar 21] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=121 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=18
+                frame [Bar 22] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=120 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=19
+                frame [Bar 23] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=120 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=19
+                frame [Bar 24] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=119 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=20
+                frame [Bar 25] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=119 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=20
+                frame [Bar 26] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=119 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=20
+                frame [Bar 27] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=118 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=21
+                frame [Bar 28] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=118 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=21
+                frame [Bar 29] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=117 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=22
+                frame [Bar 30] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=117 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=22
+                frame [Bar 31] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=116 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=23
+                frame [Bar 32] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=116 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=23
+                frame [Bar 33] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=115 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=24
+                frame [Bar 34] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=115 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=24
+                frame [Bar 35] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=115 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=24
+                frame [Bar 36] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=114 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=25
+                frame [Bar 37] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=113 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=26
+                frame [Bar 38] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=113 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=26
+                frame [Bar 39] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=112 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=27
+                frame [Bar 40] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=112 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=27
+                frame [Bar 41] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=111 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=28
+                frame [Bar 42] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=111 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=28
+                frame [Bar 43] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=110 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=29
+                frame [Bar 44] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=110 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=29
+                frame [Bar 45] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=109 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=30
+                frame [Bar 46] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=108 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=31
+                frame [Bar 47] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=108 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=31
+                frame [Bar 48] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=107 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=32
+                frame [Bar 49] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=106 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=33
+                frame [Bar 50] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=106 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=33
+                frame [Bar 51] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=105 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=34
+                frame [Bar 52] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=104 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=35
+                frame [Bar 53] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=104 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=35
+                frame [Bar 54] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=103 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=36
+                frame [Bar 55] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=102 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=37
+                frame [Bar 56] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=101 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=38
+                frame [Bar 57] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=101 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=38
+                frame [Bar 58] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=100 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=39
+                frame [Bar 59] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=99 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=40
+                frame [Bar 60] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=98 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=41
+                frame [Bar 61] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=97 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=42
+                frame [Bar 62] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=96 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=43
+                frame [Bar 63] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=96 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=43
+                frame [Bar 64] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=95 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=44
+                frame [Bar 65] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=94 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=45
+                frame [Bar 66] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=93 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=46
+                frame [Bar 67] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=92 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=47
+                frame [Bar 68] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=91 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=48
+                frame [Bar 69] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=90 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=49
+                frame [Bar 70] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=89 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=50
+                frame [Bar 71] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=88 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=51
+                frame [Bar 72] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=87 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=52
+                frame [Bar 73] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=86 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=53
+                frame [Bar 74] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=85 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=54
+                frame [Bar 75] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=84 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=55
+                frame [Bar 76] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=83 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=56
+                frame [Bar 77] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=81 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=58
+                frame [Bar 78] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=80 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=59
+                frame [Bar 79] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=79 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=60
+                frame [Bar 80] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=78 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=61
+                frame [Bar 81] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=77 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=62
+                frame [Bar 82] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=75 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=64
+                frame [Bar 83] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=74 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=65
+                frame [Bar 84] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=73 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=66
+                frame [Bar 85] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=71 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=68
+                frame [Bar 86] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=70 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=69
+                frame [Bar 87] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=69 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=70
+                frame [Bar 88] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=67 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=72
+                frame [Bar 89] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=66 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=73
+                frame [Bar 90] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=64 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=75
+                frame [Bar 91] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=63 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=76
+                frame [Bar 92] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=61 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=78
+                frame [Bar 93] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=60 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=79
+                frame [Bar 94] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=58 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=81
+                frame [Bar 95] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=56 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=83
+                frame [Bar 96] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=55 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=84
+                frame [Bar 97] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=53 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=86
+                frame [Bar 98] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=51 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=88
+                frame [Bar 99] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=49 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=90
+                frame [Bar 100] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=48 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=91
+                frame [Bar 101] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=46 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=93
+                frame [Bar 102] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=44 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=95
+                frame [Bar 103] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=42 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=97
+                frame [Bar 104] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=40 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=99
+                frame [Bar 105] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=38 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=101
+                frame [Bar 106] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=36 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=103
+                frame [Bar 107] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=34 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=105
+                frame [Bar 108] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=32 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=107
+                frame [Bar 109] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=30 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=109
+                frame [Bar 110] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=27 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=112
+                frame [Bar 111] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=25 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=114
+                frame [Bar 112] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=23 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=116
+                frame [Bar 113] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=21 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=118
+                frame [Bar 114] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=18 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=121
+                frame [Bar 115] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=16 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=123
+                frame [Bar 116] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=13 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=126
+                frame [Bar 117] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=11 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=128
+                frame [Bar 118] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=8 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=131
+                frame [Bar 119] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=5 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=134
+                frame [Bar 120] ←Chart Bar width=fill_container layout=vertical gap=1
+                  rectangle [Interest] fill=$accent-bright width=fill_container height=3 cornerRadius=0
+                  rectangle [Principal] fill=$accent width=fill_container height=136
+              rectangle [Baseline] fill=#8E8B80 width=fill_container height=1
+              frame [Axis] width=fill_container justifyContent=space_between
+                text [Axis Label] content=1-р сар fill=#5C6560 fontFamily=Inter fontSize=12 fontWeight=normal
+                text [Axis Label] content=120-р сар fill=#5C6560 fontFamily=Inter fontSize=12 fontWeight=normal
+            frame [Legend] width=fill_container layout=vertical gap=16
+              frame [Legend Row] width=fill_container gap=16
+                frame [Legend — Үндсэн төлбөр] ←Legend Item width=fill_container layout=vertical gap=8
+                  frame [Legend Key] gap=8 alignItems=center
+                    rectangle [Swatch] fill=$accent width=10 height=10 cornerRadius=3
+                    text [Legend Label] content=Үндсэн төлбөр fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=500
+                  frame [Legend Values] layout=vertical gap=2
+                    text [Legend Percent] content=88.1% fill=#141A17 fontFamily=Inter fontSize=20 fontWeight=700
+                    text [Legend Amount] content=10,000,000₮ fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+                frame [Legend — Нийт хүү] ←Legend Item width=fill_container layout=vertical gap=8
+                  frame [Legend Key] gap=8 alignItems=center
+                    rectangle [Swatch] fill=$accent width=10 height=10 cornerRadius=3
+                    text [Legend Label] content=Үндсэн төлбөр fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=500
+                  frame [Legend Values] layout=vertical gap=2
+                    text [Legend Percent] content=88.1% fill=#141A17 fontFamily=Inter fontSize=20 fontWeight=700
+                    text [Legend Amount] content=10,000,000₮ fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+              rectangle [Legend Divider] fill=#DEDCD4 width=fill_container height=1
+              frame [Legend Total] width=fill_container justifyContent=space_between alignItems=center
+                text [Total Label] content=Нийт төлөх дүн fill=#5C6560 fontFamily=Inter fontSize=13 fontWeight=normal
+                text [Total Value] content=26,457,716₮ fill=#141A17 fontFamily=Inter fontSize=13 fontWeight=600
